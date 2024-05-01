@@ -1,0 +1,41 @@
+﻿@{
+    var prof = ViewBag.profession;
+}
+@model IEnumerable<HalloDoc.DAL.DataModels.Healthprofessional>;
+<partial name="/Views/Partners/DeleteVendorPopUp.cshtml" />
+<div class="container-fluid mt-lg-5 mt-sm-3 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-start mb-3 mt-3">
+            <div class="h4">Partners</div>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow  p-3"
+             style="border-radius: 10px">
+            <div class="d-sm-flex justify-content-between">
+                <div class="d-md-flex">
+                    <span class=" me-2 d-sm-6">
+                        <input type="search" class="form-control ps-4" id="VendorSearch" placeholder="Search Vendors">
+                    </span>
+                    <select class="form-select  LoadProfessions mb-3 d-sm-6" id="LoadProfession">
+
+                        <option value="-1">All Profession</option>
+                        @foreach (var item in prof)
+                        {
+                            <option value="@item.Healthprofessionalid">@item.Professionname</option>
+                        }
+                    </select>
+                </div>
+                <button class="btn btn-primary CreateBtn" id="CreatePartner"> Add Business</button>
+            </div>
+
+            @* partialview *@
+            <div id="loadPartnerTable">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/Partners/PartnerScript.js"></script>

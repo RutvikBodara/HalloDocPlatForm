@@ -1,0 +1,141 @@
+﻿@model IEnumerable<HalloDoc.DAL.DataModels.AccountType>;
+<div class="container-fluid mt-lg-5 mt-sm-3 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3 mt-3">
+            <div class="h3">Create Role</div>
+            <button class="btn btn-outline-primary" id="CreateAccessBack">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+
+    </div>
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow  p-3"
+             style="border-radius: 10px">
+            <div class="d-flex justify-content-start mb-2">
+                <h4> Details</h4>
+            </div>
+            <form id="CreateAccessForm">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="RoleName" placeholder=" RoleName" />
+                            <label for="RoleName">RoleName</label>
+                            <span class="RoleNameValidation" style="color:indianred"></span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating mb-4">
+                            <select class="form-select" id="Changeaccount">
+                                <option value="" selected disabled>Select Account Type</option>
+                                @foreach (var obj in Model)
+                                {
+                                    <option value="@obj.AccountTypeId">@obj.Name</option>
+                                }
+                            </select>
+                            <label for="floatingInputstate">State</label>
+                            <span class="ChangeaccountValidation" style="color:indianred"> </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="LoadRoleMenu">
+                    @* load roles here *@
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button class="btn btn-primary p-3 me-4" id="CreateAccess" type="submit">Save</button>
+                    <button class="btn btn-outline-primary p-3 me-4" id="CancelRole">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("#CancelRole").click(function (e) {
+        e.preventDefault();
+        $(".admin-data-container").load('/AdminPartials/CreateAccess', function () {
+            $.ajax({
+                url: '/AdminPartials/getAccountRoleMenu',
+                method: 'POST',
+                success: function (response) {
+                    $("#LoadRoleMenu").empty();
+                    response.forEach(function (item) {
+                        $("#LoadRoleMenu").append('<input class="Accesscheck" id="' + item.menuid + '" type = "checkbox" value = "' + item.name + '"  >  <label class="form-check-label me-3" for="' + item.menuid + '">' + item.name + '   </label > ');
+                    });
+                }
+            });
+        })
+    });
+    $("#RoleName").on("keyup", function () {
+        if ($(this).val() == "") {
+            $(".RoleNameValidation").html("This field is required");
+        } else {
+            $(".RoleNameValidation").html("");
+        }
+    });
+
+    $("#CreateAccessBack").click(function () {
+        $("#Account-access-drop-down").click();
+    });
+
+    $("#CreateAccessForm").on("submit", function (e) {
+        e.preventDefault();
+        var ids = [];
+        var formdata = new FormData();
+        formdata.append("Rolename", $("#RoleName").val())
+        formdata.append("accounttype", $("#Changeaccount").val());
+        $('input[type=checkbox]:checked').each(function () {
+            // ids.push({ id: $(this).val()})
+            formdata.append("arrayPage", $(this).attr("id"));
+        });
+        if ($("#RoleName").val() != null && $("#Changeaccount").val() != null) {
+            $.ajax({
+                url: '/AdminPartials/CreateAccessRole',
+                method: 'POST',
+                data: formdata,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response) {
+                        toastr.success("Access Created");
+                    }
+                    else {
+                        toastr.error("something went wrng");
+                    }
+                    // CancelRole();
+                    $("#Account-access-drop-down").click();
+                }
+            });
+        }
+        else {
+            if ($("#RoleName").val() == "") {
+                $(".RoleNameValidation").html("This field is required");
+            }
+            if ($("#Changeaccount").val() == null) {
+                $(".ChangeaccountValidation").html("Please Select Valid AccountType");
+            }
+        }
+    });
+    $("#Changeaccount").on("change", function () {
+        if ($(this).val() == null) {
+            $(".ChangeaccountValidation").html("Please Select Valid AccountType");
+        }
+        else {
+            $(".ChangeaccountValidation").html("");
+        }
+
+        $.ajax({
+            url: '/AdminPartials/getAccountRoleMenu',
+            method: 'POST',
+            data: { accountType: $(this).val() },
+            success: function (response) {
+                $("#LoadRoleMenu").empty();
+                response.forEach(function (item) {
+                    $("#LoadRoleMenu").append('<input class="regioncheck" id="' + item.menuid + '" type = "checkbox" value = "' + item.name + '"  >  <label class="form-check-label me-3" for="' + item.menuid + '">' + item.name + '   </label > ');
+                });
+            }
+        });
+    });
+</script>

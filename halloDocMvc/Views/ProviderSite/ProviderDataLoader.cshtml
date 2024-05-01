@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Provider Dashboard";
+    Layout = "ProviderHeader";
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+
+}
+@section styles {
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/patientSubmitRequestStyle.css">
+    <link rel="stylesheet" href="/css/sidebarcss.css">
+    <link rel="stylesheet" href="/css/adminDashBoardcss.css">
+}
+
+<div class="loader"></div>
+@* partial view will be loaded here *@
+<div class="Provider-data-container" style="overflow-x: hidden">
+</div>
+<script src="/js/ProviderScript/ProviderActionMenuScript.js"></script>
+@section scriptdashboard {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    @* load all partial view on click events top-7 *@
+    <script>
+        $(document).ajaxSend(function () {
+            $(".loader").fadeIn(250);
+        });
+
+        $(document).ajaxComplete(function () {
+            $(".loader").fadeOut(250);
+        });
+        $(document).ready(function () {
+            $("#ProviderDash").click();
+        })
+        $("#ProviderDash").click(function () {
+            localStorage.setItem("CurrentClicked", "#ProviderDash")
+            $(".Provider-data-container").load('@Url.Action("ProviderDashBoardMain", "ProviderAccount")', function () {
+            });
+        });
+
+        function BackDoc() {
+            // var actionmethod = localStorage.getItem("BackDoc");
+            // var userid = localStorage.getItem("userid");
+            $(".Provider-data-container").load('/ProviderAccount/ProviderDashBoardMain');
+        }
+    </script>
+}

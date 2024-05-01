@@ -1,0 +1,77 @@
+﻿@model IEnumerable<HalloDoc.DAL.ViewModals.ProviderAccount.WeeklyTimeSheetViewModel>
+<div class="container-fluid mt-lg-5 mt-sm-3 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-end mb-3 mt-3">
+            <button onclick="$('#ProviderInvoicing').click()" class="btn btn-outline-primary">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center mb-3">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow  p-3"
+             style="border-radius: 10px">
+            <div class="d-none d-md-block table-responsive">
+                <form class="WekklyFormSubmit">
+                    <table class="table table-striped table-responsive mt-3">
+                        <thead>
+                            <tr>
+                                <td>Date</td>
+                                <td>On Call Hours</td>
+                                <td>Total Hours</td>
+                                <td>Weekend/Holiday</td>
+                                <td>Number of HouseCalls</td>
+                                <td>Number of Phone Consults</td>
+                            </tr>
+                        </thead>
+                        <tboday>
+                            @foreach (var obj in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <span class="Shift-Dates"> @obj.Date </span>
+                                    </td>
+                                    <td>
+                                        @obj.OnCallHours
+                                    </td>
+                                    <td>
+                                        <input asp-for="@obj.TotalHours" class="form-control form-control-sm Total-hours" type="text" placeholder="TotalHours">
+                                    </td>
+                                    <td class="justify-content-center">
+                                        <input type="checkbox"  class="IsHoliday"/>
+                                    </td>
+                                    <td>
+                                        <input asp-for="@obj.NumberOfHouseCall" class="form-control form-control-sm House-call" type="text" placeholder="NumberOfHouseCall">
+                                    </td>
+                                    <td>
+                                        <input asp-for="@obj.NumberOfPhoneConsult" class="form-control form-control-sm Phone-call" type="text" placeholder="NumberOfPhoneConsult">
+                                    </td>
+                                </tr>
+                            }
+                        </tboday>
+                    </table>
+
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary me-3" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mb-3">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow  p-3"
+             style="border-radius: 10px">
+            <div class="d-flex justify-content-start  mt-2">
+                <button class="btn btn-primary me-3" id="AddReceipts">Add Receipts</button>
+            </div>
+            <div class="Load_AddReceipts">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary me-3">Finalize</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/ProviderScript/Invoicingscript.js"></script>

@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "AdminHeader";
+        // <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+}
+@section styles {
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/patientSubmitRequestStyle.css">
+    <link rel="stylesheet" href="/css/sidebarcss.css">
+    <link rel="stylesheet" href="/css/adminDashBoardcss.css">
+}
+
+<div class="loader"></div>
+@* partial view will be loaded here *@
+<div class="admin-data-container" style="overflow-x: hidden">
+</div>
+
+@section scriptdashboard {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    @* load all partial view on click events top-7 *@
+    <script>
+        $(document).ajaxSend(function () {
+            $(".loader").fadeIn(250);
+        });
+        $(document).ajaxComplete(function () {
+            $(".loader").fadeOut(250);
+        });
+        $(document).ready(function () {
+            // $('.loader').bind('ajaxStart', function () {
+            //     $(this).show();
+            //     $(".admin-data-container").hide();
+            // }).bind('ajaxStop', function () {
+            //     $(".admin-data-container").show();
+            //     $(this).hide();
+            // });
+            $("#AdminDash").click();
+        })
+        $("#AdminDash").click(function () {
+
+            localStorage.setItem("CurrentClicked", "#AdminDash")
+
+            $(".admin-data-container").load('@Url.Action("AdminDashBoardMain", "AdminPartials")', function () {
+                // $.ajax({
+                //     url: '/AdminPartials/LoadRegion',
+                //     method: 'POST',
+                //     success: function (response) {
+                //         $('#RegionList').empty();
+                //         $('#RegionList').append('<option value="-1" Selected>All Region</option>')
+                //         response.region.forEach(function (regionname) {
+                //             $('#RegionList').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                //         })
+                //     }
+                // });
+            });
+        })
+        $("#AdminProfileEdit").click(function () {
+            localStorage.setItem("profileEdit", "admin");
+            $(".admin-data-container").load('@Url.Action("AdminProfile", "AdminPartials")', function () {
+                // load status
+                $.ajax({
+                    url: '/AdminPartials/LoadStatus',
+                    method: 'POST',
+                    success: function (response) {
+                        response.forEach(function (status) {
+                            if (($('.loadstatus').val()) == status.statusId) {
+                            }
+                            else {
+                                $('.loadstatus').append('<option value="' + status.statusId + '">' + status.statusname + '</option>')
+                            }
+                        });
+                    }
+                })
+                // load role
+                $.ajax({
+                    url: '/AdminPartials/LoadRole',
+                    method: 'POST',
+                    success: function (response) {
+                        response.forEach(function (role) {
+                            if ($('.loadRole').val() == role.roleid) {
+
+                            }
+                            else if (role.accounttype == 2) {
+                                $('.loadRole').append('<option value="' + role.roleid + '">' + role.name + '</option>')
+                            }
+                        });
+                    }
+                });
+                // load region
+                $.ajax({
+                    url: '/AdminPartials/LoadRegion',
+                    method: 'POST',
+                    success: function (response) {
+                        response.region.forEach(function (regionname) {
+                            if ($('.loadRegion').val() == regionname.regionid) {
+
+                            } else {
+                                $('.loadRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                            }
+                        });
+                    }
+                });
+            });
+        });
+        function BackDoc() {
+            var actionmethod = localStorage.getItem("BackDoc");
+            var userid = localStorage.getItem("userid");
+            $(".admin-data-container").load('/AdminPartials/' + actionmethod + '?userid=' + userid)
+        }
+    </script>
+
+}

@@ -1,0 +1,318 @@
+@model HalloDoc.DAL.ViewModals.BusinessRequestviewmodel
+
+@{
+    ViewData["Title"] = "Family Friend Request";
+    // <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/css/intlTelInput.css" rel="stylesheet" />
+    Layout = "header_footer_Layout";
+}
+@section styles {
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/PatientRequestFormDesign.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+}
+
+<!-- popup -->
+<div class="modal fade" id="myModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-center">
+                    <i class="bi bi-exclamation-circle m-2 " style="color: #F7AC01;
+              font-size: 70px;"></i>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <h5>Information</h5>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 d-flex justify-content-center mt-2">
+                        <p style="text-align: justify">
+                            When submitting a request you must provide the correct contact
+                            Information for the patient or the reponsiry party.Failure to
+                            provide correct email and phone number will delay service or
+                            be declined.
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary m-2" data-bs-dismiss="modal">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class="backbtnpatientRequest d-flex justify-content-end mt-3 mb-3 col-lg-8 col-md-8 col-sm-12 col-12">
+            <a asp-controller="PatientRequests" asp-action="PatientSubmitRequest">
+                <button id="" class="btn btn-outline-primary">
+                    <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                    back
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+        <form method="post" class="createBusinessrequestform col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-100 p-3"
+              style="border-radius: 10px">
+            <h5 class="mb-3">Business Information</h5>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="BusinessFirstname" type="text" class="form-control" id="floatingInput1" placeholder="Your First Name"
+                               required />
+                        <label for="floatingInput1">Your First Name</label>
+                        <span asp-validation-for="BusinessFirstname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="BusinessLastname" type="text" class="form-control" id="floatingInput2" placeholder="Your Last Name" />
+                        <label for="floatingInput2">Your Last Name</label>
+                        <span asp-validation-for="BusinessLastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="BusinessCountryCode" id="BusinessCountryCode" hidden />
+                        <input asp-for="BusinessPhonenumber" id="BusinessPhonenumber" type="tel" class="form-control mobileBusiness pt-3 pb-3" />
+                        <span id="mobileBusinessValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="BusinessEmail" type="email" class="form-control" id="floatingInput3" placeholder="Email" />
+                        <label for="floatingInput3">Email</label>
+                        <span asp-validation-for="BusinessEmail" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="BusinessLocation" type="text" class="form-control" id="floatingInput4" placeholder="Your Last Name" />
+                        <label for="floatingInput4">Business/Property Name</label>
+                        <span asp-validation-for="BusinessLocation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Casenumber" type="text" class="form-control" id="floatingInput5"
+                               placeholder="Case Number (Optional)" />
+                        <label for="floatingInput5">Case Number(Optional)</label>
+                        <span asp-validation-for="Casenumber" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Patient Information</h5>
+
+            <div>
+                <div class="form-floating mb-4 col-12">
+                    <textarea asp-for="Notes" class="form-control flex-wrap" id="exampleFormControlTextarea1" rows="10"
+                              placeholder="Enter Brief Details Of symptoms"></textarea>
+                    <label for="exampleFormControlTextarea1" class="text-wrap">Enter Brief Details Of symptoms</label>
+                    <span asp-validation-for="Notes" style="color:indianred"></span>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="PatientFirstname" type="text" class="form-control" id="floatingInput6" placeholder="Your First Name"
+                               required />
+                        <label for="floatingInput6">First Name</label>
+                        <span asp-validation-for="PatientFirstname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="PatientLastname" type="text" class="form-control" id="floatingInput7" placeholder="Your Last Name" />
+                        <label for="floatingInput7">Last Name</label>
+                        <span asp-validation-for="PatientLastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="dateofbirth" type="date" class="form-control" id="floatingInput8" placeholder="Date" />
+                        <label for="floatingInput8">Date Of Birth</label>
+
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Patient Contact Number</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="PatientEmail" type="email" class="form-control" id="PatEmail" placeholder="Email" required />
+                        <label for="PatEmail">Email</label>
+                        <span asp-validation-for="PatientEmail" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="PatientCountryCode" id="PatientCountryCode" hidden />
+                        <input asp-for="PatientPhonenumber" type="tel" class="form-control mobilePatient pt-3 pb-3" />
+                        <span id="mobilePatientValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+
+            @*       <div class="row mt-2">
+            <div class="col-12 col-md-6">
+            <div id="Password" class="form-floating mb-4" style="display:none">
+            <input asp-for="password" type="password" class="form-control" id="Passlabel" placeholder="Password" required />
+            <label for="Passlabel">Password</label>
+            <span asp-validation-for="password" style="color:indianred"></span>
+            </div>
+            </div>
+            <div class="col-12 col-md-6">
+            <div id="ConfirmPassword" class="input-group form-floating mobilenumHolder mb-4" style="display:none">
+
+            <input asp-for="Conpasword" type="password" class="form-control" id="floatinglabel19" required />
+            <label for="floatinglabel19">Confirm Password</label>
+            <span asp-validation-for="Conpasword" style="color:indianred"></span>
+            </div>
+            </div>
+            </div> *@
+
+            <h5 class="mb-3">Patient Location</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Street" type="text" class="form-control" id="floatingInput09" placeholder="Street" />
+                        <label for="floatingInput09">Street</label>
+                        <span asp-validation-for="Street" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="City" type="text" class="form-control" id="floatingInput08" placeholder="City" />
+                        <label for="floatingInput08">City</label>
+                        <span asp-validation-for="City" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        @*    <input asp-for="State" type="text" class="form-control" id="floatingInput07" placeholder="State" />
+                        <label for="floatingInput07">State</label>
+                        <span asp-validation-for="State" style="color:indianred"></span> *@
+
+                        <select asp-for="regid" class="form-select" id="loadregion">
+                        </select>
+                        <span asp-validation-for="regid" style="color:indianred"></span>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Zipcode" type="number" class="form-control" id="floatingInput06" placeholder="Zip Code" />
+                        <label for="floatingInput06">Zip Code</label>
+                        <span asp-validation-for="Zipcode" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="floatingInput04"
+                               placeholder="Room # Suite (Optional)" />
+                        <label for="floatingInput04">Room # Suite (Optional)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary p-3 me-4" id="BusinessRequestSubmit">Submit</button>
+                    <button class="btn btn-outline-primary p-3">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts {
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="~/js/EmailCheckscript.js"></script>
+    @* <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> *@
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.7/js/intlTelInput.js"></script> *@
+    <script src="/js/Popup.js"></script>
+    @{
+        <partial name="_validationScriptsPartial" />
+    }
+    <script>
+        $(document).ready(function () {
+
+            let input1 = document.querySelector(".mobileBusiness");
+
+            const input1Script = window.intlTelInput(input1, {
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
+                preferredCountries: ["in"],
+                separateDialCode: true,
+                //initialCountry: "in"
+            });
+
+            $(".mobileBusiness").on("keyup", function () {
+                // console.log(input.isValidNumber());
+                if (input1Script.isValidNumber() == false) {
+                    $("#mobileBusinessValidation").html("Phonenumber is not valid");
+                }
+                else {
+                    $("#mobileBusinessValidation").html("");
+                }
+            });
+
+            let input2 = document.querySelector(".mobilePatient");
+
+            const input2script = window.intlTelInput(input2, {
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
+                preferredCountries: ["in"],
+                separateDialCode: true,
+                //initialCountry: "in"
+            });
+            $(".mobilePatient").on("keyup", function () {
+                // console.log(input.isValidNumber());
+                if (input2script.isValidNumber() == false) {
+                    $("#mobilePatientValidation").html("Phonenumber is not valid");
+                }
+                else {
+                    $("#mobilePatientValidation").html("");
+                }
+            });
+
+            $(".createBusinessrequestform").on("submit", function (e) {
+                if (input2script.isValidNumber() == false || input1Script.isValidNumber() == false) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+
+
+
+
+
+
+            $.ajax({
+                url: '/PatientRequests/LoadRegion',
+                method: 'POST',
+                success: function (response) {
+                    $('#loadregion').empty();
+                    $('#loadregion').append('<option value="" Selected disabled>Select Region</option>')
+                    response.region.forEach(function (regionname) {
+                        $('#loadregion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                    })
+                }
+            });
+            $("#BusinessRequestSubmit").click(function (e) {
+                $("#BusinessCountryCode").val($(".iti__selected-dial-code").text());
+                $("#PatientCountryCode").val($(".iti__selected-dial-code").text());
+            });
+        });
+    </script>
+}

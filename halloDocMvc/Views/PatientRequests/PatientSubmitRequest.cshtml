@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Patient Submit Request";
+    Layout = "header_footer_Layout";
+}
+@section styles {
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/patientSubmitRequestStyle.css">
+
+}
+<section class="content container-fluid">
+    <div class="d-flex textandbtnholder my-5 ">
+        <div class="textholder">
+            <h1 class="iam">I am a...</h1>
+        </div>
+        <div class="backbtnpatientRequest">
+            <a asp-controller="Home" asp-action="Index">
+                <button id="" class="btn  btn-outline-primary"><img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt=""> back</button>
+            </a>
+        </div>
+    </div>
+    <form>
+        <div class="directPatientRequest mb-3">
+            <button asp-controller="patientRequests" asp-action="PatientRequestCreate" class="directPatientRequest  btn-widths patientbtn" data-toggle="modal" data-target="#myModal">PATIENT</button>
+        </div>
+    </form>
+    <form action="">
+        <div class="directPatientRequest mb-3">
+            <button asp-controller="patientRequests" asp-action="FamilyFriendRequest" class="directPatientRequest  btn-widths  familyfriendbtn">FAMILY/FRIEND</button>
+        </div>
+    </form>
+    <form action="/html/ConciergeRequest.html">
+        <div class="directPatientRequest mb-3">
+            <button asp-controller="patientRequests" asp-action="ConciergeRequest" class="directPatientRequest  btn-widths conciergebtn">CONCIERGE</button>
+        </div>
+    </form>
+
+    <form action="">
+        <div class="directPatientRequest mb-3">
+            <button asp-controller="patientRequests" asp-action="BusinessRequest" class="directPatientRequest  btn-widths businesspartnerbtn">BUSINESS PARTNERS</button>
+        </div>
+    </form>
+</section>

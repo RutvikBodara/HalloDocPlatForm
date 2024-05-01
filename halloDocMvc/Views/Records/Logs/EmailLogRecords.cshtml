@@ -1,0 +1,325 @@
+﻿@model HalloDoc.DAL.ViewModals.Records.EmailAndSMSCombineViewmodel
+@if (Model.maxPage != 0)
+{
+    <div class="d-none d-md-block table-responsive d-none d-md-block">
+        <table class="table table-striped table-responsive mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <td>Recipient</td>
+                    <td>Action</td>
+                    <td>Role Name</td>
+                    @if (ViewBag.Currenttype == 1)
+                    {
+                        <td>Email Id</td>
+                    }
+                    else
+                    {
+                        <td>Mobile Number</td>
+                    }
+                    <td>Created Date</td>
+                    <td>Sent Date</td>
+                    <td>Sent</td>
+                    <td>Sent Tries</td>
+                    <td>Confirmation Number</td>
+                </tr>
+            </thead>
+            <tboday>
+                @foreach (var obj in Model.emailLogsDatas)
+                {
+                    <tr>
+                        <td>
+                            @obj.Recipient
+                        </td>
+                        <td>
+                            @obj.actionName
+                        </td>
+                        <td>
+                            @if (obj.RoleName != null)
+                            {
+                                @obj.RoleName
+                            }
+                            else
+                            {
+                                <p>-</p>
+                            }
+                        </td>
+                        @if (ViewBag.Currenttype == 1)
+                        {
+                            <td>
+                                @if (obj.Email != null)
+                                {
+                                    @obj.Email
+                                }
+                                else
+                                {
+                                    <p>-</p>
+                                }
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                @if (obj.Mobile != null)
+                                {
+                                    @obj.Mobile
+                                }
+                                else
+                                {
+                                    <p>-</p>
+                                }
+                            </td>
+                        }
+                        <td>
+                            @if (obj.CreatedDate != null)
+                            {
+                                @obj.CreatedDate
+                            }
+                            else
+                            {
+                                <p>-</p>
+                            }
+                        </td>
+                        <td>
+                            @if (obj.SentDate != null)
+                            {
+                                @obj.SentDate
+                            }
+                            else
+                            {
+                                <p>-</p>
+                            }
+                        </td>
+                        <td>
+                            @if (obj.sent != null)
+                            {
+                                @obj.sent
+                            }
+                            else
+                            {
+                                <p>-</p>
+                            }
+                        </td>
+                        <td>
+                            @if (obj.sentTrie != null)
+                            {
+                                @obj.sentTrie
+                            }
+                            else
+                            {
+                                <p>-</p>
+                            }
+                        </td>
+                        <td>
+                            @if (obj.ConfirmationNumber != null)
+                            {
+                                @obj.ConfirmationNumber
+                            }
+                            else
+                            {
+                                <p>-</p>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tboday>
+        </table>
+        <div class="d-flex justify-content-between">
+            <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+            <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </button>
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="d-flex justify-content-center">
+        <h3 class="h3 text-danger">Data Not Found</h3>
+    </div>
+}
+<div class="d-block d-md-none mt-3 p-2">
+    @*
+    <div class="d-flex justify-content-end mb-4">
+    <button class="btn btn-primary m-2" id="createAccess"> create Access</button>
+    </div>
+    *@
+    @if (Model.maxPage != 0)
+    {
+        @foreach (var obj in Model.emailLogsDatas)
+        {
+            var myuuid = Guid.NewGuid();
+            var myid = "a" + myuuid;
+            <div @* style="background-color:#e4f8ff" *@>
+
+                <div class="shadow" style="border-radius:15px">
+                    <div class="pt-2 ps-2" data-bs-toggle="collapse" href="#@myid" aria-expanded="false" aria-controls="#@myid">
+                        <div class="m-2">
+                            @obj.Recipient
+                        </div>
+                        <div class="m-2">
+                            <span>Action Name:</span>
+                            @if (obj.actionName == null)
+                            {
+                                <span>-</span>
+                            }
+                            else
+                            {
+                                <span class="fw-bold">@obj.actionName</span>
+                            }
+                        </div>
+                        <div class="m-2">
+                            @if (ViewBag.Currenttype == 1)
+                            {
+                                <span>
+                                    Email:
+                                </span>
+                                <span class="fw-bold"> @obj.Email</span>
+                            }
+                            else
+                            {
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-telephone" viewBox="0 0 16 16">
+                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                                    </svg> Mobile
+                                </span>
+                                <span class="fw-bold">@obj.Mobile</span>
+                            }
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="collapse col-sm-12 ps-3 in ms-3 me-3 pb-3" id="@myid">
+                        <div class="mb-2">
+                            <span class="fw-bolder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                </svg> Role Name:
+                            </span>
+                            @if (obj.RoleName != null)
+                            {
+                                @obj.RoleName
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bolder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                    <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg> Create Date:
+                            </span>
+                            @if (obj.CreatedDate != null)
+                            {
+                                @obj.CreatedDate
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bolder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                    <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg> Sent Date:
+                            </span>
+                            @if (obj.SentDate != null)
+                            {
+                                @obj.SentDate
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bolder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" />
+                                </svg> Sent:
+                            </span>
+                            @if (obj.sent != null)
+                            {
+                                @obj.sent
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bolder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                                </svg> Sent Tries:
+                            </span>
+                            @if (obj.sentTrie != null)
+                            {
+                                @obj.sentTrie
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bolder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" />
+                                </svg> Confirmation Number:
+                            </span>
+                            @if (obj.ConfirmationNumber != null)
+                            {
+                                @obj.ConfirmationNumber
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        }
+        <div class="d-flex justify-content-between">
+            <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+            <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </button>
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    }
+</div>

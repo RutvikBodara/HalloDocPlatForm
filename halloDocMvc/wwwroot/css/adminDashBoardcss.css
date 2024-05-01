@@ -1,0 +1,94 @@
+﻿
+::selection {
+    color: white;
+    background-color: #2bb9e9;
+}
+
+.Admin-side-cards div {
+    border-radius: 8px;
+}
+
+.card-new {
+    background-color: #e9eaef;
+    color: #203f9a;
+    border: 1px solid #203f9a;
+}
+
+.card-pending {
+    background-color: #e5f2f8;
+    color: #00adef;
+    border: 1px solid #00adef;
+}
+
+.card-active {
+    background-color: #e9f0e8;
+    color: #228c20;
+    border: 1px solid #228c20;
+}
+
+.card-conclude {
+    background-color: #f7e6ee;
+    color: #da0f82;
+    border: 1px solid #da0f82;
+}
+
+.card-to-close {
+    background-color: #e5eef5;
+    color: #0370d7;
+    border: 1px solid #0370d7;
+}
+
+.card-unpaid {
+    background-color: #efeef4;
+    color: #9966cd;
+    border: 1px solid #9966cd;
+}
+
+.active .card-new {
+    background-color: #203f9a;
+    color: white;
+    border: 1px solid #203f9a;
+}
+
+.active .card-pending {
+    background-color: #00adef;
+    color: white;
+    border: 1px solid #00adef;
+}
+
+.active .card-active {
+    background-color: #228c20;
+    color: white;
+    border: 1px solid #228c20;
+}
+
+.active .card-conclude {
+    background-color: #da0f82;
+    color: white;
+    border: 1px solid #da0f82;
+}
+
+.active .card-to-close {
+    background-color: #0370d7;
+    color: white;
+    border: 1px solid #0370d7;
+}
+
+.active .card-unpaid {
+    background-color: #9966cd;
+    color: white;
+    border: 1px solid #9966cd;
+}
+
+.admin-btn {
+    border: none;
+    background-color: transparent;
+}
+
+#Provider:hover {
+}
+
+.dropdown-item:hover {
+    color: white;
+    background-color: #60cef3;
+}

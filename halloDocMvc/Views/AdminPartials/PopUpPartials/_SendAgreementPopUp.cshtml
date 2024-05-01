@@ -1,0 +1,36 @@
+﻿
+
+<div class="modal fade" id="SendAgreementModel" tabindex="-1" aria-labelledby="headerToggle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="headerToggle">Send Agreement</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span class="RequestType">
+                   @* show requestType here *@
+                </span>
+                <p class="AssignDescription">
+                    To Send Ageement please make sure you are updating correct contact
+                    information below for responsible party.
+                </p>
+                <div class="row mb-3 form-floating mobilenumHolder">
+                    <input type="tel" class="form-control SendAgreementMobile" id="Send_Agr_PhoneNumber" placeholder="Phone Number" required>
+                  @*   <label for="#PhoneNumber">Phone Number</label> *@
+                    <span class="Send_Agr_PhoneNumber_Validation" style="color:indianred"></span>
+                </div>
+
+                <div class="row mb-3 form-floating">
+                    <input type="email" class="form-control" id="Send_Agr_Email" placeholder="Email" required>
+                    <label for="#Email">Email</label>
+                    <span class="Send_Agr_Email_Validation" style="color:indianred"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" onclick="Send_AgreementConfirm()" class="btn btn-primary Send_Agr_ConfirmBtn">Submit</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

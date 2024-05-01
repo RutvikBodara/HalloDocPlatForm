@@ -1,0 +1,495 @@
+﻿﻿
+<partial name="/Views/Schedule/_AddNewShiftPopUp.cshtml" />
+<partial name="/Views/Schedule/_ViewShiftpopup.cshtml" />
+<partial name="/Views/Schedule/ShowAllShifts.cshtml" />
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4"> My Scheduling</div>
+            @*  <button id="" class="btn btn-outline-primary">
+            <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+            back
+            </button> *@
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 shadow p-3" id="" style="border-radius: 10px">
+            <div class="d-md-flex justify-content-end mb-2">
+                <div class="mb-3">
+                    <button class="btn btn-primary mb-sm-3 mb-xs-3" id="AddNewShift" data-bs-toggle="modal" data-bs-target="#CreateShift">Add New Shift</button>
+                </div>
+            </div>
+            @* now all the data will be dynamic *@
+
+            <div class="d-flex justify-content-start fw-bolder timestampsbasedonreq">
+                @* loads dates dynamically base on selection of day week and months *@
+            </div>
+            <div class="d-flex justify-content-end">
+                @* loads dates dynamically base on selection of day week and months *@
+                <span style="background-color:#ebadd4; width:50px; height:20px; border-radius:5px; border:#ebadd4;"></span><span class="ms-2 me-2"> Pending Shifts</span>
+                <span style="background-color:#9edb9a; width:50px; height:20px; border-radius:5px; border:#9edb9a;"></span> <span class="ms-2 me-2"> Approved Shifts Shifts</span>
+            </div>
+
+            <div class="d-md-flex justify-content-between">
+            </div>
+            <div class="d-md-flex justify-content-between mt-2 mb-2">
+                <div>
+                    <button class="btn btn-primary me-1" style="border-radius:50px" id="leftSideCalender">  <i class="bi bi-chevron-left"></i> </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                        <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    <button class="btn btn-primary ms-1" style="border-radius:50px" id="RightSideCalender">  <i class="bi bi-chevron-right"></i> </button>
+                </div>
+            </div>
+
+            <div class="Load-Schedule mt-3 ">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var months = ["", "jan", "Fab", "Mar", "Apr", "May", "June", "July", "Augest", "Sept", "Oct", "Nov", "Dec"];
+    $(document).ready(function () {
+        $.ajax({
+            url: '/ProviderAccount/LoadPhysicianRegion',
+            method: 'POST',
+            success: function (response) {
+                $('.loadRegion').empty();
+                $('.loadRegion').append('<option value="" Selected>All Selected</option>')
+
+                response.forEach(function (regionname) {
+                    $('.loadRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                })
+                MonthClicked();
+            }
+        });
+        //handle other cases if needed
+    });
+
+    var shiftdata = null;
+    getshifts();
+    function getshifts() {
+        $.ajax({
+            url: '/ProviderAccount/GetShifts',
+            method: 'GET',
+            success: function (response) {
+                shiftdata = response;
+            }
+        });
+    }
+
+    // var tomorrow = new Date();
+    // var selectedDate = formatDate(tomorrow);
+    //shift counter
+    var i = 1;
+
+    var monthsdata = new Date();
+    // var curmonthwithyear = new Date(monthsdata.setDate(monthsdata.getDate() - curr.getDay()));
+
+    $("#RightSideCalender").click(function () {
+        monthsdata.setMonth(monthsdata.getMonth() + 1);
+        MonthClicked();
+    });
+    $("#leftSideCalender").click(function () {
+        monthsdata.setMonth(monthsdata.getMonth() - 1);
+        MonthClicked();
+    });
+    $("#regions").on("change", function () {
+        MonthClicked();
+    });
+    var dayname = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    function MonthClicked() {
+        var month = monthsdata.getMonth() + 1;
+        var year = monthsdata.getFullYear();
+
+        $(".timestampsbasedonreq").html(`${months[month]} - ${year}`);
+        var regid = null;
+        if ($("#regions").val() == "-1") {
+            regid = null;
+        }
+        else {
+            regid = $("#regions").val();
+        }
+        $(".Load-Schedule").load("/ProviderAccount/MonthWiseSchedule", function (response) {
+            $.ajax({
+                url: '/ProviderAccount/ShiftMonthsData',
+                data:
+                {
+                    month: month,
+                    year: year,
+                    regid: regid
+                },
+                method: 'POST',
+                success: function (response) {
+                    //response will contains physician details, region and shiftdetails status details ass well
+                    LoadMonthTable(response, month, year);
+                }
+
+            });
+        });
+    };
+
+    function LoadMonthTable(response, month, year) {
+        //find start date
+        var monthstart = new Date(year, month - 1, 1);
+        //find end date
+        var monthend = new Date(year, month, 0);
+        monthend.setDate(monthend.getDate() - 1);
+        var sizeArray = monthend.getDate() + 1;
+
+        //create arrays
+        var regionArray = Array(sizeArray + 1).fill(0);
+        var shiftArray = Array(sizeArray + 1).fill(0);
+        var shiftStatus = Array(sizeArray + 1).fill(0);
+        var shifttime = Array(sizeArray + 1).fill(0);
+        var phydata = Array(sizeArray + 1).fill(0);
+        var shiftCounter = Array(sizeArray + 1).fill(0)
+        //iterate in response
+        response.forEach(function (item) {
+            //fetch date
+
+            var shiftdate = item.shiftDate;
+
+            var DayOfMonth = shiftdate.split("-")[2];
+            if (DayOfMonth[0] == "0") {
+                DayOfMonth = DayOfMonth[1];
+            }
+            DayOfMonth = Number(DayOfMonth)
+
+            //shift
+            if (shiftArray[DayOfMonth] == "0") {
+
+                shiftArray[DayOfMonth] = item.shiftdetailId;
+                regionArray[DayOfMonth] = item.regionId + ":" + item.region;
+                shiftStatus[DayOfMonth] = item.status;
+                phydata[DayOfMonth] = item.physicianname + "%" + item.phyid;
+                shifttime[DayOfMonth] = item.start + " % " + item.end
+                shiftCounter[DayOfMonth] = 1
+            }
+            else {
+                var shiftstr = shiftArray[DayOfMonth] + "," + item.shiftdetailId
+                shiftArray[DayOfMonth] = shiftstr;
+
+                regionArray[DayOfMonth] += "," + item.regionId + ":" + item.region;
+
+                shiftStatus[DayOfMonth] += "," + item.status;
+
+                phydata[DayOfMonth] += "," + item.physicianname + "%" + item.phyid;
+
+                shifttime[DayOfMonth] += "," + item.start + " % " + item.end
+                shiftCounter[DayOfMonth] += 1
+            }
+        });
+        // console.log(phydata)
+        // console.log(regionArray);
+        // console.log(shiftArray);
+        // console.log(shiftCounter)
+
+        //once done this process till start date print simple div s
+        var startdate = monthstart.getDay();
+        // console.log(startdate);
+        //create varible who count for a week
+        var weekCounter = 0;
+
+        //for sunday
+        if (startdate == 0) {
+            startdate = 7;
+        }
+        var appenddata = '<tr>';
+        while (startdate != 1) {
+
+            var onespan = `<td><div></div><div></div><div></div><div></div><div></div><div></div></td>`
+            appenddata += onespan;
+            startdate--;
+            weekCounter++;
+        }
+
+        //run loop from 1 to end date
+        for (var i = 1; i <= sizeArray; i++) {
+            if (weekCounter > 6) {
+                appenddata += `</tr><tr>`
+
+                weekCounter = 0;
+            }
+            weekCounter++;
+            //fetch shifts
+            if (shiftCounter[i] != 0) {
+
+                //data with single request
+                var shhiftstatusdata = shiftStatus[i];
+                var Shiftdatas = shiftArray[i];
+                var phydatas = phydata[i];
+                var shifttimedata = shifttime[i];
+                var regionArraydata = regionArray[i];
+                var checker = 0;
+                var datacount = 0;
+
+                //data with multiple request
+                if (shiftArray[i] != 0 && shiftCounter[i] != 1) {
+                    shhiftstatusdata = shiftStatus[i].split(',')
+                    Shiftdatas = shiftArray[i].split(',')
+                    phydatas = phydata[i].split(',')
+                    shifttimedata = shifttime[i].split(',')
+                    regionArraydata = regionArray[i].split(',')
+                    datacount = Shiftdatas.length;
+                    checker = 1;
+                }
+
+                var onespan = `<td class="active"><div class="text-center" style="background-color:pink; ">${i}</div>`
+                //in loop che if data is single type of multiple type
+                //if single type just put data right away
+
+                if (checker != 1 && Shiftdatas[i] != "0") {
+
+                    //for single value case
+                    var splitPhydata = phydatas.split('%');
+                    var firstname = splitPhydata[0];
+                    var lastname = splitPhydata[1];
+                    var phyid = splitPhydata[2];
+                    var splitshifts = Shiftdatas;
+                    var splitregion = regionArraydata.split(':');
+                    var regid = splitregion[0];
+                    var regname = splitregion[1];
+                    var times = shifttimedata.split('%');
+                    var starttime = times[0];
+                    var endtime = times[1];
+
+                    var color = '';
+                    if (shhiftstatusdata == 1) {
+                        color = '#9edb9a';
+                    }
+                    else {
+                        color = '#ebadd4'
+                    }
+                    var colval = `<div class="active m-2 text-center" style="background-color:${color}; color:white;  align:middle; ; border:solid 1px; border:radius:5px;"  onclick="ShowShiftDetailsPopup('${phyid}','${firstname}','${lastname}', '${splitshifts}','${regid}')" >${starttime}-${endtime} :Dr: ${firstname} ,${lastname}</div>`
+                    onespan += colval;
+                }
+                else {
+                    var j = 0;
+                    while (j != 5 && datacount != 0) {
+
+                        var splitshifts = Shiftdatas[j];
+                        var splitstatus = shhiftstatusdata[j];
+                        var splitPhydata = phydatas[j].split('%');
+                        var firstname = splitPhydata[0];
+                        var lastname = splitPhydata[1];
+                        var phyid = splitPhydata[2];
+                        var splitregion = regionArraydata[j].split(':');
+                        var regid = splitregion[0];
+                        var regname = splitregion[1];
+                        var times = shifttimedata[j].split('%');
+                        var starttime = times[0];
+                        var endtime = times[1];
+
+                        var colval = '';
+                        datacount--;
+                        j++;
+                        if (j == 5 && datacount != 0) {
+                            //show view all btn
+                            colval = `<div class="active text-center m-2 " style="background-color:red; color:white" onclick="showAllShiftMonth('${phydatas}','${regionArraydata}','${Shiftdatas}' )" >View All</div>`
+                            onespan += colval;
+                            break;
+                        }
+
+                        var color = '';
+                        if (splitstatus != "1") {
+                            color = '#ebadd4'
+                        }
+                        else {
+                            color = '#9edb9a';
+                        }
+                        colval = `<div class="active m-2 text-center" style="background-color:${color}; color:white;  align:middle; ; border:solid 1px; border:radius:5px;"  onclick="ShowShiftDetailsPopup('${phyid}','${firstname}','${lastname}', '${splitshifts}','${regid}','${regname}')" >${starttime}-${endtime} :Dr: ${firstname} ,${lastname}</div>`
+
+                        onespan += colval;
+                    }
+                }
+                appenddata += onespan + "</td>"
+                //inner splits
+            } else {
+                var onespan = `<td><div class="text-center" style="background-color:pink;">${i}</div><div></div><div></div><div></div><div></div><div></div></td>`
+                appenddata += onespan;
+            }
+        }
+
+        $(".MonthTableBody").html(appenddata)
+        //if counter is >6 close tr and also restart it
+
+        //foreach iteration go on the index of array if not null add 5 btns with split the shift id and connect them with the popup
+
+        //and all set
+
+    };
+
+    function showAllShiftMonth(phydatas, regionArraydata, Shiftdatas) {
+        //full physician data
+        // console.log(phydatas);
+        // console.log(regionArraydata);
+        // console.log(Shiftdatas)
+
+        $("#ShiftPhy").html(`All shifts`);
+        $(".loadshiftshere").empty();
+        var shiftno = 1;
+        var j = 0;
+        var countshifts = Shiftdatas.split(',').length;
+        var phydata = phydatas.split(',');
+        var regdata = regionArraydata.split(',');
+
+        while (countshifts != j) {
+            //fetch phydetails
+
+
+            var splitPhydata = phydata[j].split('%');
+            var firstname = splitPhydata[0];
+            var lastname = splitPhydata[1];
+            var phyid = splitPhydata[2];
+
+            var splitregion = regdata[j].split(':');
+            var regid = splitregion[0];
+            var regname = splitregion[1];
+            var splitshifts = Shiftdatas.split(',');
+            var SeperateShift = `<hr/><div class="d-flex justify-content-center  m-2" onclick="ShowShiftDetailsPopup('${phyid}','${firstname}','${lastname}', '${splitshifts[j]}','${regid}')" >Shift No: ${shiftno}</div> <hr/>`
+            $(".loadshiftshere").append(SeperateShift);
+            i++;
+            j++;
+            shiftno++;
+        }
+        $("#ShowAllShift").modal("show");
+    }
+
+    function ShowShiftDetailsPopup(phyid, firstname, lastname, shiftid, date, regid) {
+        //fetch shift data
+        var ShiftDetailsid = shiftid.split(',');
+
+        if (ShiftDetailsid.length > 1) {
+            console.log("already shown yet");
+        }
+        else {
+            $.ajax({
+                url: '/ProviderAccount/FetchScheduleData',
+                method: 'Post',
+                data:
+                {
+                    ShiftDetailsids: ShiftDetailsid[0],
+                },
+                success: function (response) {
+
+                    $('.loadPhyRegion,.CurrentPhy').empty();
+                    $('.loadPhyRegion').append(`<option value="${response.regionid}" selected>need to be added</option>`);
+                    $('.CurrentPhy').append(`<option value="${phyid}" selected>${firstname} ${lastname}</option>`);
+                    $('#ShiftDate').val(response.shiftdate);
+                    $('#CurShiftStart').val(response.starttime);
+                    $('#CurShiftEnd').val(response.endtime);
+                    $('.ViewShift-Body input,.ViewShift-Body select').attr("disabled", "true");
+                    $('#ViewShift').modal("show");
+                    $(".SaveShift").attr("data-shiftdetId", ShiftDetailsid[0]);
+                    $(".ReturnShift").attr("hiddeb",true);
+                    $("#AllShiftcancelbtn").click();
+                    if (response.shiftdate == formatDate(new Date())) {
+                        // console.log($('#CurShiftEnd').val() + "  " + (new Date()).toLocaleTimeString())
+                        if ($('#CurShiftEnd').val() <= (new Date()).toLocaleTimeString('en-GB')) {
+                            $(".EditShift").attr("hidden", true);
+                        }
+                        else {
+                            $(".EditShift").removeAttr("hidden", true);
+                        }
+                    }
+                    else if (response.shiftdate < formatDate(new Date())) {
+                        $(".EditShift").attr("hidden", true);
+                    }
+                    else {
+                        $(".EditShift").removeAttr("hidden", true);                  }
+                }
+            });
+        }
+    };
+    //on edit btn click of view shift
+    $('.EditShift').click(function (e) {
+        e.preventDefault();
+        $(this).attr("hidden", true);
+        $('.SaveShift').removeAttr("hidden", true);
+        $('#ShiftDate,#CurShiftStart,#CurShiftEnd').prop("disabled", false)
+    });
+    $(".ReturnShift").click(function (e) {
+        e.preventDefault()
+        var shiftid = $(".ReturnShift").attr("data-shiftdetId");
+        $.ajax({
+            url: '/ProviderAccount/ChangeShiftStatus',
+            data: { shiftdetailsid: shiftid },
+            success: function (response) {
+                if (response) {
+                    toastr.success("Shift Approved")
+                    $("#Shiftcancelbtn").click();
+                }
+                else {
+                    toastr.error("Something went wrong")
+                }
+                $("#day").click();
+            }
+        });
+    });
+    $('.SaveShift').click(function (e) {
+        e.preventDefault();
+        var date = $('#ShiftDate').val();
+        var starttime = $('#CurShiftStart').val();
+        var endtime = $("#CurShiftEnd").val();
+
+        var StartPart = starttime.split(':');
+        var EndPart = endtime.split(':')
+        var startdate = new Date(0, 0, 0, StartPart[0], StartPart[1])
+        var enddate = new Date(0, 0, 0, EndPart[0], EndPart[1])
+        if (startdate >= enddate) {
+            toastr.error("Please Select Valid Time");
+            return false;
+        }
+        $.ajax({
+            url: '/ProviderAccount/EditShiftDetails',
+            data:
+            {
+                shiftdetailsid: $(".SaveShift").attr("data-shiftdetId"),
+                date: date,
+                start: starttime,
+                end: endtime
+            },
+            success: function (response) {
+                if (response == "Not Valid") {
+                    toastr.error("Shift alredy exist in this time zone")
+                }
+                else if (response) {
+                    if (response) {
+                        toastr.success("Data Changed");
+                    }
+                    $('#Shiftcancelbtn').click();
+                    //load scheduling
+                    $("#Scheduling-drop-Down").click();
+                    $(".SaveShift").attr("hidden", true);
+                    $('.EditShift').removeAttr("hidden", true);
+                    $('#ShiftDate,#CurShiftStart,#CurShiftEnd').prop("disabled", true);
+                    $("#MySchedule").click();
+                }
+                else {
+                    toastr.error("Something went wrong")
+                }
+            }
+
+        });
+
+    });
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
+</script>

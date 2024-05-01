@@ -1,0 +1,156 @@
+﻿
+@model ProjectManagement.DAL.ViewModels.Project.ProjectTableMainViewModel
+<div class="Load-Table">
+
+<div  class="d-none d-md-block table-responsive d-none d-md-block m-3">
+    @if (Model.ProjectTables != null)
+    {
+        <table class="table table-striped table-responsive mt-3">
+            <thead>
+                <tr>
+                    <td>Project Id</td>
+                    <td>Project Name</td>
+                    <td>Assignee</td>
+                    <td>Description</td>
+                    <td>Due Date</td>
+                    <td>Domain</td>
+                    <td>City</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tboday>
+                @foreach (var dataObject in Model.ProjectTables)
+                {
+                    <tr>
+                        <td>
+                            @dataObject.Id
+                        </td>
+                        <td>
+                            @dataObject.ProjectName
+                        </td>
+                        <td>
+                            @dataObject.Assignee
+                        </td>
+                        <td>
+                            @dataObject.Description
+                        </td>
+                        <td>
+                            @dataObject.DueDate
+                        </td>
+                        <td>
+                            @dataObject.Domain
+                        </td>
+                         <td>
+                            @dataObject.City
+                        </td>
+                         <td>
+                            <button class="btn btn-primary me-2" onclick="EditProject(@dataObject.Id)">Edit</button>
+                            <button class="btn btn-primary me-2" onclick="DeleteProject(@dataObject.Id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tboday>
+        </table>
+        <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+            <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                </svg>
+            </button>
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+            <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.MaxPage')">Next</button>
+            <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="d-flex justify-content-center">
+            <h3 class="h3">Data Not Found</h3>
+        </div>
+    }
+</div>
+</div>
+<div class="d-block d-md-none mt-3 p-2">
+
+    @*   <div class="d-flex justify-content-end mb-4">
+    <button class="btn btn-primary m-2" id="createAccess"> create Access</button>
+    </div> *@
+    @if (Model.ProjectTables != null)
+    {
+        foreach (var dataObject in Model.ProjectTables)
+        {
+            var myuuid = Guid.NewGuid();
+            var myid = "a" + myuuid;
+            <div>
+
+                <div class="shadow" style="border-radius:15px">
+                    <div class="pt-2 ps-2" data-bs-toggle="collapse" href="#@myid" aria-expanded="false" aria-controls="#@myid">
+                        <div class="mb-2">
+                            @dataObject.Id
+                        </div>
+                    </div>
+                    <br />
+                    <div class="collapse col-sm-12 ps-3 in ms-3 me-3 pb-3" id="@myid">
+                        <div class="mb-2">
+                            <span class="fw-bold">Project Name:</span>
+                            @dataObject.ProjectName
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Assignee:</span>
+                            @dataObject.Assignee
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Description:</span>
+                            @dataObject.Description
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Due Date:</span>
+                            @dataObject.DueDate
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Domain:</span>
+                            @dataObject.Domain
+                        </div>
+                        <div class="d-flex justify-content-end m-2">
+                            <button class="btn btn-primary me-2" onclick="EditProject(@dataObject.Id)">Edit</button>
+                            <button class="btn btn-dark  me-2" onclick="DeleteProject(@dataObject.Id)">Delete</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br />
+        }
+        <div class="d-flex justify-content-center mt-4 mb-5 gap-1">
+            <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                </svg>
+            </button>
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+            <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.MaxPage')">Next</button>
+            <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="d-flex justify-content-center">
+            <h3 class="h3">Data Not Found</h3>
+
+        </div>
+    }
+</div>

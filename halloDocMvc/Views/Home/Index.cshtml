@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "first_Page";
+    Layout = "first_page";
+}
+
+<body id="body">
+    <div class="container-fluid min-vh-100">
+        <div class="row main">
+            <div class="d-md-none img-fluid loginImg" style="z-index:-1">
+                <img src="/images/loginLeftSide.jpg" alt="" class="img-fluid min-vh-100" />
+            </div>
+
+            <div class="col-sm-12 LoginContent" style="z-index:1">
+                <div class="row DarkButton clearfix">
+                    <button type="button" id="dmodes" onclick="darkmode()" class="btn dmode btn-outline-primary">
+                        <img src="/images/dark_mode_black_24dp.svg" alt="" />
+                    </button>
+                </div>
+                <div class="ttt">
+                    <div class="row brandLogo mt-5">
+                        <img src="/images/brandName.jpg" alt="" class="w-100" />
+                    </div>
+                    <div class="row">
+                        <form class="">
+                            <div class="my-3 btnwidthspatientsideholder clearfix">
+                                <button asp-controller="patientRequests" asp-action="PatientSubmitRequest"
+                                        class="btnwidthspatientside submitrequestbtn mt-4" id="btn1">
+                                    Submit A Request
+                                </button>
+                            </div>
+                        </form>
+                        <form action="">
+                            <div class="my-3 btnwidthspatientsideholder">
+                                <button asp-controller="PatientSide" asp-action="LoginPage"
+                                        class="btnwidthspatientside registeredpatient mt-4">
+                                    Registered Patient
+                                </button>
+                            </div>
+                        </form>
+                        @*  <form action="">
+                        <div class="my-5 btnwidthspatientsideholder">
+                        <button asp-controller="AdminLogin" asp-action="LoginPage"
+                        class="btnwidthspatientside registeredpatient mt-4" style="background-color:red; color:white; font-family:800; border-color:red;">
+                        Admin Login
+                        </button>
+                        </div>
+                        </form> *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="d-flex justify-content-end patientsubmitreqfooter" style="background-color: black">
+        <div>
+            <span>
+                <a href="" class="me-3 tnc"> Terms And Conditions </a>
+                <span>| </span>
+                <a href="" class="privacypolicy ms-3">Privacy Policy</a>
+            </span>
+        </div>
+    </footer>
+
+</body>

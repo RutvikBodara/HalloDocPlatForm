@@ -1,0 +1,33 @@
+﻿@model IEnumerable<HalloDoc.DAL.DataModels.Physician>;
+<div class="min-vh-100">
+    <div class="min-vh-100" id="map" style="height:100%; width:100%"></div>
+</div>
+<script>
+    var amdlat = [77.4126, 23.2599]
+    var map = tt.map({
+        container: "map",
+        key: "IJbnFmAofnIbaqPaRgfSv5pg9alXYVMx",
+        center: amdlat,
+        zoom: 5
+
+    })
+
+    var popupOffsets = {
+        top: [0, 0],
+        bottom: [0, -70],
+        "bottom-right": [0, -70],
+        "bottom-left": [0, -70],
+        left: [25, -35],
+        right: [-25, -35],
+    }
+    //update lat and long when phy login
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            @:var marker = new tt.Marker().setLngLat([@item.Longtitude , @item.Lattitude]).addTo(map);
+            @:var popup = new tt.Popup({ offset: popupOffsets }).setHTML("@item.Firstname @item.Lastname");
+            @:marker.setPopup(popup).togglePopup()
+        }
+    }
+</script>

@@ -1,0 +1,31 @@
+﻿<div class="modal fade" id="DeleteVendor" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-center">
+                    <i class="bi bi-exclamation-circle m-2 " style="color: red;
+              font-size: 70px;"></i>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <h5>Confirmation for Delete Business</h5>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 d-flex justify-content-center mt-2">
+                        <p style="text-align: justify">
+                            Are you want to sure to delete this Business?once clear
+                            you are not able to see this Business again!
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button id="DeleteVendorBtn" @* requestid *@ type="button" class="btn btn-danger m-2">
+                        Delete
+                    </button>
+                    <button type="button" class="btn btn-outline-success m-2 ClearClose" data-bs-dismiss="modal">
+                        cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

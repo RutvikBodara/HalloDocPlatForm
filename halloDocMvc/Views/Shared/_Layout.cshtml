@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] front page</title>
+    @RenderSection("styles", required: false)
+
+</head>
+
+<body id="body">
+    <div class="container-fluid ">
+        <div class="row main justify-content-center">
+            <div class="col-lg-6 col-md-6 img-fluid loginImg">
+                <img src="/images/loginLeftSide.jpg" alt="" class="img-fluid min-vh-100">
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 LoginContent min-vh-100">
+
+                <div class="row DarkButton clearfix justify-content-end">
+                    <button type="button" id="dmodes" class="btn dmode btn-outline-primary" onclick="darkmode()">
+                        <img src="/images/dark_mode_black_24dp.svg" alt="">
+                    </button>
+                </div>
+                <div class="ttt">
+                    <div class="mobileBack mb-2">
+                        <a class="backhome" asp-action="Index" asp-controller="Home">
+                            <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg"
+                                 alt=""> back
+                        </a>
+                    </div>
+                    <div class="row brandLogo mt-5 ">
+                        <img src="/images/brandName.jpg" alt="" class="w-100">
+                    </div>
+                    <partial name="_alerts" />
+
+                    @RenderBody()
+                </div>
+                <div class="row tncprivacy">
+                    <span>
+                        <a href="" class="me-3 tnc"> Terms And Conditions </a> <span>|</span> <a href=""
+                                                                                                 class="privacypolicy ms-3">Privacy Policy</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    @* <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> *@
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.7/js/intlTelInput.js"></script> *@
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    @RenderSection("eyesection", required: false)
+    @RenderSection("scripts", required: false)
+</body>
+</html>

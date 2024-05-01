@@ -1,0 +1,201 @@
+﻿@model HalloDoc.DAL.ViewModals.Access.UserAccessViewModel;
+<div class="container-fluid mt-lg-5 mt-sm-3 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-start mb-3 mt-3">
+            <div class="h4">User Access</div>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow  p-3"
+             style="border-radius: 10px">
+            <div class="d-flex justify-content-between">
+                <select class="form-select  loadRole mb-3 w-25 w-sm-100" id="LoadRole">
+                    @* role,phy and parient role data *@
+                </select>
+                <button class="btn btn-primary CreateBtn" id="Admin-create-drop-Down" hidden> create Admin</button>
+                <button class="btn btn-primary CreateBtn" id="CreatePhysician" hidden> create Physician</button>
+            </div>
+
+            <div class="d-none d-md-block table-responsive d-none d-md-block">
+
+                <table class="table table-striped table-responsive mt-3">
+                    <thead>
+                        <tr>
+                            <td>Account Type</td>
+                            <td>Account POC</td>
+                            <td>Phone</td>
+                            <td>Status</td>
+                            <td>Open Requests</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tboday>
+                        @foreach (var obj in Model.UserAccessIndexViewModel)
+                        {
+                            if (obj.userid == null)
+                            {
+
+                                <tr>
+                                    <td>
+                                        @obj.AccountType
+                                    </td>
+                                    <td>
+                                        @obj.AccountPOC
+                                    </td>
+                                    <td>
+                                        @if (obj.Phone != null)
+                                        {
+                                            @obj.Phone
+                                        }
+                                        else
+                                        {
+                                            <p>-</p>
+                                        }
+                                    </td>
+                                    <td>
+                                        @obj.Status
+                                    </td>
+                                    <td>
+                                        @obj.OpenRequest
+                                    </td>
+                                    <td>
+                                        @if (obj.AdminId != null)
+                                        {
+                                            <button class="btn  btn-outline-primary" id="@obj.AdminId" onclick="EditAdmin(@obj.AdminId)">Edit</button>
+                                        }
+                                        else if (obj.PhysicianId != null)
+                                        {
+                                            <button class="btn  btn-outline-primary" id="@obj.PhysicianId" onclick="EditPhysicianProfile(@obj.PhysicianId)">Edit</button>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tboday>
+                </table>
+
+                <div class="d-flex justify-content-between">
+                    <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+                    <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="FirstPage()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                            </svg>
+                        </button>
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                        <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                        <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-md-none mt-3 p-2">
+
+                @*<div class="d-flex justify-content-end mb-4">
+                <button class="btn btn-primary m-2" id="createAccess"> create Access</button>
+                </div> *@
+                @foreach (var obj in Model.UserAccessIndexViewModel)
+                {
+                    if (obj.userid == null)
+                    {
+                        var myuuid = Guid.NewGuid();
+                        var myid = "a" + myuuid;
+                        <div @* style="background-color:#e4f8ff" *@>
+
+                            <div class="shadow" style="border-radius:15px">
+                                <div class="pt-2 ps-2" data-bs-toggle="collapse" href="#@myid" aria-expanded="false" aria-controls="#@myid">
+                                    <div class="mb-2">
+                                        @obj.AccountPOC
+                                    </div>
+                                    <div class="mb-2">
+                                        <span class="">Account Type:</span>
+                                        @obj.AccountType
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="collapse col-sm-12 ps-3 in ms-3 me-3 pb-3" id="@myid">
+                                    <div class="mb-2">
+                                        <span class="fw-bold">Phone</span>
+                                        @if (obj.Phone != null)
+                                        {
+                                            @obj.Phone
+                                        }
+                                        else
+                                        {
+                                            <span>-</span>
+                                        }
+                                    </div>
+                                    <div class="mb-2">
+                                        <span class="fw-bold">Phone</span>
+                                        @if (obj.Status != null)
+                                        {
+                                            @obj.Status
+                                        }
+                                        else
+                                        {
+                                            <span>-</span>
+                                        }
+                                    </div>
+                                    <div class="mb-2">
+                                        <span class="fw-bold">Open Request:</span>
+                                        @if (obj.OpenRequest != null)
+                                        {
+                                            @obj.OpenRequest
+                                        }
+                                        else
+                                        {
+                                            <span>-</span>
+                                        }
+                                    </div>
+                                    <div class="fw-bold">
+                                        @if (obj.AdminId != null)
+                                        {
+                                            <button onclick="EditAdmin(@obj.AdminId)" class=" btn btn-outline-primary">Edit</button>
+                                        }
+                                        else if (obj.PhysicianId != null)
+                                        {
+                                            <button class=" btn btn-outline-primary" onclick="EditPhysicianProfile(@obj.PhysicianId)">Edit</button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    }
+                }
+
+                <div class="d-flex justify-content-between">
+                    <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+                    <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="FirstPage()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                            </svg>
+                        </button>
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                        <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                        <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/AdminScripts/AdminDashBoardScripts/AdminProviderCombineScript.js"></script>
+@* pagination *@

@@ -1,0 +1,44 @@
+﻿
+<div class="modal fade" id="ContactProvider" tabindex="-1" aria-labelledby="headerToggle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="headerToggle">Send Mail to Patient for submitting Request</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="ContactProviderForm">
+                <div class="modal-body">
+                    <p>Choose Commnication to send message</p>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="option" id="Sms" checked>
+                        <label class="form-check-label" for="Sms">
+                           Sms
+                        </label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="option" id="Email">
+                        <label class="form-check-label" for="Email">
+                            Email
+                        </label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="option" id="Both">
+                        <label class="form-check-label" for="Both">
+                            Both
+                        </label>
+                    </div>
+                    <div class="form-floating mt-3 mb-3">
+                        <textarea class="form-control h-100" id="Message" rows="3"
+                                  placeholder="message" required></textarea>
+                        <label for="Message" class=" text-wrap">message</label>
+                        <span id="messageValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary ProviderSubmit">Submit</button>
+                    <button type="button" class="btn btn-outline-primary CancelBtn" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

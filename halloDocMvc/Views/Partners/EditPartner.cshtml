@@ -1,0 +1,137 @@
+﻿@{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<style>
+        .mobilenumHolder > * {
+            width: 100%;
+            height: 100%;
+        }
+
+</style>
+}
+
+@model HalloDoc.DAL.DataModels.Healthprofessional;
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">Edit Business</div>
+
+            <button onclick="$('#Partner').click()" class="btn btn-outline-primary">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-80 p-3"
+             style="border-radius: 10px" id="BusinessForm">
+            <form class="row mt-2" id="EditVendor">
+                <h5 class="mb-3">Edit Information</h5>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Vendorname" type="text" class="form-control" id="BusinessName" placeholder="Business Name" />
+                        <label for="BusinessName">Business Name</label>
+                        <span asp-validation-for="Vendorname" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+
+                @* select fropdown *@
+                <div class=" col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <select class="form-select" id="ProfessionSelect" asp-for="Profession" required>
+                            @foreach (var item in ViewBag.profession)
+                            {
+                                @if (Model != null && item.Healthprofessionalid == Model.Profession)
+                                {
+                                    <option value="@item.Healthprofessionalid" selected>@item.Professionname</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.Healthprofessionalid">@item.Professionname</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="Profession" style="color:indianred" class="validspans">
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Faxnumber" type="text" class="form-control" id="FaxNumber" placeholder="Fax Number" />
+                        <label for="FaxNumber">Fax Number</label>
+                        <span asp-validation-for="Faxnumber" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+                <div class="form-floating mobilenumHolder mb-4 col-12 col-md-6">
+                    <input asp-for="Phonenumber" type="tel" class="form-control mobileman   pt-3 pb-3" required />
+                    <span id="PhonenumberValidation" style="color:indianred"></span>
+              @*       <span asp-validation-for="Phonenumber" style="color:indianred" class="validspans"></span> *@
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Email" type="email" class="form-control" id="BusinessMail" placeholder="Email" required />
+                        <label for="BusinessMail">Email</label>
+                        <span asp-validation-for="Email" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Businesscontact" type="text" class="form-control" id="BusinessContact" placeholder="Business Contact" required />
+                        <label for="BusinessContact">Business Contact</label>
+                        <span asp-validation-for="Businesscontact" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Address" type="text" class="form-control" id="Street" placeholder="Street" />
+                        <label for="Street">Street</label>
+                        <span asp-validation-for="Address" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="City" type="text" class="form-control" id="City" placeholder="City" />
+                        <label for="City">City</label>
+                        <span asp-validation-for="City" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="State" type="text" class="form-control" id="State" placeholder="State" />
+                        <label for="State">State </label>
+                        <span asp-validation-for="State" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Zip" type="text" class="form-control" id="ZipCode" placeholder="ZipCode" />
+                        <label for="ZipCode">ZipCode</label>
+                        <span asp-validation-for="Zip" style="color:indianred" class="validspans"></span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" id="EditBusiness" class="btn btn-outline-primary">
+                        Edit
+                    </button>
+                    <button type="submit" id="SaveBusiness" class="btn btn-outline-primary">
+                        Submit
+                    </button>
+                    <button type="submit" id="CancelBusiness" class="btn btn-outline-primary">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/Partners/PartnerScript.js">
+</script>
+@{
+    <partial name="/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}

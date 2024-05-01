@@ -1,0 +1,40 @@
+﻿
+<div class="modal fade" id="SendLink" tabindex="-1" aria-labelledby="headerToggle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="headerToggle">Send Mail to Patient for submitting Request</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="SendLinkForm">
+                <div class="modal-body">
+                    <div class="row mb-3 form-floating">
+                        <input type="text" class="form-control" id="Req_FirstName" name="firstname" placeholder="FirstName">
+                        <label for="#Req_FirstName">FirstName</label>
+                        <span class="firstname_Validation" style="color:indianred"></span>
+                    </div>
+
+                    <div class="row mb-3 form-floating">
+                        <input type="text" class="form-control" id="Req_LastName" name="lastname" placeholder="LastName">
+                        <label for="#Req_LastName">LastName</label>
+                        <span class="lastname_Validation" style="color:indianred"></span>
+                    </div>
+
+                  @*   <div class="row mb-3 form-floating">
+                        <input type="tel" class="form-control SendLinkMobile2 p-3 ps-5" id="Req_PhoneNumber" name="mobilenumber">
+                          <label for="#Req_PhoneNumber">Phone Number</label>
+                    </div> *@
+                    <div class="row mb-3 form-floating">
+                        <input type="email" class="form-control" id="Req_Email" name="email" placeholder="Email">
+                        <label for="#Req_Email">Email</label>
+                        <span class="Email_Validation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary Send_link_ConfirmBtn">Submit</button>
+                    <button type="button" class="btn btn-outline-primary closebtn" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

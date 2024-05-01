@@ -1,0 +1,193 @@
+﻿@* @{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+} *@
+
+@{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+}
+
+@model HalloDoc.DAL.ViewModals.AdminDashBoardActions.AdminProfileViewModel
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">My Profile</div>
+
+            @if (ViewBag.CurrentProfile != "Self")
+            {
+   
+            <button onclick="$('#User-Access').click()" class="btn btn-outline-primary" id="ProfileAdminBtn">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+            }
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-80 p-3"
+             style="border-radius: 10px" id="AdminProfileForm">
+            <h5>Account Information</h5>
+
+            <form class="row mt-2" id="AdminAspForm" method="post">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Aspnetuser.Username" type="text" class="form-control" id="AdminUserName" placeholder="User Name" />
+                        <label for="AdminUserName">User Name</label>
+                        <span asp-validation-for="AdminData.Aspnetuser.Username" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" name="Adminpassword" id="AdminPassword" placeholder="Password" />
+                        <label for="AdminPassword">Password</label>
+                        <span class="AdminpasswordValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Adminid" id="adminId" hidden/>
+                        <select class="form-select loadstatus" asp-for="@Model.AdminData.Status">
+                            <option value="@Model.AdminData.StatusNavigation.StatusId" selected> @Model.AdminData.StatusNavigation.Statusname</option>
+                        </select>
+                        @* <input asp-for="StatusNavigation.Statusname" type="text" class="form-control" id="AdminStatus" placeholder="Status" /> *@
+                        <label for="AdminStatus">status</label>
+                        <span asp-validation-for="@Model.AdminData.Status" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <select class="form-select loadRole" asp-for="@Model.AdminData.Roleid">
+                            <option value="@Model.AdminData.Role.Roleid" selected> @Model.AdminData.Role.Name</option>
+                        </select>
+                        @* <input asp-for="Role.Name" type="text" class="form-control" id="AdminRole" placeholder="Role" /> *@
+                        <label for="AdminRole">Role</label>
+                        <span asp-validation-for="@Model.AdminData.Roleid" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-end mb-2">
+                    <button class="btn btn-outline-primary" id="ResetAdminPass">Reset Password</button>
+                </div>
+
+                <h5 class="mb-3">Administrator Information</h5>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Firstname" type="text" class="form-control" id="AdminFirstName" placeholder="First Name" />
+                        <label for="AdminFirstName">FirstName</label>
+                        <span asp-validation-for="AdminData.Firstname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Lastname" type="text" class="form-control" id="AdminLastName" placeholder="Last Name" />
+                        <label for="AdminLastName">Last Name</label>
+                        <span asp-validation-for="AdminData.Lastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Email" type="email" class="form-control" id="AdminMail" placeholder="Email" />
+                        <label for="AdminMail">Email</label>
+                        <span asp-validation-for="AdminData.Email" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Email" type="email" class="form-control" id="AdminConfirmMail" placeholder="Confirm Email" />
+                        <label for="AdminConfirmMail">Confirm Email</label>
+                        <span id="confirmMailValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    @*  <div class="col-2">
+                    <partial name="/Views/CountryList/countryListDropDown.cshtml" />
+                    </div> *@
+                    <div class="form-floating mobilenumHolder mb-4">
+                        <input asp-for="AdminData.Mobile" type="tel" class="form-control mobileman  pt-3 pb-3" />
+                        <span id="mobileAspValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                @*     <div class="col-12 col-md-6 regionCheckbox d-flex gap-2" disabled>
+                </div> *@
+                <div class="col-12 col-md-6">
+
+                    @foreach (var item in Model.selectedRegion)
+                    {
+                        <input class="regioncheck" id="@item.Regionid" type="checkbox" value="@item.Regionid" checked disabled />  <label class="form-check-label me-3" for="@item.Regionid">@item.Name </label>
+                    }
+                    @foreach (var item in Model.nonSelectedRegion)
+                    {
+                        <input class="regioncheck" id="@item.Regionid" type="checkbox" value="@item.Regionid" disabled />  <label class="form-check-label me-3" for="@item.Regionid">@item.Name </label>
+                    }
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary p-3 me-4" id="AdminAspFormSubmitbtn" type="submit">Submit</button>
+                    <button class="btn btn-danger p-3 me-4" id="AdminAspFormCancelbtn">Cancel</button>
+                    <button class="btn btn-outline-primary p-3 me-4" id="AdminAspFormEditbtn">Edit</button>
+                </div>
+            </form>
+
+            <h5 class="mb-4">Mailing & Billing Information</h5>
+            <form class="row mt-2" id="AdminBusinessForm">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Address1" type="text" class="form-control" id="AdminAddress1" placeholder="Address1" />
+                        <label for="AdminAddress1">Address1</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Address2" type="text" class="form-control" id="AdminAddress2" placeholder="Address2" />
+                        <label for="AdminAddress2">Address2</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.City" type="text" class="form-control" id="floatingInputcity" placeholder="City" />
+                        <label for="floatingInputcity">City</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <select class="form-select loadRegion" asp-for="AdminData.Regionid">
+                            <option value="@Model.AdminData.Region.Regionid" selected> @Model.AdminData.Region.Name</option>
+                        </select>
+                        @* <input asp-for="Region.Name" type="text" class="form-control" id="floatingInputstate" placeholder="State"/> *@
+                        <label for="floatingInputstate">State</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Zip" type="number" class="form-control" id="floatingInputzip" placeholder="Zip Code" />
+                        <label for="floatingInputzip">Zip Code</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="AdminData.Altphone" type="tel" class="form-control mobileman2 W-100  pt-3 pb-3" />
+                        <span id="mobileBusinesValidation" style="color:indianred;"></span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary p-3 me-4" id="SubmitBusinessInfobtn" type="submit">Submit</button>
+                    <button class="btn btn-danger p-3 me-4" id="CancelBusinessInfobtn">Cancel</button>
+                    <button class="btn btn-outline-primary p-3 me-4" id="EditBusinessInfobtn">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@* <script src="/build/js/intlTelInput.js"></script> *@
+<script src="~/js/AdminScripts/AdminDashBoardScripts/AdminProfileScript.js"></script>
+@{
+    <partial name="/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}
+

@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "PatientAgreement";
+    Layout = "first_page";
+}
+
+<div class="container-fluid mt-5 mb-5 agrPage">
+    <div class="d-flex justify-content-center" style="margin-top:20%; line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;">
+
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow p-3">
+            <p class="h6 m-lg-5 m-sm-3">
+                To provide best medical service, we cannot determine the cost right away, if you agree to our service, so we will provide
+                care and follow-up until all care is completed.So with this points, if you like us to provide care to you click On "Agree" and we'll get started immediately,
+                if you do not agree simply click "Cancel."
+            </p>
+
+            <div class="row justify-content-between">
+                <button onclick="ConfirmAgreement(@Model.Requestid)" class="btn col-5 text-white" style="background-color:#198754"> I agree</button>
+                <button onclick="CancelAgr()" class="btn col-5 text-white" style="background-color:#dc3545">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="modal fade" id="CancelPatientAgreementModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Block</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    Hello : <span class="FirstName" style="color:#60cef3">@Model.Firstname @Model.Lastname  </span>
+                </p>
+                <div class="row">
+                    <div class="col-12 form-floating">
+                        <textarea class="form-control h-100" id="CancelReason" name="CancelReason" placeholder="Reason For Block Request" rows="5" required></textarea>
+                        <label for="CancelReason">Reason For Cancel Request</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="ConfirmCancel(@Model.Requestid)" type="submit" class="btn btn-primary BlockConfirmBtn">Confirm</button>
+                <button type="button" class="btn btn-outline-primary cancelbtn" data-bs-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    function CancelAgr() {
+        $('#CancelPatientAgreementModel').modal("show");
+    }
+    function ConfirmCancel(reqid) {
+        var cancelNotes = $('#CancelReason').val();
+        $.ajax({
+            url: '/Agreement/ConfirmCancel',
+            method: 'POST',
+            data: {
+                reqid: reqid,
+                cancelNotes: cancelNotes
+            },
+            success: function (response) {
+                $('.cancelbtn').click();
+                toastr.success('Request Cancelled!');
+                $('.agrPage').load('/Agreement/AgreementProcessCompleted');
+            }
+        })
+    }
+    function ConfirmAgreement(reqid) {
+        var cancelNotes = $('#CancelReason').val();
+        $.ajax({
+            url: '/Agreement/ConfirmAgreement',
+            method: 'POST',
+            data: {
+                reqid: reqid,
+            },
+            success: function (response) {
+                toastr.success('Agreement Accepted!');
+                $('.agrPage').load('/Agreement/AgreementProcessCompleted');
+            }
+        })
+    }
+</script>

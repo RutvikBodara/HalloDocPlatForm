@@ -1,0 +1,197 @@
+﻿@model HalloDoc.DAL.ViewModals.Schedule.ScheduleViewModel
+
+<div class="modal fade" id="CreateShift" tabindex="-1" aria-labelledby="headerToggle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="headerToggle">Create Shift</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="modal-body">
+                <div class="">
+                    <div class="row mb-3 form-floating">
+                        <select asp-for="Regionid" class="form-select col-12 loadRegion" id="popupLoadRegion" required>
+                        </select>
+                        <label for="#popupLoadRegion">Select Region</label>
+                        <span asp-validation-for="Regionid" style="color:indianred"></span>
+                    </div>
+                    <div class="row mb-3 form-floating">
+                        <select asp-for="Physicianid" class="form-select col-12 PhysicianSelect" id="Physician">
+                            @* //LOAD PHYSICIAN DATA HERE *@
+                            <option value="">-Select-Region-first-</option>
+                        </select>
+                        <label for="#Physician">Physician</label>
+                        <span asp-validation-for="Physicianid" style="color:indianred"></span>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input asp-for="Startdate" type="date" class="form-control" id="DatePicker" placeholder="Date" min="@DateTime.Now.ToString("yyyy-MM-dd")"/>
+                        <label for="DatePicker">Date</label>
+                        <span asp-validation-for="Startdate" style="color:indianred"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-4">
+                                <input asp-for="Starttime" type="time" class="form-control" id="ShiftStart" placeholder="Start" />
+                                <label for="ShiftStart">Start</label>
+                                <span asp-validation-for="Starttime" style="color:indianred"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-4">
+                                <input asp-for="Endtime" type="time" class="form-control" id="ShiftEnd" placeholder="End" value="08:30:00"/>
+                                <label for="ShiftEnd">End</label>
+                                <span asp-validation-for="Endtime" style="color:indianred"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input asp-for="Isrepeat" class="form-check-input" type="checkbox" id="RepeatDays">
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Repeat</label>
+                        </div>
+                    </div>
+                    <div class="showallchecks ms-2">
+                        <div class="row">
+
+                            <div class="form-check col-4">
+                                <input asp-for="sunday" class="form-check-input" type="checkbox">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Every Sunday
+                                </label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input asp-for="monday" class="form-check-input" type="checkbox">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Every Monday
+                                </label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input asp-for="Tuesday" class="form-check-input" type="checkbox">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Every Tuesday
+                                </label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input asp-for="Wednesday" class="form-check-input" type="checkbox">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Every Wednesday
+                                </label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input asp-for="Thursday" class="form-check-input" type="checkbox">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Every Thursday
+                                </label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input asp-for="friday" class="form-check-input" type="checkbox">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Every Friday
+                                </label>
+                            </div>
+                            <div class="form-check col-4">
+                                <input asp-for="saturday" class="form-check-input" type="checkbox">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Every Saturday
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row mb-3 form-floating">
+                            <select asp-for="Repeatupto" class="form-select col-12 repeatSeleat" id="Repeat" required>
+                                @* //LOAD PHYSICIAN DATA HERE *@
+                                <option value="1">1-times </option>
+                                <option value="2">2-times</option>
+                                <option value="3">3-times</option>
+                            </select>
+                            <span asp-validation-for="Repeatupto" style="color:indianred"></span>
+                            <label for="#Repeat">Repeat-End</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary CreateShiftBtn">Submit</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@{
+            <partial name="_ValidationScriptsPartial" />
+}
+<script>
+    $(".showallchecks").prop("hidden", true)
+    var controller = "Schedule"
+    if (localStorage.getItem("CurrentAccount") == "Provider") {
+        controller = "ProviderAccount";
+        $("#Physician").attr("hidden", true)
+        $("#Physician").attr("required", false)
+    }
+    $(".modal-body").on("submit", function (e) {
+        e.preventDefault();
+        // console.log($(".modal-body").serialize());
+        var starttime = $('#ShiftStart').val();
+        var endtime = $('#ShiftEnd').val();
+        var StartPart = starttime.split(':');
+        var EndPart = endtime.split(':')
+        var startdate = new Date(0, 0, 0, StartPart[0], StartPart[1])
+        var enddate = new Date(0, 0, 0, EndPart[0], EndPart[1])
+
+        //make sure no shift exist in that time
+
+        $(".modal-body").validate();
+        if($(".modal-body").valid() != true){
+            return false;
+        }
+        if (startdate >= enddate) {
+            toastr.error("please select valid time")
+            return false;
+        }
+        $.ajax({
+            url: '/' + controller + '/CreateSchedule',
+            data: $(".modal-body").serialize(),
+            method: 'POST',
+            success: function (response) {
+                if (response == "Not Valid") {
+                    toastr.error("Shift Are Already Exist In this Time Zones");
+                }
+                else if (response) {
+                    $("#cancelbtn").click();
+                    toastr.success("Schedule Created")
+
+                    $("#MySchedule").click();
+                    $("#Scheduling-drop-Down").click();
+                }
+                else {
+                    toastr.success("Something  went Wrong")
+                }
+            }
+        });
+    });
+    $("#RepeatDays").on("change", function () {
+        if ($(this).is(":checked")) {
+            $(".showallchecks").prop("hidden", false)
+        }
+        else {
+            $(".showallchecks").prop("hidden", true)
+        }
+
+    });
+
+    if (localStorage.getItem("CurrentAccount") != "Provider") {
+        $("#popupLoadRegion").on("change", function () {
+            $.ajax({
+                url: '/AdminPartials/GetPhysicianByRegion',
+                data: { RegionId: $(this).val() },
+                method: 'POST',
+                success: function (response) {
+                    $("#Physician").empty();
+                    response.physicianName.forEach(function (item) {
+                        $("#Physician").append('<option value="' + item.physicianid + '">' + item.firstname + '</option>');
+                    });
+                }
+            });
+        })
+    }
+</script>

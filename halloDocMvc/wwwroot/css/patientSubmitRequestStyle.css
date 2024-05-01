@@ -1,0 +1,124 @@
+/* patientSubmitRequest */
+
+.darkbtnheader {
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1%;
+}
+
+.textandbtnholder {
+    height: fit-content;
+}
+
+.textholder {
+    width: fit-content;
+    margin: auto;
+}
+
+.iam {
+    font-weight: 700;
+}
+
+.backbtnpatientRequest {
+    width: fit-content;
+    height: fit-content;
+}
+
+.directPatientRequest {
+    width: fit-content;
+    margin: auto;
+}
+
+.directPatientRequest {
+    width: 25%;
+}
+
+.btn-widths {
+    width: 100%;
+    height: 7vh;
+    border-radius: 10px;
+    font-size: 1.5vw;
+}
+
+.patientbtn {
+    background-color: #e8eaf1;
+    border-color: #E9EAEF;
+    border-width: 1px;
+    color: #4367d3;
+}
+
+    .patientbtn:hover {
+        background-color: #b1bff1;
+    }
+
+.familyfriendbtn {
+    background-color: #e5f3f8;
+    border-color: #ced4f1;
+    border-width: 1px;
+    color: #00adef;
+}
+
+    .familyfriendbtn:hover {
+        background-color: #bfe6f5;
+    }
+
+.conciergebtn {
+    background-color: #e8f0e8;
+    border-color: #b8e7a9;
+    border-width: 1px;
+    color: #228b22;
+}
+
+    .conciergebtn:hover {
+        background-color: #c7f1c7;
+    }
+
+.businesspartnerbtn {
+    background-color: #F8E7EF;
+    border-color: #f0c9db;
+    border-width: 1px;
+    color: #d90f81;
+}
+
+    .businesspartnerbtn:hover {
+        background-color: #f0a4c7;
+    }
+/* .patientSubmitRequestMain{
+    background-color: #fafafa;
+} */
+.patientsubmitreqfooter {
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+@media screen and (max-width : 1000px ) {
+    .directPatientRequest {
+        width: 50%;
+    }
+
+    .btn-widths {
+        width: 100%;
+        height: 10vh;
+        border-radius: 10px;
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width : 500px ) {
+    .directPatientRequest {
+        width: 90%;
+    }
+
+    .btn-widths {
+        width: 100%;
+        height: 10vh;
+        border-radius: 10px;
+        font-size: 7vw;
+        padding: 2px;
+    }
+}

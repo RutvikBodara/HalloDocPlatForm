@@ -1,0 +1,207 @@
+﻿@model HalloDoc.DAL.ViewModals.Schedule.PendingShiftCombine;
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">Requested Shifts</div>
+            <button id="" class="btn btn-outline-primary" onclick="$('#Scheduling-drop-Down').click()">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 min-vh-80 shadow p-3" id="" style="border-radius: 10px">
+            <div class="d-md-flex justify-content-between mb-2">
+                <select class="form-select  loadRegion mb-3 w-25" id="regions">
+                    @if (Model.RegionData != null)
+                    {
+                        <option id="-1" value="-1">All Region</option>
+                        @foreach (var reg in Model.RegionData)
+                        {
+                            <option id="@reg.Regionid" value="@reg.Regionid">@reg.Name </option>
+                        }
+                    }
+                </select>
+                <div class="mb-3">
+                    <button class="btn btn-primary mb-sm-3 mb-xs-3" id="curMonthShift">Current Month Shift</button>
+                    <button class="btn btn-success mb-sm-3 mb-xs-3" id="ApproveShiftBtn">Approved Selected</button>
+                    <button class="btn btn-danger mb-sm-3 mb-xs-3 " id="DeleteShiftBtn">Delete Selected</button>
+                </div>
+            </div>
+
+            <div class="LoadtableHere">
+                @* partialview of shifts *@
+                <div class="mt-3 table-responsive d-none d-md-block mb-5">
+                    <table id="" class="table mb-5" style="border:none">
+                        @if (Model.maxPage != 0)
+                        {
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <input id="MainCheck" type="checkbox" style="height:20px; width:50px" />
+
+                                    </td>
+                                    <td>Staff</td>
+                                    <td>Day</td>
+                                    <td>Time</td>
+                                    <td>Region</td>
+                                </tr>
+                            </thead>
+                        }
+                        <tboday>
+                            @* //put conditions *@
+
+                            @if (Model.ReqestedShiftDetailsviewmodel != null)
+                            {
+                                @foreach (var item in Model.ReqestedShiftDetailsviewmodel)
+                                {
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="checks" id="@item.ShiftdetailId" style="height:20px; width:45px" />
+                                        </td>
+                                        <td>
+                                            @item.Physicianname
+                                        </td>
+                                        <td>
+                                            @item.ShiftDate
+                                        </td>
+                                        <td>
+                                            @item.Start - @item.End
+                                        </td>
+                                        <td>
+                                            @item.Region
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tboday>
+                    </table>
+
+                    @if (Model.maxPage != 0)
+                    {
+                        <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                            <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                                </svg>
+                            </button>
+                            <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                            <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled/>
+                            <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                            <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                                </svg>
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        <h5 class="h5">
+                            No shifts are Pending
+                        </h5>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#MainCheck").on("change", function () {
+        if ($(this).is(":checked")) {
+            $(".checks").prop("checked", true);
+        }
+        else {
+            $(".checks").prop("checked", false);
+        }
+    });
+    $("#curMonthShift").click(function () {
+        localStorage.setItem("ClickedSchedule", "month");
+        $('#Scheduling-drop-Down').click()
+    });
+    $("#ApproveShiftBtn,#DeleteShiftBtn").click(function () {
+        var idlist = [];
+        var allchecks = $(".checks:checked").each(function (item) {
+            idlist.push($(this).attr("id"));
+        });
+        if(idlist.length == 0){
+            toastr.error("Please Select Atlest One Shift");
+            return false;
+        }
+        var reqtype = ($(this).attr("id") == "ApproveShiftBtn") ? "ApproveShift" : "DeleteShift"
+        var regid = $("#regions").val()
+        $.ajax({
+            url: '/Schedule/ApproveOrDeleteShift',
+            method: 'POST',
+            data:
+            {
+                idlist: idlist,
+                reqtype: reqtype
+            },
+            success: function (response) {
+                if (response) {
+                    toastr.success("Task Completed")
+                }
+                else {
+                    toastr.error("some of the operations may not completed")
+                }
+                $(".admin-data-container").load('/Schedule/ShiftsForReviewPartial?regid=' + $("#regions").val(), function () {
+                    $("#" + regid).prop("selected", true);
+                })
+            }
+        });
+    });
+
+    function lastPage() {
+        let lastpage = 999999;
+        var regid = $("#regions").val()
+        $(".admin-data-container").load("/Schedule/ShiftsForReviewPartial?PageNumber=" + lastpage + "&regid=" + $("#regions").val(), function () {
+            $("#" + regid).prop("selected", true);
+        });
+    };
+
+    function FirstPage() {
+        var regid = $("#regions").val()
+        $(".admin-data-container").load("/Schedule/ShiftsForReviewPartial?regid=" + $("#regions").val(), function () {
+            $("#" + regid).prop("selected", true);
+        })
+    }
+
+    function Previous() {
+        if ($("#PageNumber").val() > 1) {
+            var pageNumbner = +$("#PageNumber").val() - 1;
+            var regid = $("#regions").val()
+            $(".admin-data-container").load("/Schedule/ShiftsForReviewPartial?PageNumber=" + pageNumbner + "&regid=" + $("#regions").val(), function () {
+                $("#" + regid).prop("selected", true);
+            });
+        }
+        else {
+            return true;
+        }
+    }
+
+    function Next(maxpage) {
+        if ($("#PageNumber").val() != maxpage) {
+            var pageNumbner = +$("#PageNumber").val() + 1;
+            var regid = $("#regions").val()
+            $(".admin-data-container").load("/Schedule/ShiftsForReviewPartial?PageNumber=" + pageNumbner + "&regid=" + $("#regions").val(), function () {
+                $("#" + regid).prop("selected", true);
+            });
+        }
+        else {
+            return true;
+        }
+    }
+
+    $("#regions").change(function (e) {
+        var regid = $(this).val();
+        $(".admin-data-container").load('/Schedule/ShiftsForReviewPartial/?regid=' + regid, function () {
+            $("#" + regid).prop("selected", true);
+        });
+    })
+</script>

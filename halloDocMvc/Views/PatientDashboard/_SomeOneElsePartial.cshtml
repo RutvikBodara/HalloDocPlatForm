@@ -1,0 +1,167 @@
+﻿@{
+    var aspid = ViewBag.ASPID;
+}
+@{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+}
+@model HalloDoc.DAL.ViewModals.Family.FriendRequest
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">Submit Information</div>
+
+            <button onclick="SomeOneBack()" class="btn btn-outline-primary" type="submit">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+
+        <form method="post" class="SomeOneReq col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-80 p-3" enctype="multipart/form-data"
+              style="border-radius: 10px">
+            <h5>Patient Information</h5>
+            <div class="form-floating mb-4 col-12">
+                <textarea asp-for="patientNotes" class="form-control" id="exampleFormControlTextarea11" rows="10"
+                          placeholder="Enter Brief Details Of symptoms"></textarea>
+                <label for="exampleFormControlTextarea11" class=" text-wrap">Enter Brief Details Of symptoms</label>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="patientFirstname" type="text" class="form-control" id="floatingInput111" placeholder="First Name" required />
+                        <label for="floatingInput111">First Name</label>
+                        <span asp-validation-for="patientFirstname" style="color:indianred"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="patientLastname" type="text" class="form-control" id="floatingInput221" placeholder="Last Name" required />
+                        <label for="floatingInput221">Last Name</label>
+                        <span asp-validation-for="patientLastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="date" class="form-control" id="floatingInput331" placeholder="Date" />
+                        <label for="floatingInput331">Date</label>
+
+                    </div>
+                </div>
+            </div>
+
+            <h5>Patient Contact Information</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="PatientEmail" type="email" class="form-control" id="PatEmail1" placeholder="Email" required />
+                        <label for="PatEmail1">Email</label>
+                        <span asp-validation-for="PatientEmail" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="PatientPhonenumber" type="tel" class="form-control mobileman pt-3 pb-3" required />
+                        <span id="mobileAspValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+
+            @* <div class="row mt-2">
+            <div class="col-12 col-md-6">
+            <div id="Password" class="form-floating mb-4" style="display:none">
+            <input asp-for="password" type="password" class="form-control" id="Passlabel1" placeholder="Password" required />
+            <label for="Passlabel1">Password</label>
+            <span asp-validation-for="password" style="color:indianred"></span>
+            </div>
+            </div>
+            <div class="col-12 col-md-6">
+            <div id="ConfirmPassword" class="input-group form-floating mobilenumHolder mb-4" style="display:none">
+
+            <input asp-for="Conpasword" type="password" class="form-control" id="floatinglabel11" required />
+            <label for="floatinglabel11">Confirm Password</label>
+            <span asp-validation-for="Conpasword" style="color:indianred"></span>
+            </div>
+            </div>
+            </div> *@
+
+            <h5>Patient Location</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Street" type="text" class="form-control" id="floatingInput21" placeholder="Street" />
+                        <label for="floatingInput21">Street</label>
+                        <span asp-validation-for="Street" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="City" type="text" class="form-control" id="floatingInput31" placeholder="City" />
+                        <label for="floatingInput31">City</label>
+                        <span asp-validation-for="City" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        @*    <input asp-for="State" type="text" class="form-control" id="floatingInput4" placeholder="State" />
+                        <label for="floatingInput4">State</label>
+                        <span asp-validation-for="State" style="color:indianred"></span> *@
+
+                        <select asp-for="regid" class="form-select FetchRegion" required>
+                        </select>
+                        <span asp-validation-for="regid" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Zipcode" type="number" class="form-control" id="floatingInput511" placeholder="Zip Code" />
+                        <label for="floatingInput511">Zip Code</label>
+                        <span asp-validation-for="Zipcode" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="floatingInput61"
+                               placeholder="Room # Suite (Optional)" />
+                        <label for="floatingInput61">Room # Suite (Optional)</label>
+                    </div>
+                </div>
+            </div>
+
+            <h5>Relation</h5>
+            <div class="col-12 col-md-6">
+                <div class="form-floating mb-4">
+                    <input asp-for="Relationname" type="text" class="form-control" id="floatingInput1111" placeholder="Your Last Name" required>
+                    <label for="floatingInput1111">Relation With Patient</label>
+                    <span asp-validation-for="Relationname" style="color:indianred"></span>
+                </div>
+            </div>
+            <h5>(Optional) Upload Photo Or Document</h5>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <input asp-for="uploadFile" class="form-control form-control-lg" id="formFileLg222" type="file" />
+                    <span asp-validation-for="uploadFile" style="color:indianred"></span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary p-3 me-4" type="submit" id="SomeoneSubmit">Submit</button>
+                    <button class="btn btn-outline-primary p-3">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/js/SomeOnePartial.js"></script>
+@* <script src="/build/js/intlTelInput.js"></script> *@
+@{
+    <partial name="_validationScriptsPartial" />
+}

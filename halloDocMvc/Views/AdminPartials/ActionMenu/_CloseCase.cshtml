@@ -1,0 +1,216 @@
+﻿@{
+    var reqid = ViewBag.requestId;
+    var i = 0;
+    // var j = 0;
+}
+
+@{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+}
+
+
+<div class="container-fluid mt-lg-5 mt-sm-3 mb-5 mt-3">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+            <div class="h4">Close Case</div>
+            <button onclick="BackDoc()" class="btn btn-outline-primary">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center" id="InvoiceForm">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow  p-3"
+             style="border-radius: 10px">
+            <div class="d-flex justify-content-between">
+                <div class="">
+                    <p>Patient Name</p>
+                    <h5 style="color:#60cef3">  @ViewBag.ClientName.Firstname  @ViewBag.ClientName.Lastname </h5>
+                </div>
+                <div>
+                    <input id="filekeeper" hidden>
+                    <button id="invoiceGenerate" class="btn btn-outline-primary" hidden> Invoice </button>
+                </div>
+            </div>
+
+            <div class="h5 mt-4 mb-4">
+                Documents
+            </div>
+
+
+
+            <div class="d-none d-md-block">
+
+                <table class="table table-striped table-responsive mt-3">
+                    <thead>
+                        <tr>
+                            <td width="60%"></td>
+                            <td width="20%">Upload Date</td>
+                            <td width="20%">Action</td>
+                        </tr>
+                    </thead>
+                    <tboday>
+                        @foreach (var obj in Model)
+                        {
+                            <tr>
+                                <td class="filename">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+                                        <path d="M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606c-.28.337-.498.516-.635.572l-.035.012a.3.3 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647q-.178.037-.356.078a21 21 0 0 0 .5-1.05 12 12 0 0 0 .51.858q-.326.048-.654.114m2.525.939a4 4 0 0 1-.435-.41q.344.007.612.054c.317.057.466.147.518.209a.1.1 0 0 1 .026.064.44.44 0 0 1-.06.2.3.3 0 0 1-.094.124.1.1 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256M8.278 6.97c-.04.244-.108.524-.2.829a5 5 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.5.5 0 0 1 .145-.04c.013.03.028.092.032.198q.008.183-.038.465z" />
+                                        <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.7 11.7 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.86.86 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.84.84 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.8 5.8 0 0 0-1.335-.05 11 11 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.24 1.24 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a20 20 0 0 1-1.062 2.227 7.7 7.7 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103" />
+                                    </svg>
+                                    <span class="filesna">@obj.document</span>
+
+                                </td>
+                                <td>
+                                    @obj.uploaddate
+                                </td>
+                                <td>
+                                    <a href="~/uploads/@obj.document" id="@i" download>
+                                        @{
+                                            i++;
+                                        }
+                                        <div class="btn btn-outline-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-up" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z" />
+                                                <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tboday>
+                </table>
+                <hr />
+            </div>
+            <div class="d-block d-md-none  mt-3">
+                @foreach (var obj in Model)
+                {
+                    var myuuid = Guid.NewGuid();
+                    var myid = "a" + myuuid;
+                    <div class="shadow" style="border-radius:15px">
+
+                        <div class="pt-2 ps-2" data-bs-toggle="collapse" href="#@myid" aria-expanded="false" aria-controls="#@myid">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+                                <path d="M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606c-.28.337-.498.516-.635.572l-.035.012a.3.3 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647q-.178.037-.356.078a21 21 0 0 0 .5-1.05 12 12 0 0 0 .51.858q-.326.048-.654.114m2.525.939a4 4 0 0 1-.435-.41q.344.007.612.054c.317.057.466.147.518.209a.1.1 0 0 1 .026.064.44.44 0 0 1-.06.2.3.3 0 0 1-.094.124.1.1 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256M8.278 6.97c-.04.244-.108.524-.2.829a5 5 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.5.5 0 0 1 .145-.04c.013.03.028.092.032.198q.008.183-.038.465z" />
+                                <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.7 11.7 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.86.86 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.84.84 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.8 5.8 0 0 0-1.335-.05 11 11 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.24 1.24 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a20 20 0 0 1-1.062 2.227 7.7 7.7 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103" />
+                            </svg>
+                            @obj.document
+                        </div>
+                        <br />
+
+                        <div class="collapse col-sm-12 ps-3 in" id="@myid">
+                            <div class="ms-2 mt-2">
+                                Upload Date : @obj.uploaddate
+                            </div>
+
+                            <div class="ms-2 mt-2">
+                                <a href="~/uploads/@obj.document" id="@i" download>
+                                    @{
+                                        i++;
+                                    }
+                                    <div class="btn btn-outline-primary m-2 col-11">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-up" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z" />
+                                            <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <br />
+                }
+                <hr />
+            </div>
+
+            <div class="h5 mt-4 mb-4">
+                Patient Information
+            </div>
+            <form id="closeCaseForm">
+                <div class="row mt-2 mb-2">
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="floatingInputz" name="firstname" placeholder="First Name" value="@ViewBag.ClientName.Firstname" required />
+                            <label for="floatingInpuz">First Name</label>
+                            <span style="color:indianred"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="floatingInputx" name="lastname" placeholder="Last Name" value="@ViewBag.ClientName.Lastname" />
+                            <label for="floatingInputx">Last Name</label>
+                            <span style="color:indianred"></span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating mb-4">
+                            <input type="date" class="form-control" id="floatingInputc" name="DateOfBirth" placeholder="Date" value="@ViewBag.ClientName.Strmonth"  />
+                            <label for="floatingInputc">Date</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 d-flex">
+                        <div class="col-8">
+                            <div class="input-group form-floating mobilenumHolder mb-4">
+                                <input type="tel" class="form-control Patientmobile pt-3 pb-3" name="callNumber" value="@ViewBag.ClientName.Phonenumber" required />
+                                <span id="mobilePatientValidation" style="color:indianred"></span>
+                            </div>
+                        </div>
+                        <div class="col-2 ms-2">
+                            <button class="btn btn-outline-primary p-3" onclick="window.open(`tel:@ViewBag.ClientName.Phonenumber`);">
+                                <i class="bi bi-telephone"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating mb-4">
+                            <input type="email" class="form-control" id="PatEmailv" name="Email" placeholder="Email" value="@ViewBag.ClientName.Email" required />
+                            <label for="PatEmailv">Email</label>
+                            <span style="color:indianred"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <button id="CloseCaseEditbtn" class="btn btn-outline-primary p-3">
+                            Edit
+                        </button>
+
+                        <button id="CloseCaseSubmitbtn" type="submit" class="btn btn-outline-primary p-3">
+                            Submit
+                        </button>
+
+                    </div>
+
+                </div>
+            </form>
+
+            <button id="CloseCaseCancelbtn" class="btn btn-danger p-3">
+                Close Case
+            </button>
+        </div>
+
+
+    </div>
+
+</div>
+@* <script>
+    $("#closeCaseForm").on("submit", function (e) {
+        e.preventDefault();
+    });
+</script> *@
+<script src="/js/AdminScripts/AdminDashBoardScripts/UploadDocScript.js"></script>
+<script src="/js/AdminScripts/AdminDashBoardScripts/ViewCaseScript.js"></script>
+@{
+    <partial name="_ValidationScriptsPartial" />
+}

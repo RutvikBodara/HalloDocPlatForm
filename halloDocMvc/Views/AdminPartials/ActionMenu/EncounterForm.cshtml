@@ -1,0 +1,324 @@
+﻿@{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+}
+
+
+
+@model HalloDoc.DAL.DataModels.Encounterformdetail
+
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">Encounter Form</div>
+
+            <button onclick="BackDoc()" class="btn btn-outline-primary">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-80 p-3"
+             style="border-radius: 10px" id="AdminProfileForm">
+            <div class="mt-3 mb-2 d-flex justify-content-center">
+                <h3 style="color:#60cef3">Medial Report-Confidential</h3>
+            </div>
+            @* notes :chagne to not null in model *@
+            <form class="row mt-2" id="EncounterForm" method="post">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Reqestclient.Firstname" type="text" class="form-control" id="patientName" placeholder="First Name" required />
+                        <label for="patientName">First Name</label>
+                        <span asp-validation-for="Reqestclient.Firstname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Reqestclient.Lastname" type="text" class="form-control" id="patientLastName" placeholder="Last Name" />
+                        <label for="patientLastName">Last Name</label>
+                        <span asp-validation-for="Reqestclient.Lastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Reqestclient.Location" type="text" class="form-control" id="patientLocation" placeholder="Location" required />
+                        <label for="patientLocation">Location</label>
+                        <span asp-validation-for="Reqestclient.Location" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Reqestclient.Strmonth" type="date" class="form-control" id="patienDateOfBirth" placeholder="Date Of Birth" />
+                        <label for="patienDateOfBirth">Date Of Birth</label>
+                        <span asp-validation-for="Reqestclient.Strmonth" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        @* remember to add *@
+                        <input type="date" class="form-control" id="patDate" placeholder="Date" />
+                        <label for="patDate">Date</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating  mb-4">
+                        <input asp-for="Reqestclient.Phonenumber" type="tel" class="form-control pat_mobile W-100  pt-3 pb-3" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Reqestclient.Email" type="email" class="form-control" id="patientEmail" placeholder="Email" required />
+                        <label for="patientEmail">Email</label>
+                        <span asp-validation-for="Reqestclient.Email" style="color:indianred"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Injuryhistory" type="text" class="form-control" id="patientinjury" placeholder="History of present illiness or injury" />
+                        <label for="patientinjury">History of present illiness or injury</label>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Medicalhistory" type="text" class="form-control" id="patientHistory" placeholder="Medical History" />
+                        <label for="patientinjury">Medical History</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Medications" type="text" class="form-control" id="Medications" placeholder="Medications" />
+                        <label for="Medications">Medications</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Allergies" type="text" class="form-control" id="Allergies" placeholder="Allergies" required/>
+                        <label for="Allergies">Allergies</label>
+                        <span asp-validation-for="Allergies" style="color:indianred"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Temp" type="text" class="form-control" id="temp" placeholder="Temp" />
+                        <label for="temp">Temp</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Hr" type="text" class="form-control" id="HR" placeholder="HR" />
+                        <label for="HR">HR</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Rr" type="text" class="form-control" id="RR" placeholder="RR" />
+                        <label for="RR">RR</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 d-flex gap-1">
+                    <div class="form-floating mb-4 col-6">
+                        <input asp-for="BpS" type="text" class="form-control" id="BP1" placeholder="BP(1)" />
+                        <label for="BP1" class=" text-wrap">BP(1)</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                    <div class="form-floating mb-4 col-6">
+                        <input asp-for="BpD" type="text" class="form-control " id="BP2" placeholder="BP(2)" />
+                        <label for="BP2" class=" text-wrap">BP(2) </label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="form-floating mb-4">
+                        <input asp-for="O2" type="text" class="form-control" id="O2" placeholder="O2" />
+                        <label for="O2">O2</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Pain" type="text" class="form-control" id="Pain" placeholder="Pain" />
+                        <label for="Pain">Pain</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Heent" type="text" class="form-control" id="Heent" placeholder="Heent" />
+                        <label for="Heent">Heent</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Cv" type="text" class="form-control" id="CV" placeholder="CV" />
+                        <label for="CV">CV</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Chest" type="text" class="form-control" id="Chest" placeholder="Chest" />
+                        <label for="Chest">Chest</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Abd" type="text" class="form-control" id="ABD" placeholder="ABD" />
+                        <label for="ABD">ABD</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Extr" type="text" class="form-control" id="Extr" placeholder="Extr" />
+                        <label for="Extr">Extr</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Skin" type="text" class="form-control" id="Skin" placeholder="Skin" />
+                        <label for="Skin">Skin</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Neuro" type="text" class="form-control" id="Neuro" placeholder="Neuro" />
+                        <label for="Neuro">Neuro</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Other" type="text" class="form-control" id="Other" placeholder="Other" />
+                        <label for="Other">Other</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Disgnosis" type="text" class="form-control" id="Diagnosis" placeholder="Diagnosis" />
+                        <label for="Diagnosis">Diagnosis</label>
+                        <span style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Treatmentplan" type="text" class="form-control" id="TreatmentPlan" placeholder="Treatment Plan" required/>
+                        <label for="TreatmentPlan">Treatment Plan</label>
+                        <span asp-validation-for="Treatmentplan" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Medicationdispensed" type="text" class="form-control" id="Dispensed" placeholder="Medications Dispensed" required/>
+                        <label for="Dispensed">Medications Dispensed</label>
+                        <span asp-validation-for="Medicationdispensed" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Procedure" type="text" class="form-control" id="Procedures" placeholder="Procedures" required/>
+                        <label for="Procedures">Procedures</label>
+                        <span asp-validation-for="Procedure" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 ">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Followup" type="text" class="form-control" id="Folloup" placeholder="Folloup" required/>
+                        <label for="Folloup">Folloup</label>
+                        <span asp-validation-for="Followup" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary p-3 me-4" id="EncounterSave" type="submit">Save Changes</button>
+                    <button class="btn btn-success p-3 me-4" onclick="FinalizeEnconuter(event)" id="FinalizeEnconuter" hidden>Finalize</button>
+                    <button class="btn btn-danger p-3 me-4" id="EncounterEdit">Edit</button>
+                    <button class="btn btn-outline-primary p-3 me-4" id="EncounterCancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* <script src="/build/js/intlTelInput.js"></script> *@
+<script>
+    //for navigation of physician account and admin account
+    var controller = "AdminPartials";
+    var accountType = "admin";
+    if (localStorage.getItem("CurrentAccount") == "Provider") {
+        controller = "ProviderAccount"
+        accountType = "Provider";
+        $("#FinalizeEnconuter").attr("hidden", false);
+    }
+    $("#FinalizeEnconuter").click(function (event) {
+        event.preventDefault();
+        $("#EncounterForm").validate();
+        if ($("#EncounterForm").valid() != true) {
+            return false;
+        }
+        $.ajax({
+            url: '/ProviderAccount/FinalizeEnconuter',
+            method: 'POST',
+            success: function (response) {
+                if (response) {
+                    toastr.success("FormFinalized");
+                    $(".Provider-data-container").load('/ProviderAccount/ProviderDashBoardMain')
+                }
+                else {
+                    toastr.error("Something went wrong");
+                }
+            }
+        });
+    });
+    $("#EncounterForm").on("submit", function (e) {
+        e.preventDefault();
+
+        $("#EncounterForm").validate();
+        if (!$("#EncounterForm").valid()) {
+            return false;
+        }
+        var formdata = $("#EncounterForm").serialize();
+
+        $.ajax({
+            url: '/' + controller + '/EncounterFormSubmit',
+            method: 'POST',
+            data: formdata,
+            success: function (response) {
+                if (response.status) {
+                    toastr.success("Patient Data Changed")
+                } else {
+                    toastr.error("Something really wrong happened")
+                }
+
+                $("." + accountType + "-data-container").load("/" + controller + "/EncounterForm?reqid=" + response.reqid);
+
+            }
+        });
+    });
+</script>
+<script src="~/js/AdminScripts/AdminDashBoardScripts/EncounterFormScript.js"></script>
+@{
+        <partial name="/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}
+

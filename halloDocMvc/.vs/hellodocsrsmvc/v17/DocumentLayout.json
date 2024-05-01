@@ -1,0 +1,308 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HalloDoc3Tier\\halloDocMvc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\controllers\\provideraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:controllers\\provideraccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\provideraccount\\providermyschedule\\_editschedulemain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\provideraccount\\providermyschedule\\_editschedulemain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\schedule\\_addnewshiftpopup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\schedule\\_addnewshiftpopup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\schedule\\_editschedulemain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\schedule\\_editschedulemain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\wwwroot\\js\\providerscript\\providerheader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:wwwroot\\js\\providerscript\\providerheader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E841C7C-6BBB-451B-9539-926504054BCE}|..\\HalloDoc.BAL\\HalloDoc.BAL.csproj|d:\\hallodoc3tier\\hallodoc.bal\\repository\\schedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E841C7C-6BBB-451B-9539-926504054BCE}|..\\HalloDoc.BAL\\HalloDoc.BAL.csproj|d:\\hallodoc3tier\\hallodoc.bal\\interface\\ischedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\controllers\\adminpartialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:controllers\\adminpartialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\provideraccount\\providerdashboard\\_concludecareindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\provideraccount\\providerdashboard\\_concludecareindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\provideraccount\\providerdashboard\\_activetablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\provideraccount\\providerdashboard\\_activetablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\provideraccount\\providerdashboard\\_concludetablepartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\provideraccount\\providerdashboard\\_concludetablepartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\provideraccount\\providerdashboard\\_pendingtablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\provideraccount\\providerdashboard\\_pendingtablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\wwwroot\\js\\providerscript\\provideractionmenuscript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:wwwroot\\js\\providerscript\\provideractionmenuscript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\patientdashboard\\_mepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\patientdashboard\\_mepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\patientdashboard\\patientdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\patientdashboard\\patientdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|d:\\hallodoc3tier\\hallodocmvc\\views\\providersite\\providerdataloader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{34EF501B-EB44-4698-8B13-264BE9CB76B6}|hellodocsrsmvc.csproj|solutionrelative:views\\providersite\\providerdataloader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_EditScheduleMain.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\Schedule\\_EditScheduleMain.cshtml",
+              "RelativeDocumentMoniker": "Views\\Schedule\\_EditScheduleMain.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\Schedule\\_EditScheduleMain.cshtml",
+              "RelativeToolTip": "Views\\Schedule\\_EditScheduleMain.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T19:22:37.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_EditScheduleMain.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderMySchedule\\_EditScheduleMain.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProviderAccount\\ProviderMySchedule\\_EditScheduleMain.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderMySchedule\\_EditScheduleMain.cshtml",
+              "RelativeToolTip": "Views\\ProviderAccount\\ProviderMySchedule\\_EditScheduleMain.cshtml",
+              "ViewState": "AQIAALgBAAAAAAAAAAAkwMoBAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T19:04:47.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_AddNewShiftPopUp.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\Schedule\\_AddNewShiftPopUp.cshtml",
+              "RelativeDocumentMoniker": "Views\\Schedule\\_AddNewShiftPopUp.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\Schedule\\_AddNewShiftPopUp.cshtml",
+              "RelativeToolTip": "Views\\Schedule\\_AddNewShiftPopUp.cshtml",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAAAHAAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T18:57:14.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProviderAccountController.cs",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Controllers\\ProviderAccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProviderAccountController.cs",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Controllers\\ProviderAccountController.cs",
+              "RelativeToolTip": "Controllers\\ProviderAccountController.cs",
+              "ViewState": "AQIAAEwCAAAAAAAAAAAAAGgCAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T19:09:56.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProviderHeader.js",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ProviderHeader.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\ProviderScript\\ProviderHeader.js",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ProviderHeader.js",
+              "RelativeToolTip": "wwwroot\\js\\ProviderScript\\ProviderHeader.js",
+              "ViewState": "AQIAABIAAAAAAAAAAAA3wBoAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-21T11:14:35.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ScheduleController.cs",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Controllers\\ScheduleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ScheduleController.cs",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Controllers\\ScheduleController.cs",
+              "RelativeToolTip": "Controllers\\ScheduleController.cs",
+              "ViewState": "AQIAAGgAAAAAAAAAAADwv3UAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:37:32.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ScheduleRepo.cs",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\HalloDoc.BAL\\Repository\\ScheduleRepo.cs",
+              "RelativeDocumentMoniker": "..\\HalloDoc.BAL\\Repository\\ScheduleRepo.cs",
+              "ToolTip": "D:\\HalloDoc3Tier\\HalloDoc.BAL\\Repository\\ScheduleRepo.cs",
+              "RelativeToolTip": "..\\HalloDoc.BAL\\Repository\\ScheduleRepo.cs",
+              "ViewState": "AQIAAFkBAAAAAAAAAAAkwGsBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:42:05.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IScheduleRepo.cs",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\HalloDoc.BAL\\Interface\\IScheduleRepo.cs",
+              "RelativeDocumentMoniker": "..\\HalloDoc.BAL\\Interface\\IScheduleRepo.cs",
+              "ToolTip": "D:\\HalloDoc3Tier\\HalloDoc.BAL\\Interface\\IScheduleRepo.cs",
+              "RelativeToolTip": "..\\HalloDoc.BAL\\Interface\\IScheduleRepo.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:40:00.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminPartialsController.cs",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Controllers\\AdminPartialsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminPartialsController.cs",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Controllers\\AdminPartialsController.cs",
+              "RelativeToolTip": "Controllers\\AdminPartialsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:37:30.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_ConcludeTablePartialView.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeTablePartialView.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeTablePartialView.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeTablePartialView.cshtml",
+              "RelativeToolTip": "Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeTablePartialView.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAADMAAACgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T11:20:54.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ConcludeCareIndex.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeCareIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeCareIndex.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeCareIndex.cshtml",
+              "RelativeToolTip": "Views\\ProviderAccount\\ProviderDashBoard\\_ConcludeCareIndex.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T11:20:41.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_ActiveTablePartial.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_ActiveTablePartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProviderAccount\\ProviderDashBoard\\_ActiveTablePartial.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_ActiveTablePartial.cshtml",
+              "RelativeToolTip": "Views\\ProviderAccount\\ProviderDashBoard\\_ActiveTablePartial.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADYAAACgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T11:09:06.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_PendingTablePartial.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_PendingTablePartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProviderAccount\\ProviderDashBoard\\_PendingTablePartial.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderAccount\\ProviderDashBoard\\_PendingTablePartial.cshtml",
+              "RelativeToolTip": "Views\\ProviderAccount\\ProviderDashBoard\\_PendingTablePartial.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAADUAAABsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T11:19:59.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProviderActionMenuScript.js",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ProviderActionMenuScript.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\ProviderScript\\ProviderActionMenuScript.js",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ProviderActionMenuScript.js",
+              "RelativeToolTip": "wwwroot\\js\\ProviderScript\\ProviderActionMenuScript.js",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwCUAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-21T11:14:17.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProviderDataLoader.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderSite\\ProviderDataLoader.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProviderSite\\ProviderDataLoader.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\ProviderSite\\ProviderDataLoader.cshtml",
+              "RelativeToolTip": "Views\\ProviderSite\\ProviderDataLoader.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T11:11:54.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PatientDashBoard.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\PatientDashboard\\PatientDashBoard.cshtml",
+              "RelativeDocumentMoniker": "Views\\PatientDashboard\\PatientDashBoard.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\PatientDashboard\\PatientDashBoard.cshtml",
+              "RelativeToolTip": "Views\\PatientDashboard\\PatientDashBoard.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T11:08:51.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_MePartial.cshtml",
+              "DocumentMoniker": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\PatientDashboard\\_MePartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\PatientDashboard\\_MePartial.cshtml",
+              "ToolTip": "D:\\HalloDoc3Tier\\halloDocMvc\\Views\\PatientDashboard\\_MePartial.cshtml",
+              "RelativeToolTip": "Views\\PatientDashboard\\_MePartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-21T11:08:44.508Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

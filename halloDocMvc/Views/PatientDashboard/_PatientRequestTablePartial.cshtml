@@ -1,0 +1,121 @@
+﻿
+<div id="patienttable">
+    <h4 class="mt-lg-5 mt-sm-2 mb-3 mt-xs-3">Medical history</h4>
+    <div class="container-fluid mb-5 shadow" style="border-radius: 10px">
+        <!-- backbtn -->
+        <div class="d-flex justify-content-end">
+            <div class="backbtnpatientRequest d-flex justify-content-end mt-3 mb-3">
+
+                <button id="" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Request_model">
+
+                    <div class="d-block d-sm-none">
+                        <i class="bi bi-plus-lg"></i>
+                    </div>
+                    <div class="d-none d-lg-block d-md-block d-sm-block">
+                        Create New Request
+                    </div>
+
+                </button>
+
+            </div>
+        </div>
+        <!-- form for submit -->
+        <div class="d-flex justify-content-center d-none d-md-block">
+            <table class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <td width="20%">Created Date</td>
+                        <td width="60%">curreny status</td>
+                        <td width="20%">Document</td>
+                    </tr>
+                </thead>
+                <tboday>
+
+                    @foreach (var obj in Model)
+                    {
+                        <tr width="20%">
+                            <td>
+                                @obj.Createddate
+                            </td>
+                            <td>
+                                @obj.StatusName
+                            </td>
+                            <td>
+
+                                @if (@obj.Filename != null)
+                                {
+
+                                    <button onclick="ReqDoc(@obj.RequestId)" class="btn btn-outline-primary">
+                                        ( @obj.docCount )
+                                        Documents
+                                    </button>
+
+                                }
+
+                            </td>
+                        </tr>
+
+                    }
+                </tboday>
+            </table>
+
+        </div>
+
+        <div class="d-block d-md-none patienttable">
+            @foreach (var obj in Model)
+            {
+                var myuuid = Guid.NewGuid();
+                var myid = "a" + myuuid;
+                <div class="shadow" style="border-radius:15px">
+
+                    <div class="pt-2 ps-2" data-bs-toggle="collapse" href="#@myid" aria-expanded="false" aria-controls="#@myid">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-clock" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                        </svg>
+                        <span class="ps-1"> Created Date : @obj.Createddate</span>
+
+                    </div>
+                    <br />
+                    <div class="collapse multi-collapse col-sm-12 ps-3 in" id="@myid">
+                        <div class="ms-2 mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                            </svg>
+                            <span class="ps-1"> Current Provider : - @* -add provider here  *@</span>
+                        </div>
+                        <br />
+                        <div class="ms-2 mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-check-lg" viewBox="0 0 16 16">
+                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                            </svg>
+                            <span class="ps-1"> Current Staus : @obj.StatusName </span>
+
+
+                        </div>
+                        <br /> <br />
+
+                        @if (@obj.Filename != null)
+                        {
+                            @* <button id="docButton" class="btn btn-outline-primary" >Documents</button> *@
+
+
+                            <button onclick="ReqDoc(@obj.RequestId)" class="btn btn-outline-primary" style="width:95%">
+                                ( @obj.docCount )
+                                Documents
+                            </button>
+
+                            <br />
+                        }
+                        <br />
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+    </div>
+</div>
+@section scriptdashboard {
+    <script src="/js/DisableBack.js"></script>
+}

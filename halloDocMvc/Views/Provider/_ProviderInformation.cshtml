@@ -1,0 +1,446 @@
+﻿@model HalloDoc.DAL.ViewModals.Provider.ProviderInfoViewModel;
+<partial name="~/Views/AdminPartials/PopUpPartials/_ContactProviderPopup.cshtml" />
+
+<div class="container-fluid mt-lg-5 mt-sm-3 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-start mb-3 mt-3">
+            <div class="h4">Provider Information</div>
+        </div>
+    </div>
+    <!-- form for submit -->
+
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 shadow  p-3 d-none d-md-block"
+             style="border-radius: 10px">
+            <div class="d-flex justify-content-between">
+                <select class="form-select ps-4 w-25 FetchRegionProvider">
+                    @* load region here *@
+                </select>
+                <button class="btn btn-primary" id="CreateProvider"> create Provider Account</button>
+            </div>
+
+
+
+            @if (Model.maxPage != 0)
+            {
+
+                <div class="d-none d-md-block table-responsive">
+
+                    <table class="table table-striped table-responsive mt-3">
+                        <thead>
+                            <tr>
+                                <td width="10%">Stop Notification</td>
+                                <td>Provider Name</td>
+                                <td>Role</td>
+                                <td>On Call Status</td>
+                                <td>Status</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tboday>
+                            @foreach (var obj in Model.physicians)
+                            {
+                                Guid uuid = Guid.NewGuid();
+                                <tr>
+                                    <td class="justify-content-center gap-1">
+                                        <span>
+                                            @if (obj.IsNotificationStopped == true)
+                                            {
+                                                <input id="a-@uuid" type="checkbox" onchange="ShowSavebtn('b-@uuid','a-@uuid')" checked>
+                                            }
+                                            else
+                                            {
+                                                <input id="a-@uuid" type="checkbox" onchange="ShowSavebtnNotChcked('b-@uuid','a-@uuid')">
+                                            }
+                                        </span>
+                                        <button id="b-@uuid" onclick="StopNotify('@obj.PhysicianId','a-@uuid','b-@uuid')" class="btn btn-danger" hidden>Save!</button>
+                                    </td>
+                                    <td class="provider-Name">
+                                        @obj.FirstName , @obj.LastName
+                                    </td>
+                                    <td>
+                                        @obj.RoleName
+                                    </td>
+                                    <td>
+                                        @obj.ProviderOnCall
+                                        @* //on call status *@
+                                    </td>
+                                    <td>
+                                        @obj.StatusName
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="btn btn-outline-primary" onclick="ContactProvider(@obj.PhysicianId,'@obj.Mobile','@obj.Email','@obj.FirstName')">Contact</button>
+                                            <button class="btn btn-outline-primary" onclick="EditPhysicianProfile(@obj.PhysicianId)">Edit</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tboday>
+                    </table>
+                </div>
+
+
+
+                @* pagination *@
+                <div class="d-flex justify-content-between">
+                    <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+                    <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                        <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                            </svg>
+                        </button>
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                        <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                        <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                        <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            }
+            else
+            {
+
+                <div class="d-flex justify-content-center">
+                    <h3 class="h3">Data Not Found</h3>
+                </div>
+            }
+        </div>
+    </div>
+
+
+
+    <div class="d-block d-md-none shadow mt-3 p-2">
+        <div>
+
+            <select class="form-select ps-4 FetchRegionProvider">
+                @* ///use loop insted *@
+            </select>
+            <div class="d-flex justify-content-center mb-4">
+                <button class="btn btn-primary m-2" id="CreateProviderMobile"> create Provider Account</button>
+            </div>
+            @if (Model.maxPage != 0)
+            {
+                @foreach (var obj in Model.physicians)
+                {
+                    var myuuid = Guid.NewGuid();
+                    var myid = "a" + myuuid;
+                    <div@* style="background-color:#e4f8ff" *@>
+
+                        <div class="shadow" style="border-radius:15px">
+
+                            <div class="pt-2 ps-2" data-bs-toggle="collapse" href="#@myid" aria-expanded="false" aria-controls="#@myid">
+                                <div class="d-flex ms-3 gap-2 mb-3">
+                                    @if (obj.IsNotificationStopped == true)
+                                    {
+                                        <input id="a-@myuuid" type="checkbox" onchange="ShowSavebtn('b-@myuuid','a-@myuuid')" checked>
+                                    }
+                                    else
+                                    {
+                                        <input id="a-@myuuid" type="checkbox" onchange="ShowSavebtnNotChcked('b-@myuuid','a-@myuuid')">
+                                    }
+                                    <button id="b-@myuuid" onclick="StopNotify('@obj.PhysicianId','a-@myuuid','b-@myuuid')" class="btn btn-danger" hidden>Save!</button>
+
+                                    @* <input type="checkbox" /> *@
+
+                                    @obj.FirstName,@obj.LastName
+                                </div>
+                                <P class="ms-3">On Call Status:@obj.StatusName</P>
+                            </div>
+                            <br />
+                            <div class="collapse col-sm-12 ps-3 in ms-3 me-3" id="@myid">
+                                <div class="ms-2 mt-2 mb-2 d-flex">
+                                    Role :@obj.RoleName
+                                </div>
+                                <div class="ms-2 mt-2 d-flex">
+                                    Provider On Call :@obj.ProviderOnCall
+                                </div>
+                                <div class="ms-2 mt-2 d-flex me-3 justify-content-end gap-2">
+                                    <button class="btn btn-outline-primary" onclick="ContactProvider(@obj.PhysicianId,'@obj.Mobile','@obj.Email','@obj.FirstName')">Contact</button>
+
+                                    <button class="btn btn-outline-primary me-2" onclick="EditPhysicianProfile(@obj.PhysicianId)">edit</button>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                </div>
+                <br />
+                }
+            }
+            else
+            {
+            <div class="d-flex justify-content-center">
+                <h3 class="h3 text-danger">Data Not Found</h3>
+            </div>
+            }
+    </div>
+        @* pagination *@
+        @if (Model.maxPage != 0)
+        {
+        <div class="d-flex justify-content-between">
+            <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+            <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </button>
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        }
+
+</div>
+
+    @*     }
+
+
+</div> *@
+<script>
+
+    $(document).ready(function () {
+        var regid = localStorage.getItem("lastregion")
+
+        $.ajax({
+            url: '/AdminPartials/LoadRegion',
+            method: 'POST',
+            success: function (response) {
+                $('.FetchRegionProvider').empty();
+                $('.FetchRegionProvider').append('<option value="" Selected>Select Region</option>')
+                response.region.forEach(function (regionname) {
+                    if (regid != null && regid == regionname.regionid) {
+                        $('.FetchRegionProvider').append('<option value="' + regionname.regionid + '"selected>' + regionname.name + '</option>')
+                    }
+                    else {
+                        $('.FetchRegionProvider').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                    }
+                })
+            }
+        });
+    });
+
+    function lastPage() {
+        let lastpage = 999999;
+        $(".admin-data-container").load("/AdminPartials/ProviderPage?PageNumber=" + lastpage + "&regionid=" + $(".FetchRegionProvider").val());
+    };
+    function FirstPage() {
+        var CurrentPage = localStorage.getItem("RequestState");
+        $(".admin-data-container").load('/AdminPartials/ProviderPage' + "?regionid=" + $(".FetchRegionProvider").val(), function () { });
+    }
+    function Previous() {
+        var CurrentPage = localStorage.getItem("RequestState");
+        if ($("#PageNumber").val() > 1) {
+            var pageNumbner = +$("#PageNumber").val() - 1;
+            $(".admin-data-container").load("/AdminPartials/ProviderPage?PageNumber=" + pageNumbner + "&regionid=" + $(".FetchRegionProvider").val());
+        }
+        else {
+            return true;
+        }
+    }
+    function Next(maxpage) {
+        if ($("#PageNumber").val() != maxpage) {
+            var pageNumbner = +$("#PageNumber").val() + 1;
+           
+            $(".admin-data-container").load("/AdminPartials/ProviderPage?PageNumber=" + pageNumbner + "&regionid=" + $(".FetchRegionProvider").val());
+        }
+        else {
+            return true;
+        }
+    }
+
+
+    $(".FetchRegionProvider").on("change", function () {
+        localStorage.setItem("lastregion", $(this).val())
+        $(".admin-data-container").load('/AdminPartials/ProviderPage?regionid=' + $(this).val())
+    });
+
+    $("#CreateProvider,#CreateProviderMobile").click(function () {
+
+        localStorage.setItem("providerfrom", "Provider");
+        $(".admin-data-container").load('/AdminPartials/CreateProvider', function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            function showPosition(position) {
+                $("#Lattitude").val(position.coords.latitude);
+                $('#Longtitude').val(position.coords.longitude);
+
+            }
+            $.ajax({
+                url: '/AdminPartials/LoadRegion',
+                method: 'POST',
+                success: function (response) {
+                    $('.FetchRegion').empty();
+                    $('.FetchRegion').append('<option value="" Selected disabled>Select Region</option>')
+                    response.region.forEach(function (regionname) {
+                        $('.FetchRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                    })
+                }
+            });
+            $.ajax({
+                // AccountaccessFetch
+                url: '/AdminPartials/loadRole',
+                method: 'POST',
+                success: function (response) {
+                    $('.loadRole').empty();
+                    $('.loadRole').append('<option value="" Selected disabled>Select Role</option>')
+                    response.forEach(function (statusname) {
+                        if (statusname.accounttype == 1) {
+                            $('.loadRole').append('<option value="' + statusname.roleid + '">' + statusname.name + '</option>')
+                        }
+                    })
+                }
+            });
+        });
+    });
+    function ShowSavebtn(btnid, checkid) {
+
+        if ($('#' + checkid).is(':checked')) {
+            $('#' + btnid).attr("hidden", true);
+        }
+        else {
+            $('#' + btnid).attr("hidden", false);
+        }
+    }
+    function ShowSavebtnNotChcked(btnid, checkid) {
+        if ($('#' + checkid).is(':checked')) {
+            $('#' + btnid).attr("hidden", false);
+        }
+        else {
+            $('#' + btnid).attr("hidden", true);
+        }
+    }
+    function EditPhysicianProfile(phyid) {
+        localStorage.setItem("providerfrom", "Provider");
+        localStorage.setItem("profileEdit", "Provider");
+        localStorage.setItem("phyid", phyid)
+        $(".admin-data-container").load('/AdminPartials/EditPhysicianProfile?phyid=' + phyid, function () {
+            // load status
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            function showPosition(position) {
+                $("#Lattitude").val(position.coords.latitude);
+                $('#Longtitude').val(position.coords.longitude);
+
+            }
+            $.ajax({
+                url: '/AdminPartials/LoadStatus',
+                method: 'POST',
+                success: function (response) {
+                    response.forEach(function (status) {
+                        if (($('.loadstatus').val()) == status.statusId) {
+                        }
+                        else {
+                            $('.loadstatus').append('<option value="' + status.statusId + '">' + status.statusname + '</option>')
+                        }
+                    });
+                }
+            })
+            // load role
+            $.ajax({
+                //remove accountaccesfetch or load role dublicates
+                url: '/AdminPartials/AccountaccessFetch',
+                method: 'POST',
+                success: function (response) {
+                    response.roles.forEach(function (role) {
+                        if (($('.loadRole').val()) == role.roleid || role.accounttype != 1) {
+                            console.log("Skip")
+                        }
+                        else {
+                            $('.loadRole').append('<option value="' + role.roleid + '">' + role.name + '</option>')
+                        }
+                    });
+                }
+            });
+            // load region
+            $.ajax({
+                url: '/AdminPartials/LoadRegion',
+                method: 'POST',
+                success: function (response) {
+                    response.region.forEach(function (regionname) {
+                        if ($('.loadRegion').val() == regionname.regionid) {
+                            console.log("repeated")
+                        } else {
+                            $('.loadRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                        }
+                    });
+                }
+            });
+        });
+    }
+    function StopNotify(phyid, checkid, btnid) {
+        $.ajax({
+            url: '/AdminPartials/StopNotify',
+            method: 'POST',
+            data: {
+                phyid: phyid,
+                check: $('#' + checkid).is(':checked')
+            },
+            success: function (response) {
+                if (response) {
+                    toastr.success("Changes saved");
+                    $('#' + btnid).attr("hidden", true);
+                    $(".admin-data-container").load('/AdminPartials/ProviderPage?regionid=' + $(".FetchRegionProvider").val())
+                }
+                else {
+                    toastr.error("something went wrong");
+                }
+            }
+        })
+    }
+
+    $(".ProviderSubmit").click(function (e) {
+        e.preventDefault();
+        if ($("#Message").val() == "") {
+            $("#messageValidation").html("please enter message you wanna send!")
+            return false;
+        }
+
+        var options = document.querySelector('input[name="option"]:checked').id;
+        var notes = $("#Message").val();
+        var phyid = $(".ProviderSubmit").attr("data-phyid");
+        var phonenumber = $(".ProviderSubmit").attr("data-phonenumber");
+        var email = $(".ProviderSubmit").attr("data-email");
+        var name = $(".ProviderSubmit").attr("data-firstname");
+        $.ajax({
+            url: '/AdminPartials/ContactProvider',
+            method: 'POST',
+            data: {
+                options: options,
+                bodyData: notes,
+                phyid: phyid,
+                phone: phonenumber,
+                email: email,
+                name: name
+            },
+            success: function (response) {
+                if (response) {
+                    toastr.success("sent!")
+                }
+                else {
+                    toastr.error("Something went wrong")
+                }
+                $(".CancelBtn").click();
+            }
+        });
+    });
+
+
+</script>

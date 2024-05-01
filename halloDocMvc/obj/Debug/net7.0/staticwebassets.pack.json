@@ -1,0 +1,1429 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltoimage.exe"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\css\\demo.css",
+      "PackagePath": "staticwebassets\\build\\css\\demo.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\css\\intlTelInput.css",
+      "PackagePath": "staticwebassets\\build\\css\\intlTelInput.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\css\\intlTelInput.min.css",
+      "PackagePath": "staticwebassets\\build\\css\\intlTelInput.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\img\\flags.png",
+      "PackagePath": "staticwebassets\\build\\img\\flags.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\img\\flags@2x.png",
+      "PackagePath": "staticwebassets\\build\\img\\flags@2x.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\img\\globe.png",
+      "PackagePath": "staticwebassets\\build\\img\\globe.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\img\\globe@2x.png",
+      "PackagePath": "staticwebassets\\build\\img\\globe@2x.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\js\\data.js",
+      "PackagePath": "staticwebassets\\build\\js\\data.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\js\\data.min.js",
+      "PackagePath": "staticwebassets\\build\\js\\data.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\js\\intlTelInput-jquery.js",
+      "PackagePath": "staticwebassets\\build\\js\\intlTelInput-jquery.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\js\\intlTelInput-jquery.min.js",
+      "PackagePath": "staticwebassets\\build\\js\\intlTelInput-jquery.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\js\\intlTelInput.js",
+      "PackagePath": "staticwebassets\\build\\js\\intlTelInput.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\js\\intlTelInput.min.js",
+      "PackagePath": "staticwebassets\\build\\js\\intlTelInput.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\build\\js\\utils.js",
+      "PackagePath": "staticwebassets\\build\\js\\utils.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\Adminstyle.css",
+      "PackagePath": "staticwebassets\\css\\Adminstyle.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\AssignmentStyle.css",
+      "PackagePath": "staticwebassets\\css\\AssignmentStyle.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\PatientRequestFormDesign.css",
+      "PackagePath": "staticwebassets\\css\\PatientRequestFormDesign.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\ShineEffect.css",
+      "PackagePath": "staticwebassets\\css\\ShineEffect.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\adminDashBoardcss.css",
+      "PackagePath": "staticwebassets\\css\\adminDashBoardcss.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\patientSubmitRequestStyle.css",
+      "PackagePath": "staticwebassets\\css\\patientSubmitRequestStyle.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\patientsidedesign.css",
+      "PackagePath": "staticwebassets\\css\\patientsidedesign.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\sidebarcss.css",
+      "PackagePath": "staticwebassets\\css\\sidebarcss.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\7768657_3763028.jpg",
+      "PackagePath": "staticwebassets\\images\\7768657_3763028.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\7774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\images\\7774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\Animation - 1712672918770 (1).gif",
+      "PackagePath": "staticwebassets\\images\\Animation - 1712672918770 (1).gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\Fig1. Platform login page.jpg",
+      "PackagePath": "staticwebassets\\images\\Fig1. Platform login page.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\LesfImage.png",
+      "PackagePath": "staticwebassets\\images\\LesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg",
+      "PackagePath": "staticwebassets\\images\\arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\brandName.jpg",
+      "PackagePath": "staticwebassets\\images\\brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\cloud-upload-icon.svg",
+      "PackagePath": "staticwebassets\\images\\cloud-upload-icon.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\congratulations-7600.gif",
+      "PackagePath": "staticwebassets\\images\\congratulations-7600.gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\dark_mode_black_24dp.svg",
+      "PackagePath": "staticwebassets\\images\\dark_mode_black_24dp.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\exclamation2.jpg",
+      "PackagePath": "staticwebassets\\images\\exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\images\\image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\india-flag-icon.svg",
+      "PackagePath": "staticwebassets\\images\\india-flag-icon.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\loginLeftSide.jpg",
+      "PackagePath": "staticwebassets\\images\\loginLeftSide.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\password_icon.svg",
+      "PackagePath": "staticwebassets\\images\\password_icon.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\reset-password-svgrepo-com.svg",
+      "PackagePath": "staticwebassets\\images\\reset-password-svgrepo-com.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\images\\user_circle.svg",
+      "PackagePath": "staticwebassets\\images\\user_circle.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminHeaderScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminHeaderScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\ActionMenuScripts.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\ActionMenuScripts.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\AdminProfileScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\AdminProfileScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\AdminProviderCombineScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\AdminProviderCombineScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\OrderAction.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\OrderAction.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\UploadDocScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\UploadDocScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\ViewCaseBtnScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\ViewCaseBtnScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\ViewCaseScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\ViewCaseScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\AdminDashBoardScripts\\ViewNotesScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\AdminDashBoardScripts\\ViewNotesScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\AdminScripts\\Provider\\ProviderProfileScript.js",
+      "PackagePath": "staticwebassets\\js\\AdminScripts\\Provider\\ProviderProfileScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\DisableBack.js",
+      "PackagePath": "staticwebassets\\js\\DisableBack.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\DownLoadSelected.js",
+      "PackagePath": "staticwebassets\\js\\DownLoadSelected.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\EmailCheckscript.js",
+      "PackagePath": "staticwebassets\\js\\EmailCheckscript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\MePartial.js",
+      "PackagePath": "staticwebassets\\js\\MePartial.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\PasswordEyeScript.js",
+      "PackagePath": "staticwebassets\\js\\PasswordEyeScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\PatientDashBoardScript.js",
+      "PackagePath": "staticwebassets\\js\\PatientDashBoardScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\PatientProfileEdit.js",
+      "PackagePath": "staticwebassets\\js\\PatientProfileEdit.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\Popup.js",
+      "PackagePath": "staticwebassets\\js\\Popup.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\EncounterFormScript.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\EncounterFormScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\Invoicingscript.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\Invoicingscript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\OrderAction.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\OrderAction.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ProviderActionMenuScript.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\ProviderActionMenuScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ProviderHeader.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\ProviderHeader.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\UploadDocScript.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\UploadDocScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ViewCaseScript.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\ViewCaseScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\ProviderScript\\ViewNotesScript.js",
+      "PackagePath": "staticwebassets\\js\\ProviderScript\\ViewNotesScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\Records\\BlockHistoryScript.js",
+      "PackagePath": "staticwebassets\\js\\Records\\BlockHistoryScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\Records\\EmailLogScript.js",
+      "PackagePath": "staticwebassets\\js\\Records\\EmailLogScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\Records\\PatientRecordsScript.js",
+      "PackagePath": "staticwebassets\\js\\Records\\PatientRecordsScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\Records\\SearchRecordsScript.js",
+      "PackagePath": "staticwebassets\\js\\Records\\SearchRecordsScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\SideBarScript.js",
+      "PackagePath": "staticwebassets\\js\\SideBarScript.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\SomeOnePartial.js",
+      "PackagePath": "staticwebassets\\js\\SomeOnePartial.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\0dbca92e-606b-42b6-b447-1be427c58cdaFinalReport.pdf",
+      "PackagePath": "staticwebassets\\uploads\\0dbca92e-606b-42b6-b447-1be427c58cdaFinalReport.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\0e69be3a-5d2f-4628-9cf8-3aadb93979287686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\0e69be3a-5d2f-4628-9cf8-3aadb93979287686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\108eb616-56b2-4c53-ac9f-f830edb32cf49e5024d1-2aed-4b87-818b-5e86469e342aexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\108eb616-56b2-4c53-ac9f-f830edb32cf49e5024d1-2aed-4b87-818b-5e86469e342aexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\171fcd00-de53-47ca-b10a-580cb590a2139e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\171fcd00-de53-47ca-b10a-580cb590a2139e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\18dec0ef-43b6-4df7-936e-3e3aa14b25c1logo.png",
+      "PackagePath": "staticwebassets\\uploads\\18dec0ef-43b6-4df7-936e-3e3aa14b25c1logo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\1c2bdd16-46ee-460d-840b-4d4690023a729e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\1c2bdd16-46ee-460d-840b-4d4690023a729e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\2ecec352-f26a-494b-b9df-6a9ff98284837686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\2ecec352-f26a-494b-b9df-6a9ff98284837686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\3189422c-cce1-4496-832c-84bee50fc08f1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\3189422c-cce1-4496-832c-84bee50fc08f1.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\36d976e4-78ed-4f23-ab36-c9a005fa4de60dbca92e-606b-42b6-b447-1be427c58cdaFinalReport.pdf",
+      "PackagePath": "staticwebassets\\uploads\\36d976e4-78ed-4f23-ab36-c9a005fa4de60dbca92e-606b-42b6-b447-1be427c58cdaFinalReport.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\37293457-f9d4-48ce-9bf5-dc4905627aaaFinalReport (16).pdf",
+      "PackagePath": "staticwebassets\\uploads\\37293457-f9d4-48ce-9bf5-dc4905627aaaFinalReport (16).pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\3808c1e7-8cf9-45e4-a783-6fe6ad139ab961595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1).gif",
+      "PackagePath": "staticwebassets\\uploads\\3808c1e7-8cf9-45e4-a783-6fe6ad139ab961595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1).gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\383a2db7-29c5-4a24-ab09-18d67a23431aexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\383a2db7-29c5-4a24-ab09-18d67a23431aexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\3996381d-696a-42ec-9722-f646eae900b11.pdf",
+      "PackagePath": "staticwebassets\\uploads\\3996381d-696a-42ec-9722-f646eae900b11.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\3d69b95f-8120-4338-81b5-d933a102ce2c1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\3d69b95f-8120-4338-81b5-d933a102ce2c1.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\3f10a9d0-1f44-4991-8f04-f73939e1ccb71.pdf",
+      "PackagePath": "staticwebassets\\uploads\\3f10a9d0-1f44-4991-8f04-f73939e1ccb71.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\3fae39c8-6ddc-463b-9f95-dd6cd34d5f43brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3fae39c8-6ddc-463b-9f95-dd6cd34d5f43brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\48683b14-be19-4100-93dd-7c4340b63e49FinalReport.pdf",
+      "PackagePath": "staticwebassets\\uploads\\48683b14-be19-4100-93dd-7c4340b63e49FinalReport.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\4d913136-b292-4099-a321-620cb110f11d7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\4d913136-b292-4099-a321-620cb110f11d7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\5504c17e-cd3c-4460-8cf3-f4992fb237049e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\5504c17e-cd3c-4460-8cf3-f4992fb237049e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\5606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\5606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\56e5ccd4-42c6-4056-aebe-5731045e9b9auser_circle.svg",
+      "PackagePath": "staticwebassets\\uploads\\56e5ccd4-42c6-4056-aebe-5731045e9b9auser_circle.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\5e9ffffe-6068-42b1-8214-8a463e9ce699brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\5e9ffffe-6068-42b1-8214-8a463e9ce699brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\5f6cb293-65a9-44c3-820c-1c2c0264373adaa0eb0a-0c43-4ea5-86c2-def6a75d9cf5170fd7d9-df74-43f2-9b4d-8ab76f084012Screenshot_20210701-123325.png",
+      "PackagePath": "staticwebassets\\uploads\\5f6cb293-65a9-44c3-820c-1c2c0264373adaa0eb0a-0c43-4ea5-86c2-def6a75d9cf5170fd7d9-df74-43f2-9b4d-8ab76f084012Screenshot_20210701-123325.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\61595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1).gif",
+      "PackagePath": "staticwebassets\\uploads\\61595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1).gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\65515179-b731-44c1-aa51-2c913ef567537686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\65515179-b731-44c1-aa51-2c913ef567537686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\67696b2f-5096-4c62-a56e-549ec5a172671.pdf",
+      "PackagePath": "staticwebassets\\uploads\\67696b2f-5096-4c62-a56e-549ec5a172671.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\67847401-eca8-400b-af2e-d02eaec07393exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\67847401-eca8-400b-af2e-d02eaec07393exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\67fd083a-1093-441a-a960-3d7ab6b3287f1c2bdd16-46ee-460d-840b-4d4690023a729e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\67fd083a-1093-441a-a960-3d7ab6b3287f1c2bdd16-46ee-460d-840b-4d4690023a729e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\6b695a16-2686-47ba-a01e-9532f23d8ac21.pdf",
+      "PackagePath": "staticwebassets\\uploads\\6b695a16-2686-47ba-a01e-9532f23d8ac21.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\7090f96e-8c20-4169-953f-b2fc4d09ad9d5606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7090f96e-8c20-4169-953f-b2fc4d09ad9d5606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\76a1318c-7b1d-44f7-a7e9-07efb815891aexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\76a1318c-7b1d-44f7-a7e9-07efb815891aexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\7a349217-d10d-4937-8dde-bfe74a930bbb18.pdf",
+      "PackagePath": "staticwebassets\\uploads\\7a349217-d10d-4937-8dde-bfe74a930bbb18.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\7e8313f5-e35d-4529-8ff2-7490fdf65e45Animation - 1712672918770.gif",
+      "PackagePath": "staticwebassets\\uploads\\7e8313f5-e35d-4529-8ff2-7490fdf65e45Animation - 1712672918770.gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\801490c2-d707-4ff7-ad05-2203f09a82acAnimation - 1712672918770.gif",
+      "PackagePath": "staticwebassets\\uploads\\801490c2-d707-4ff7-ad05-2203f09a82acAnimation - 1712672918770.gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\852106fc-c65f-4f61-b9a8-b7ccf22e6c87logo.png",
+      "PackagePath": "staticwebassets\\uploads\\852106fc-c65f-4f61-b9a8-b7ccf22e6c87logo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\9131a33a-6324-41dd-9f75-011497e8efcdSRS-23-24-Trainees-8March24.pdf",
+      "PackagePath": "staticwebassets\\uploads\\9131a33a-6324-41dd-9f75-011497e8efcdSRS-23-24-Trainees-8March24.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\98eac689-8f13-4206-acf5-fcfea59ffc9fSRS-23-24-Trainees-8March24.pdf",
+      "PackagePath": "staticwebassets\\uploads\\98eac689-8f13-4206-acf5-fcfea59ffc9fSRS-23-24-Trainees-8March24.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\9b199cbd-b5a9-4194-a3b0-45dc4bc45212FinalReport.pdf",
+      "PackagePath": "staticwebassets\\uploads\\9b199cbd-b5a9-4194-a3b0-45dc4bc45212FinalReport.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\9e5024d1-2aed-4b87-818b-5e86469e342aexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9e5024d1-2aed-4b87-818b-5e86469e342aexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\00bd16be-9f90-402d-9ae9-8e17ffc8a9bcProvider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\00bd16be-9f90-402d-9ae9-8e17ffc8a9bcProvider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\021db2ee-3429-473e-8546-4fd9591660d0Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\021db2ee-3429-473e-8546-4fd9591660d0Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\04463dfa-b613-4f01-9610-4296b123dd727768657_3763028.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\04463dfa-b613-4f01-9610-4296b123dd727768657_3763028.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\05e5a72e-1d5a-4f9a-8dcb-3e86255056bc0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\05e5a72e-1d5a-4f9a-8dcb-3e86255056bc0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\083f6f60-9080-4bff-8b46-270ed4931a15Digital_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\083f6f60-9080-4bff-8b46-270ed4931a15Digital_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\09d64784-36c9-4065-90a5-844decbe40c1exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\09d64784-36c9-4065-90a5-844decbe40c1exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\0bcfbbf5-e80e-4cc3-8513-d923c6a9f91flogo.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\0bcfbbf5-e80e-4cc3-8513-d923c6a9f91flogo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\0e476945-c773-4aa0-877f-ac9fa4c605bbProvider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\0e476945-c773-4aa0-877f-ac9fa4c605bbProvider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\15f071d8-c860-490a-ae9e-58f95a7b5aa08d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\15f071d8-c860-490a-ae9e-58f95a7b5aa08d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\167f452f-71a1-44e7-b444-aeb5e2c6ebd0exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\167f452f-71a1-44e7-b444-aeb5e2c6ebd0exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\1b23477f-8d47-4e2f-a1bc-84e7b8e547885606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\1b23477f-8d47-4e2f-a1bc-84e7b8e547885606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\1b246b9d-543d-47c1-bc82-bcbf428ab5828d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\1b246b9d-543d-47c1-bc82-bcbf428ab5828d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\1d2490a0-e611-419e-b87f-67a8a5fae083image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\1d2490a0-e611-419e-b87f-67a8a5fae083image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\1f7c8420-0fee-4815-9429-3b16fadb55acLesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\1f7c8420-0fee-4815-9429-3b16fadb55acLesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\2cde53da-2b1d-4f2b-bd1c-e4b796b681a51 (2).jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\2cde53da-2b1d-4f2b-bd1c-e4b796b681a51 (2).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\2d9cbfd6-c3e9-4497-a9f7-a1161a1eb14dexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\2d9cbfd6-c3e9-4497-a9f7-a1161a1eb14dexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\305b6d4e-8307-4a51-8811-48fa6cec84ddLesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\305b6d4e-8307-4a51-8811-48fa6cec84ddLesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\32e2def3-c875-4603-9cc5-54a3f5cbbe80image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\32e2def3-c875-4603-9cc5-54a3f5cbbe80image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\386c2b61-8a03-41b6-9c0d-2d7039ac2608c366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\386c2b61-8a03-41b6-9c0d-2d7039ac2608c366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\431ba10e-ad01-45ed-9c03-456ebc186a771 (2).jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\431ba10e-ad01-45ed-9c03-456ebc186a771 (2).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\44039d95-f270-441b-90de-999d427ba310exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\44039d95-f270-441b-90de-999d427ba310exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\4b6fbcf2-3921-4ca5-a4d9-eb878d5ecd367768657_3763028.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\4b6fbcf2-3921-4ca5-a4d9-eb878d5ecd367768657_3763028.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\4eb8770e-4cec-4396-8c6e-be6b0d13adb3brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\4eb8770e-4cec-4396-8c6e-be6b0d13adb3brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\4f92f293-2b17-4a7b-9df9-8047efcd1669Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\4f92f293-2b17-4a7b-9df9-8047efcd1669Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\51b6ab8b-d68e-4390-8797-0f8bb4ef48220f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\51b6ab8b-d68e-4390-8797-0f8bb4ef48220f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\554967c5-b2f6-49eb-939d-5294503acb6cProvider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\554967c5-b2f6-49eb-939d-5294503acb6cProvider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\55b2d8aa-a88e-4c57-ba60-2a14eff19e89signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\55b2d8aa-a88e-4c57-ba60-2a14eff19e89signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\592ff414-0656-4725-b8d3-4178c87731c4exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\592ff414-0656-4725-b8d3-4178c87731c4exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\6091ae62-ceb6-4c6c-8111-b59ed1460502iohoi.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\6091ae62-ceb6-4c6c-8111-b59ed1460502iohoi.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\697435a9-9d24-40bf-b1c5-21dd64452ce1Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\697435a9-9d24-40bf-b1c5-21dd64452ce1Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\6efda990-a7b4-43d3-b8ae-b94726b9ed4b1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\6efda990-a7b4-43d3-b8ae-b94726b9ed4b1.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\6fb4506c-5d93-4ddf-83cc-001345f2e7480f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\6fb4506c-5d93-4ddf-83cc-001345f2e7480f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\738047e7-5bff-4202-b9ff-a7a7edcdf3ceAnimation - 1712672918770 (1).gif",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\738047e7-5bff-4202-b9ff-a7a7edcdf3ceAnimation - 1712672918770 (1).gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\75844ea3-a79f-498d-84ac-00c51c3e90abimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\75844ea3-a79f-498d-84ac-00c51c3e90abimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\77c26847-9f8d-45a4-b4e3-235c11a6f9d1Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\77c26847-9f8d-45a4-b4e3-235c11a6f9d1Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\77e3045f-6ff7-4fa2-bc4e-cf49dc731fc57768657_3763028.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\77e3045f-6ff7-4fa2-bc4e-cf49dc731fc57768657_3763028.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\797f7f35-28ac-42f3-b10c-ee87f52dcbccProvider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\797f7f35-28ac-42f3-b10c-ee87f52dcbccProvider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\7ebc9c47-7b91-454f-9885-4357dd24a7e6Fig1. Platform login page.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\7ebc9c47-7b91-454f-9885-4357dd24a7e6Fig1. Platform login page.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\7efcd1d8-7d8f-474a-a68f-fb195a3f7b70Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\7efcd1d8-7d8f-474a-a68f-fb195a3f7b70Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\7fd70561-4036-4ea5-8794-424d7eb84c8d8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\7fd70561-4036-4ea5-8794-424d7eb84c8d8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\803d412a-7b78-4785-981a-69af1d8254d55606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\803d412a-7b78-4785-981a-69af1d8254d55606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\83a6238e-3dfe-4a52-a3a3-bcdfb8564bb57774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\83a6238e-3dfe-4a52-a3a3-bcdfb8564bb57774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\8510bb62-bf40-422c-b665-b58b99b59c85Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\8510bb62-bf40-422c-b665-b58b99b59c85Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\8cae1902-0730-4841-967b-5a6e308c37febrandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\8cae1902-0730-4841-967b-5a6e308c37febrandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\8ea5f07a-fce2-40aa-9013-e938c5d145aaLesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\8ea5f07a-fce2-40aa-9013-e938c5d145aaLesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\8fef6c07-82b4-4548-9e18-e3dda01cd178Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\8fef6c07-82b4-4548-9e18-e3dda01cd178Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\90313579-452d-443c-b92e-2e0ca1480f0bexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\90313579-452d-443c-b92e-2e0ca1480f0bexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\932a11c7-e939-4178-8d1c-3ee1d3dd13ea7768657_3763028.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\932a11c7-e939-4178-8d1c-3ee1d3dd13ea7768657_3763028.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\93c0e33e-ccea-422d-9588-16e745c546ea0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\93c0e33e-ccea-422d-9588-16e745c546ea0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\93d60259-757b-4e21-9508-0e695e017f089e5024d1-2aed-4b87-818b-5e86469e342aexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\93d60259-757b-4e21-9508-0e695e017f089e5024d1-2aed-4b87-818b-5e86469e342aexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\979224ca-4f20-4424-9c8f-29158e8a54801.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\979224ca-4f20-4424-9c8f-29158e8a54801.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\9abb841f-55f9-45ed-b134-89b2dae3e668image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\9abb841f-55f9-45ed-b134-89b2dae3e668image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\9de1f6df-af2c-4744-a81b-ae4112d7d857brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\9de1f6df-af2c-4744-a81b-ae4112d7d857brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\a0b50a4d-2934-4895-a6a3-40e2ab3793dbbrandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\a0b50a4d-2934-4895-a6a3-40e2ab3793dbbrandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\a0bfa7a3-dcca-42b4-9fac-69a7c8db3febDigital_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\a0bfa7a3-dcca-42b4-9fac-69a7c8db3febDigital_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\a1224a5a-ef1b-430c-b9a1-39486d662583logo.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\a1224a5a-ef1b-430c-b9a1-39486d662583logo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\a39d00df-96c2-4130-b0dc-3039749220dfLesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\a39d00df-96c2-4130-b0dc-3039749220dfLesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\ab7b68b7-20da-425b-8451-f60bfb07f6808d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\ab7b68b7-20da-425b-8451-f60bfb07f6808d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\ad229887-8319-420e-8e11-f5e397b9e402image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\ad229887-8319-420e-8e11-f5e397b9e402image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\af401c12-dd3f-49c2-8760-2bc999d0ceea7768657_3763028.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\af401c12-dd3f-49c2-8760-2bc999d0ceea7768657_3763028.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\b635901e-470b-4d66-a880-4e7c1efffeea0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\b635901e-470b-4d66-a880-4e7c1efffeea0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\b85dc99b-8f89-4daa-b6a5-4bcb1d9b3a0darrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\b85dc99b-8f89-4daa-b6a5-4bcb1d9b3a0darrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\b99f9928-3a73-4e2f-97ce-eaa84a3953c07774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\b99f9928-3a73-4e2f-97ce-eaa84a3953c07774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\be20d206-2e2c-4902-a27c-4b6ac7372947751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\be20d206-2e2c-4902-a27c-4b6ac7372947751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\bf43dd35-4d75-48a7-ae8d-ff4f56e31952brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\bf43dd35-4d75-48a7-ae8d-ff4f56e31952brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\bfe794ce-3d51-430b-a533-253ef4afdd3eimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\bfe794ce-3d51-430b-a533-253ef4afdd3eimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\c0e5530e-7a15-4f3b-a611-ffbf62c4da1a5606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\c0e5530e-7a15-4f3b-a611-ffbf62c4da1a5606ec83-797f-4626-ac2a-c9763cf6896dc366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\c32efde3-0468-4687-b092-d9c4e6ef59d8Admin Dashboard Admin.pdf",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\c32efde3-0468-4687-b092-d9c4e6ef59d8Admin Dashboard Admin.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\c8206fad-a159-48e3-a60e-b65ae69c4550exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\c8206fad-a159-48e3-a60e-b65ae69c4550exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\c93372b1-5600-401c-b0a6-fab619592b95iohoi.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\c93372b1-5600-401c-b0a6-fab619592b95iohoi.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\c9817d2c-fa6f-4fb8-912a-f6c4e33b62658d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\c9817d2c-fa6f-4fb8-912a-f6c4e33b62658d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\c988c57f-c017-454e-b89f-8a4a3e0d2915Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\c988c57f-c017-454e-b89f-8a4a3e0d2915Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\cb444c8b-1242-4ec8-bae5-0255edad78877774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\cb444c8b-1242-4ec8-bae5-0255edad78877774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\cb69b915-55ac-4eb9-84ae-8ad502d221a5signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\cb69b915-55ac-4eb9-84ae-8ad502d221a5signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\ccc5ba36-47ed-4773-8e5a-9b6c1c5eb65b7774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\ccc5ba36-47ed-4773-8e5a-9b6c1c5eb65b7774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\cd01abb0-2c88-4007-ba0b-ba6a4c6d533dProvider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\cd01abb0-2c88-4007-ba0b-ba6a4c6d533dProvider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\cf6769cc-e212-427b-8f8d-b5b4f7378277Fig1. Platform login page.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\cf6769cc-e212-427b-8f8d-b5b4f7378277Fig1. Platform login page.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\cfc3dff0-d7b4-4c4c-be67-96c9572e5ef5c366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\cfc3dff0-d7b4-4c4c-be67-96c9572e5ef5c366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\d01a111d-29cf-493a-8db9-e841172234b6image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\d01a111d-29cf-493a-8db9-e841172234b6image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\d08555b2-b072-41f7-ac1f-b666c596d06ffd.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\d08555b2-b072-41f7-ac1f-b666c596d06ffd.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\dbf83a4e-0301-4daf-a8bb-4d37f384f97aAnimation - 1712672918770 (1).gif",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\dbf83a4e-0301-4daf-a8bb-4d37f384f97aAnimation - 1712672918770 (1).gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\dcb659e6-82b5-43fe-9f84-d3ef32c3544d8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\dcb659e6-82b5-43fe-9f84-d3ef32c3544d8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\dced3e84-167f-483b-9dfa-3ca86273028b8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\dced3e84-167f-483b-9dfa-3ca86273028b8d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\dcf8a9de-cb10-4c33-bdf0-2392cef3345dProvider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\dcf8a9de-cb10-4c33-bdf0-2392cef3345dProvider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\dd57e907-9fb3-4501-b0d5-8a168c147331brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\dd57e907-9fb3-4501-b0d5-8a168c147331brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\df44b7f5-3248-4b8c-81c8-fbd3236f657cProvider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\df44b7f5-3248-4b8c-81c8-fbd3236f657cProvider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\df47f2cf-725f-49b1-97a1-2d2e994b1ce10f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\df47f2cf-725f-49b1-97a1-2d2e994b1ce10f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\e2d609d0-ffb5-475d-b367-8020be76625a1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\e2d609d0-ffb5-475d-b367-8020be76625a1.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\e4baea1e-82b4-4274-b5c8-538528ddd3161.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\e4baea1e-82b4-4274-b5c8-538528ddd3161.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\e5c3051a-6d90-4278-85f5-a5d0e0ab92888d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\e5c3051a-6d90-4278-85f5-a5d0e0ab92888d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\e77f5c00-05aa-4dcf-a962-2535c2da1c6c1 (2).jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\e77f5c00-05aa-4dcf-a962-2535c2da1c6c1 (2).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\e78baaa8-1f28-4e98-a1a6-2e06fe9c6135image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\e78baaa8-1f28-4e98-a1a6-2e06fe9c6135image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\e9137bce-c1cc-4c66-bdf0-3ac4ea86dbe4exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\e9137bce-c1cc-4c66-bdf0-3ac4ea86dbe4exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\ee14b17c-1ec3-41e7-916b-2f9b1a525620Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\ee14b17c-1ec3-41e7-916b-2f9b1a525620Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\efb2b76b-995e-48d1-8ec8-5f016a0f8227image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\efb2b76b-995e-48d1-8ec8-5f016a0f8227image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\f4ea1244-404f-438d-b615-9c440e6329ecAnimation - 1712672918770.gif",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\f4ea1244-404f-438d-b615-9c440e6329ecAnimation - 1712672918770.gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\f5f9b50d-2d71-4fbd-aee1-207e7133bc548d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\f5f9b50d-2d71-4fbd-aee1-207e7133bc548d9d5072-f015-4b27-8665-504456d513217686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\f753a432-f70e-4e54-8f64-9e80043fafbe0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\f753a432-f70e-4e54-8f64-9e80043fafbe0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\f9036933-eacd-4923-a984-17bb8cf888fe0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\f9036933-eacd-4923-a984-17bb8cf888fe0f3afa28-9ded-4059-874c-ef66e652c15f751be2ba-6989-439f-91ba-ade7602c7263exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\fa78661b-1e1d-4864-b3be-5816bdce787bexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\fa78661b-1e1d-4864-b3be-5816bdce787bexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderData\\fe1b318e-7f39-4da5-a7d8-2e42f7fc4289Provider_Signature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderData\\fe1b318e-7f39-4da5-a7d8-2e42f7fc4289Provider_Signature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\057ba5b6-aaa5-46ba-8f8d-201dfa5d0408brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\057ba5b6-aaa5-46ba-8f8d-201dfa5d0408brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\15bf7203-77f5-4d05-b991-5eb31f8764ae1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\15bf7203-77f5-4d05-b991-5eb31f8764ae1.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\16e0d234-261a-486d-bf1b-b9be870462d17774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\16e0d234-261a-486d-bf1b-b9be870462d17774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\19f001d3-7b46-4bc2-8c37-cf1b724fb3fbexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\19f001d3-7b46-4bc2-8c37-cf1b724fb3fbexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\1c7eed20-1070-4a8f-840c-31e3e8d668a97686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\1c7eed20-1070-4a8f-840c-31e3e8d668a97686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\254766d7-93d4-40f5-b833-09316edaaa5b1 (2).jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\254766d7-93d4-40f5-b833-09316edaaa5b1 (2).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\28ed45e8-6a16-41f8-a6cb-0d2510dd146dexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\28ed45e8-6a16-41f8-a6cb-0d2510dd146dexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\3373240f-315c-487b-a02a-adfc47c1f4feLesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\3373240f-315c-487b-a02a-adfc47c1f4feLesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\48114d9b-2892-470e-a312-66750a5859887686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\48114d9b-2892-470e-a312-66750a5859887686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\4a5c21fc-3bd6-4266-be63-27b4ea41e97cimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\4a5c21fc-3bd6-4266-be63-27b4ea41e97cimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\4b55d28e-fdf1-49d7-a2b5-4a16c372e0581.pdf",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\4b55d28e-fdf1-49d7-a2b5-4a16c372e0581.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\4c4419e8-b24b-4adf-98f5-f51e899dd1a27686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\4c4419e8-b24b-4adf-98f5-f51e899dd1a27686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\4e4d7687-e04d-425d-a529-a0195402f68blogo.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\4e4d7687-e04d-425d-a529-a0195402f68blogo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\54029d50-bb6f-4294-b078-30a9372f01657686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\54029d50-bb6f-4294-b078-30a9372f01657686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\543722dd-e97b-4f15-b6ad-c1926dd16cc57686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\543722dd-e97b-4f15-b6ad-c1926dd16cc57686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\616c560d-f57d-452e-a6aa-1a0696b96df1loginLeftSide.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\616c560d-f57d-452e-a6aa-1a0696b96df1loginLeftSide.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\6c18f7d5-29c9-41be-8e87-5413f11b9c747686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\6c18f7d5-29c9-41be-8e87-5413f11b9c747686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\6cd573bd-a23b-47ea-846e-c578dbfbbfcdLesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\6cd573bd-a23b-47ea-846e-c578dbfbbfcdLesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\6d469e82-82ae-44ee-992e-68a2fe6c7b65Admin Dashboard Admin.pdf",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\6d469e82-82ae-44ee-992e-68a2fe6c7b65Admin Dashboard Admin.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\73cc7453-91e6-4a63-9a29-d69f17ef9ccfAdmin Dashboard Admin.pdf",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\73cc7453-91e6-4a63-9a29-d69f17ef9ccfAdmin Dashboard Admin.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\786f47ce-2f91-4a9c-9bc5-37419af9f7da1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\786f47ce-2f91-4a9c-9bc5-37419af9f7da1.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\7979dfd7-d120-4670-a928-92093f4fee0elogo.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\7979dfd7-d120-4670-a928-92093f4fee0elogo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\7f760dc1-6c43-435f-a6c2-c11bbdd90ea9LesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\7f760dc1-6c43-435f-a6c2-c11bbdd90ea9LesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\80c97a31-27ff-4bba-9a12-ccf5bbd17cc1LesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\80c97a31-27ff-4bba-9a12-ccf5bbd17cc1LesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\80dd4213-84ee-4849-9e60-2f01af3af2f87774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\80dd4213-84ee-4849-9e60-2f01af3af2f87774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\827900ea-50f5-4cae-a0b9-8573b6916e7fexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\827900ea-50f5-4cae-a0b9-8573b6916e7fexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\83706be9-ffd4-48cd-94f0-493423c8d3a47686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\83706be9-ffd4-48cd-94f0-493423c8d3a47686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\8567dc7d-3fee-4d24-a5b2-124f29f063acimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\8567dc7d-3fee-4d24-a5b2-124f29f063acimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\8f9ded74-a465-409e-8b75-d3dc16219024a8ea5772-3768-4237-a3b8-3cb8a907db26image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\8f9ded74-a465-409e-8b75-d3dc16219024a8ea5772-3768-4237-a3b8-3cb8a907db26image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\9686e611-0631-4206-8bdc-6314d0ac96137686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\9686e611-0631-4206-8bdc-6314d0ac96137686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\9756e309-6d47-4ff7-8cca-982fc8800cb9dollar-icon.svg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\9756e309-6d47-4ff7-8cca-982fc8800cb9dollar-icon.svg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\9a732af7-09e9-4ac8-aa08-421243620eefimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\9a732af7-09e9-4ac8-aa08-421243620eefimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\a041bf8f-1496-475d-ac70-89042141924blogo.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\a041bf8f-1496-475d-ac70-89042141924blogo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\a7ba82b7-ed74-4770-8d6b-842d2a04ee049d6f5c7a-2581-4b6b-8c3e-f60d988db8e0image_2024_01_17T04_17_17_750Z (1).png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\a7ba82b7-ed74-4770-8d6b-842d2a04ee049d6f5c7a-2581-4b6b-8c3e-f60d988db8e0image_2024_01_17T04_17_17_750Z (1).png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\abfe8cd9-0b93-4458-99ad-1641eeffdbfesignature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\abfe8cd9-0b93-4458-99ad-1641eeffdbfesignature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\ac0f7e37-7abe-49c7-bc89-817641f0f9e1image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\ac0f7e37-7abe-49c7-bc89-817641f0f9e1image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\b3acd184-272b-4077-8946-260cc696b74dLesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\b3acd184-272b-4077-8946-260cc696b74dLesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\b6301c67-be76-4806-9d43-8e752b4a07dfimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\b6301c67-be76-4806-9d43-8e752b4a07dfimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\b8a8f4e1-3bf2-4649-a4c2-ad1bf937ea26exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\b8a8f4e1-3bf2-4649-a4c2-ad1bf937ea26exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\bc778c43-4647-4529-a48f-2d1fc5d5d2521 (2).jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\bc778c43-4647-4529-a48f-2d1fc5d5d2521 (2).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\bf923de1-4cd9-405c-9bde-97ea86dee8c7LesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\bf923de1-4cd9-405c-9bde-97ea86dee8c7LesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\c78f2566-f543-407c-999c-850e21d863cbimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\c78f2566-f543-407c-999c-850e21d863cbimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\cbfa5cf1-bdb7-4b83-a183-59f8b7f121237774236_3736765.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\cbfa5cf1-bdb7-4b83-a183-59f8b7f121237774236_3736765.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\ccee81ca-e1d6-40ea-b380-e9f875a4cf4blogo.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\ccee81ca-e1d6-40ea-b380-e9f875a4cf4blogo.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\da721f60-75ad-4399-a697-47c1642ce48cimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\da721f60-75ad-4399-a697-47c1642ce48cimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\dd17f592-17d3-456b-8c03-14ad45be3c7a7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\dd17f592-17d3-456b-8c03-14ad45be3c7a7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\e276c020-53f6-4f41-a83f-94bde4ff3033LesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\e276c020-53f6-4f41-a83f-94bde4ff3033LesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\e41273c6-09eb-4939-b84e-dbfe1e6fb99fsignature.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\e41273c6-09eb-4939-b84e-dbfe1e6fb99fsignature.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\e48397d1-4688-49cc-8385-5d00e92929d5LesfImage.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\e48397d1-4688-49cc-8385-5d00e92929d5LesfImage.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\f0001f88-0737-4908-bba8-f9775b60977fPatientData (1).xlsx",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\f0001f88-0737-4908-bba8-f9775b60977fPatientData (1).xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\f1680b9c-1be0-4ca5-93bd-8f6a28696463image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\f1680b9c-1be0-4ca5-93bd-8f6a28696463image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\f311d7d4-f2d3-4946-86c9-2d8d63a31dcdimage_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\f311d7d4-f2d3-4946-86c9-2d8d63a31dcdimage_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\fa69e79e-b3ac-4d60-800f-f8465553c51e7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\fa69e79e-b3ac-4d60-800f-f8465553c51e7686fdbf-7a2f-404d-bb42-f8d27d22b852image_2024_01_17T04_17_17_750Z.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\ProviderDocument\\fcc6d216-541a-4e6a-a460-498fb0e5338b7768657_3763028.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProviderDocument\\fcc6d216-541a-4e6a-a460-498fb0e5338b7768657_3763028.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\a73bf09c-4a2a-4fc6-a858-7cebcb42b3fc9e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\a73bf09c-4a2a-4fc6-a858-7cebcb42b3fc9e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\b0966f06-9219-4fa1-b072-798511c87422FinalReport (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\b0966f06-9219-4fa1-b072-798511c87422FinalReport (1).pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\b2915592-e7b7-42d4-a5aa-370b2e142d0b61595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1).gif",
+      "PackagePath": "staticwebassets\\uploads\\b2915592-e7b7-42d4-a5aa-370b2e142d0b61595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1).gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\b536cbc0-157e-4ddd-b0ab-540cfb7aa39f9e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\b536cbc0-157e-4ddd-b0ab-540cfb7aa39f9e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\bc4e5603-2b13-41bd-86dd-2cf63f5ff556Session 2 (1).txt",
+      "PackagePath": "staticwebassets\\uploads\\bc4e5603-2b13-41bd-86dd-2cf63f5ff556Session 2 (1).txt"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\c152d1cd-0975-4448-ac77-0ae6ae90ae6e1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\c152d1cd-0975-4448-ac77-0ae6ae90ae6e1.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\c3656855-4568-43df-af27-a164f0d6d5a1Fig1. Platform login page (2).jpg",
+      "PackagePath": "staticwebassets\\uploads\\c3656855-4568-43df-af27-a164f0d6d5a1Fig1. Platform login page (2).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\c366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c366e08f-68a2-46c7-8399-65f32a04b0ecexclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\c48947d4-b5cf-406a-812a-aa02f21baee3exclamation2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c48947d4-b5cf-406a-812a-aa02f21baee3exclamation2.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\d12b9957-2670-4e9f-b54e-adc66cb15e515_6312237456959734745.docx",
+      "PackagePath": "staticwebassets\\uploads\\d12b9957-2670-4e9f-b54e-adc66cb15e515_6312237456959734745.docx"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\d7cd455b-d1c6-4626-b6f7-20e5e77f420ccasino-in-mumbai.xlsx",
+      "PackagePath": "staticwebassets\\uploads\\d7cd455b-d1c6-4626-b6f7-20e5e77f420ccasino-in-mumbai.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\d9a35168-c00f-4d53-b441-26a00d8905c39e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\d9a35168-c00f-4d53-b441-26a00d8905c39e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\daa0eb0a-0c43-4ea5-86c2-def6a75d9cf5170fd7d9-df74-43f2-9b4d-8ab76f084012Screenshot_20210701-123325.png",
+      "PackagePath": "staticwebassets\\uploads\\daa0eb0a-0c43-4ea5-86c2-def6a75d9cf5170fd7d9-df74-43f2-9b4d-8ab76f084012Screenshot_20210701-123325.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\e98ed6eb-9854-4f4e-b020-195852439ef89e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\e98ed6eb-9854-4f4e-b020-195852439ef89e5024d1-2aed-4b87-818b-5e86469e342aexclamation2 (1).jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\e9939ea5-b714-4e60-91eb-be33f9479439brandName.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e9939ea5-b714-4e60-91eb-be33f9479439brandName.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\eb842d1c-ac0b-4733-8d1e-bc70ef4ca50761595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1) (1).gif",
+      "PackagePath": "staticwebassets\\uploads\\eb842d1c-ac0b-4733-8d1e-bc70ef4ca50761595eee-1da3-4453-bb55-33fdb3527160Animation - 1712672918770 (1) (1).gif"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\f1a43def-77ad-4ae6-a736-a8cd04d4d0f5Screenshot_20201230-125817.png",
+      "PackagePath": "staticwebassets\\uploads\\f1a43def-77ad-4ae6-a736-a8cd04d4d0f5Screenshot_20201230-125817.png"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\f29983cc-dcd9-45e5-936a-daa2b35705f85_6312237456959734740.docx",
+      "PackagePath": "staticwebassets\\uploads\\f29983cc-dcd9-45e5-936a-daa2b35705f85_6312237456959734740.docx"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\f3f36206-2b01-4fa0-9677-436bb121bc91FinalReport.pdf",
+      "PackagePath": "staticwebassets\\uploads\\f3f36206-2b01-4fa0-9677-436bb121bc91FinalReport.pdf"
+    },
+    {
+      "Id": "D:\\Projects\\HalloDoc3Tier\\halloDocMvc\\wwwroot\\uploads\\f43c1619-b4b5-4d31-8d5e-4045e761c6c3PendingRequestsData.xlsx",
+      "PackagePath": "staticwebassets\\uploads\\f43c1619-b4b5-4d31-8d5e-4045e761c6c3PendingRequestsData.xlsx"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.hellodocsrsmvc.props",
+      "PackagePath": "build\\hellodocsrsmvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.hellodocsrsmvc.props",
+      "PackagePath": "buildMultiTargeting\\hellodocsrsmvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.hellodocsrsmvc.props",
+      "PackagePath": "buildTransitive\\hellodocsrsmvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.hellodocsrsmvc.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="modal fade" id="ViewShift" tabindex="-1" aria-labelledby="headerToggle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="headerToggle">View Shift</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="modal-body ViewShift-Body">
+                <div class="">
+                    <div class="row mb-3 form-floating">
+                        <select class="form-select col-12 loadPhyRegion" id="popupLoadRegion" required>
+                            @* load region *@
+                        </select>
+                    </div>
+                    <div class="row mb-3 form-floating">
+                        <select class="form-select col-12 CurrentPhy" id="Physician" required>
+                            @* load physician *@
+                        </select>
+                        <label for="#Physician">Physician</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="date" class="form-control" id="ShiftDate" placeholder="Date" required />
+                        <label for="DatePicker">Shift Date</label>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-4">
+                                <input type="time" class="form-control" id="CurShiftStart" placeholder="Start" required />
+                                <label for="ShiftStart">Start</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-4">
+                                <input type="time" class="form-control" id="CurShiftEnd" placeholder="End" required />
+                                <label for="ShiftEnd">End</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary ReturnShift">Return</button>
+                    <button type="submit" class="btn btn-primary EditShift">Edit</button>
+                    <button type="submit" class="btn btn-primary SaveShift" hidden>Save</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="Shiftcancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    if (localStorage.getItem("CurrentAccount") == "Provider") {
+        $(".ReturnShift").attr("hidden", true)
+        $("#Physician").attr("required", false)
+    }
+</script>

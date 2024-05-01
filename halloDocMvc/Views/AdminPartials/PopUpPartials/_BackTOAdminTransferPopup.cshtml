@@ -1,0 +1,29 @@
+﻿
+<div class="modal fade" id="TransferBack" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Transfer Request</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    This request will be transferred to admin
+                </p>
+                <div class="row">
+                    <div class="col-12 form-floating">
+                        <textarea class="form-control h-100" id="TransferToAdmin" name="Description" placeholder="Description" rows="5" required></textarea>
+                        <label for="TransferToAdmin">Description</label>
+                        <span class="TransferReason" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="TransferBackAdmin()" type="submit" class="btn btn-primary SubmitTransferBackBtn">Submit</button>
+                <button type="button" class="btn btn-outline-primary btnclose" data-bs-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>

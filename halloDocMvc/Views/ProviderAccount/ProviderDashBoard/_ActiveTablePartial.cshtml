@@ -1,0 +1,282 @@
+﻿<partial name="~/Views/AdminPartials/PopUpPartials/_EncounterPopUp.cshtml" />
+<partial name="~/Views/AdminPartials/PopUpPartials/_DownloadEncounterFormPopup.cshtml" />
+
+<div class="table-responsive d-none d-md-block mb-5">
+    <table class="table" style="border:none">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td></td>
+                <td>phone</td>
+                <td>Address</td>
+                <td>Status</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tboday>
+
+            @foreach (var obj in Model.ActiveRequestViewModels)
+            {
+
+                var background = "";
+
+                var requestor = "";
+                switch (obj.RequestType)
+                {
+                    case 1:
+                        background = "rgb(226, 98, 119)";
+                        requestor = "business";
+                        break;
+
+                    case 2:
+                        background = "rgb(25, 135, 84)";
+                        break;
+
+                    case 3:
+                        background = "rgb(237, 145, 36)";
+                        requestor = "Family";
+                        break;
+                    case 4:
+                        background = "rgb(0, 186, 250)";
+                        requestor = "Concierge";
+                        break;
+                }
+
+
+
+                <tr class="bg-danger text-white">
+                    <td class="text-white" style="background-color:@background">
+                        @obj.Firstname
+                        @if (obj.IsFinalize == true)
+                        {
+                            <button class="btn btn-danger" disabled>Finalized</button>
+                        }
+                    </td>
+                    <td class="text-white" style="background-color:@background"><button class="btn btn-outline-light" onclick="window.open('mailto:@obj.Email')"><i class="bi bi-envelope"></i> </button></td>
+
+                    <td class="text-white" style="background-color:@background">
+                        <button class="btn btn-outline-light" onclick="window.open('tel:@obj.Phonenumber');">
+                            <i class="bi bi-telephone"></i>
+                            @obj.Phonenumber (Patient)
+                        </button>
+                        <br /><br />
+                        @if (obj.RequestType != 2)
+                        {
+                            <button class="btn btn-outline-light" onclick="window.open('tel:@obj.MobileRequestor');">
+                                <i class="bi bi-telephone"></i>
+                                @obj.MobileRequestor (@requestor)
+                            </button>
+                        }
+                    </td>
+                    <td class="text-white" style="background-color:@background;">@obj.Address</td>
+
+                    @* statusbtn here *@
+                    <td class="text-white" style="background-color:@background;">
+                        @if (obj.StatusType == 6)
+                        {
+                            <button class="btn btn-primary" onclick="ConcludeRequest(@obj.RequestId)">HouseCall </button>
+                        }
+                    </td>
+
+                    <td class="text-white" style="background-color:@background">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline-light" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                Actions
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                <li onclick="viewCases(@obj.RequestId)"><button class="dropdown-item" type="button">View Case</button></li>
+                                <li onclick="View_Document(@obj.RequestId)"><button class="dropdown-item" type="button">View Uploads</button></li>
+                                <li onclick="ShowViewNotes(@obj.RequestId)"><button class="dropdown-item" type="button">View Notes</button></li>
+                                <li onclick="OrderCheckOutPage(@obj.RequestId)"><button class="dropdown-item" type="button">Order</button></li>
+                                @* <li><button class="dropdown-item" type="button">Doctor Note</button></li> *@
+                                @if (obj.StatusType == 6)
+                                {
+                                    if (obj.IsFinalize == true)
+                                    {
+                                        <li onclick="DownloadEncounterFormPopUp(@obj.RequestId)"><button class="dropdown-item" type="button">Encounter</button></li>
+                                    }
+                                    else
+                                    {
+                                        <li onclick="EncounterForm(@obj.RequestId)"><button class="dropdown-item" type="button">Encounter</button></li>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <li onclick="EncounterModel(@obj.RequestId)"><button class="dropdown-item" type="button">Encounter</button></li>
+                                }
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tboday>
+    </table>
+    <div class="d-flex justify-content-between">
+        <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+        <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+            <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                </svg>
+            </button>
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+            <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+            <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-block d-md-none patienttable">
+
+    @foreach (var obj in Model.ActiveRequestViewModels)
+    {
+        var uuid = Guid.NewGuid();
+        <div class="shadow p-2" style="background-color:#e4f8ff">
+            <div class="pt-2 ps-3" data-bs-toggle="collapse" href="#A-@uuid" aria-expanded="false" aria-controls="#A-@uuid">
+
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        @obj.Firstname
+                        @if (obj.IsFinalize == true)
+                        {
+                            <button class="btn btn-danger" disabled>Finalized</button>
+                        }
+                    </div>
+                    <div class="me-3">
+                        @if (obj.RequestType == 1)
+                        {
+                            <span>Business</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#e26277" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                        else if (obj.RequestType == 2)
+                        {
+                            <span>Patient</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#198754" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                        else if (obj.RequestType == 3)
+                        {
+                            <span>Family</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#ed9124" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                        else if (obj.RequestType == 4)
+                        {
+                            <span>Concierge</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#00bafa" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <p class="">
+                        @obj.Address
+                    </p>
+                    <div class="me-3">
+                        <a href="http://maps.google.com/?q={@obj.Address}" target="_blank" class="mapbtn btn btn-outline-primary"><span><i class="bi bi-geo-alt"></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="collapse multi-collapse col-sm-12 ps-3 in" id="A-@uuid">
+
+
+                <div class="ms-2 mt-2 ">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>
+                    </span>
+                    Email:
+                    <span class="fw-bold">
+                        @obj.Email
+                    </span>
+                </div>
+
+                <div class="ms-2 mt-2">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                        </svg>
+                    </span>
+                    Patient :
+                    <span class="fw-bold">
+                        @obj.Phonenumber
+                    </span>
+                </div>
+
+
+
+
+                <div class="d-flex row mt-3 gap-2 ms-2">
+                    @if (obj.StatusType == 6)
+                    {
+                        <button class="btn btn-primary" onclick="ConcludeRequest(@obj.RequestId)">HouseCall </button>
+                    }
+                    <button onclick="ShowViewNotes(@obj.RequestId)" class="btn col-5 text-white" style="background-color:#198754">View Notes</button>
+                    <button onclick="viewCases(@obj.RequestId)" class="viewCases btn col-5 text-white" style="background-color:blue">View Case</button>
+
+                    <button onclick="View_Document(@obj.RequestId)" id="CancelList" class="btn col-5 text-white" style="background-color:#198754"> View Uploads</button>
+
+
+                    @if (obj.StatusType == 6)
+                    {
+                        if (obj.IsFinalize == true)
+                        {
+                            <button onclick="DownloadEncounterFormPopUp(@obj.RequestId)" id="CancelList" class="btn col-5 text-white" style="background-color:#198754"> Encounter</button>
+                        }
+                        else
+                        {
+                            <button onclick="EncounterForm(@obj.RequestId)" id="CancelList" class="btn col-5 text-white" style="background-color:#198754"> Encounter</button>
+                        }
+
+                    }
+                    else
+                    {
+                        <button onclick="EncounterModel(@obj.RequestId)" id="CancelList" class="btn col-5 text-white" style="background-color:#198754"> Encounter</button>
+                    }
+                    <button onclick="OrderCheckOutPage(@obj.RequestId)" id="CancelList" class="btn col-5 text-white" style="background-color:orange"> Orders</button>
+                    <button class="btn col-5 text-white" onclick="window.open('mailto:@obj.Email')" style="background-color:#198754">Email</button>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+
+    <div class="d-flex justify-content-between">
+        <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+        <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+            <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                </svg>
+            </button>
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+            <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+            <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+            <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+

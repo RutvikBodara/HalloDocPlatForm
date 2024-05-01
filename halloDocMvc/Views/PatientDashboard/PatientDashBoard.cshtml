@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "PatientDashboard";
+    Layout = "_PatientHeader";
+
+}
+@section styles {
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/css/intlTelInput.css"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/patientSubmitRequestStyle.css">
+    <link rel="stylesheet" href="/css/adminDashBoardcss.css">
+}
+
+
+<div class="modal fade" id="Request_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create New Request</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Here, I want to create  new request for...
+                </p>
+                <div class="text-center">
+                    <input type="radio" class="btn-check" name="option" id="Me" checked>
+                    <label class="btn btn-outline-primary p-2 mx-2" for="Me">Me</label>
+
+                    <input type="radio" class="btn-check" name="option" id="SomeoneElse">
+                    <label class="btn btn-outline-primary p-2 mx-2" for="SomeoneElse">Some one else</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="continue" value="Continue">
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* partial view will be loaded here *@
+<div class="patient-data-container">
+</div>
+
+@section scriptdashboard {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="~/js/DisableBack.js"></script>
+    <script src="/js/DownLoadSelected.js"></script>
+    <script src="/js/PatientDashBoardScript.js"></script>
+}
+
+
+

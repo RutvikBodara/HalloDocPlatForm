@@ -1,0 +1,102 @@
+﻿@model HalloDoc.DAL.ViewModals.Records.SearchFilterModel
+<div class="container-fluid mt-lg-5 mt-sm-3 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class="col-12 d-flex justify-content-between mb-3 mt-3">
+            <div class="h4">Search Records</div>
+            <button class=" btn btn-primary" id="ExportPatHistory">Export</button>
+        </div>
+    </div>
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+        <div class="col-12 shadow p-3"
+             style="border-radius: 10px">
+            <form id="SearchForm">
+                <div class=" row">
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <select class="form-select" id="LoadRequestStatus" asp-for="reqstatus">
+                                @if (Model.requeststatuses != null)
+                                {
+                                    <option value="-1">Select Request Status</option>
+                                    @foreach (var item in Model.requeststatuses)
+                                    {
+                                        <option value="@item.Requeststatusid">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                            <label for="LoadRequestStatus">Select Request Status</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <input asp-for="patName" type="text" class="form-control" id="Patientname" placeholder="Patient Name" />
+                            <label for="Patientname">Patient Name</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <select asp-for="RequestType" class="form-select" id="LoadRequestType">
+
+                                @if (Model.requesttypes != null)
+                                {
+                                    <option value="-1">Select Request Type</option>
+                                    @foreach (var item in Model.requesttypes)
+                                    {
+                                        <option value="@item.Requesttypeid">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                            <label for="LoadRequestType">Select Request Type</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <input asp-for="FromDate" type="date" class="form-control" id="StartDate" placeholder="From Date Of Service" />
+                            <label for="StartDate">From Date Of Service</label>
+                            <span class="StartDateValidation" style="color:indianred"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <input asp-for="ToDate" type="date" class="form-control" id="EndDate" placeholder="To Date Of Service" />
+                            <label for="EndDate">To Date Of Service</label>
+                            <span class="EndDateValidation" style="color:indianred"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <input asp-for="ProviderName" type="text" class="form-control" id="ProviderName" placeholder="Provider Name" />
+                            <label for="ProviderName">Provider Name </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <input asp-for="Email" type="text" class="form-control" id="PatEmail" placeholder="Email" />
+                            <label for="PatEmail">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 col-md-3">
+                        <div class="form-floating mb-4">
+                            <input asp-for="PhoneNumber" type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number" />
+                            <label for="PhoneNumber">Phone Number </label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                        <button class="btn btn-outline-primary" id="ClearSearch">Clear</button>
+                        <button class="btn btn-primary" id="submitSearch" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+            @* partialview *@
+            <div id="loadPartnerTable">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+<script src="/js/Records/SearchRecordsScript.js"></script>
+@{
+    <partial name="_ValidationScriptsPartial" />
+}
+

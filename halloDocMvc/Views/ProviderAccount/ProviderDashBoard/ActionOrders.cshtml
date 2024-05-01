@@ -1,0 +1,133 @@
+﻿@model HalloDoc.DAL.ViewModals.AdminDashBoardActions.OrderActionViewModel
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">Send Orders</div>
+            <button id="backfromOrders" class="btn btn-outline-primary">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+
+        <form class="col-lg-8 col-md-8 col-sm-12 col-12 shadow p-3" id="OrderForm"
+              style="border-radius: 10px">
+            <div class="row mt-2 mb-2">
+                <div class="col-12 col-md-6">
+                    <select asp-for="professionName" class="form-select p-3 mb-4" id="Profession">
+                        <option value="" selected>--Select--Profession--</option>
+                        @foreach (var Prof in Model.Profession)
+                        {
+                            <option value="@Prof.Healthprofessionalid">@Prof.Professionname</option>
+                        };
+                    </select>
+                    <span asp-validation-for="professionName" style="color:indianred"> </span>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <select asp-for="BusinessName" class="form-select p-3 mb-4" id="BusinessName">
+                        <option value="" selected>--Business--</option>
+                        @*   @foreach (var x1 in Model.ActiveBusiness)
+                        {
+                        <option value="@x1.VendorId">@x1.Name</option>
+                        }; *@
+                    </select>
+                    <span asp-validation-for="BusinessName" style="color:indianred"> </span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input asp-for="BusinessContact" type="tel" class="form-control" id="BusinessContact" placeholder="Business Contact" />
+                        <label for="BusinessContact">Business Contact</label>
+                        <span asp-validation-for="BusinessContact" style="color:indianred"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input id="BusinessEmail" asp-for="BusinessEmail" type="email" class="form-control" placeholder="Email" />
+                        <label for="BusinessEmail">Email</label>
+                        <span asp-validation-for="BusinessEmail" style="color:indianred"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input id="FaxNumber" asp-for="Faxnumber" type="tel" class="form-control" placeholder="Fax Number" />
+                        <label for="FaxNumber">Fax Number</label>
+                        <span asp-validation-for="Faxnumber" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating  col-12 mb-4">
+                <textarea asp-for="Pres" class="form-control h-100" id="Prescription" rows="5"
+                          placeholder="Prescription or Order Details"></textarea>
+                <label for="Prescription" class=" text-wrap">Prescription or Order Details</label>
+                <span asp-validation-for="Pres" style="color:indianred"> </span>
+            </div>
+            <div class="form-floating  col-6">
+                <select asp-for="refill" class="form-select p-3 mb-4">
+                    <option selected disabled>Number Of Refills</option>
+                    <option value="1">One</option>
+                    <option value="2">two</option>
+                    <option value="3">three</option>
+                    <option value="4">four</option>
+                    <option value="5">five</option>
+                </select>
+                <span asp-validation-for="refill" style="color:indianred"></span>
+            </div>
+            <div class="row mt-3">
+                <div class="d-flex justify-content-end">
+                    <button type="submit" id="Ordersubmit" class="btn btn-primary p-3 me-3">
+                        Submit
+                    </button>
+                    <button onclick="cancelorder(1)" class="btn btn-outline-primary p-3">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@{
+    <partial name="_validationScriptsPartial" />
+}
+<script src="/js/ProviderScript/OrderAction.js"></script>
+<script>
+
+    $("#backfromOrders").click(function () {
+        $(".Provider-data-container").load('@Url.Action("ProviderDashBoardMain", "ProviderAccount")');
+    });
+    $("#cancelorder").click(function (e) {
+        e.preventDefault();
+    })
+    $("#OrderForm").on("submit", function (e) {
+        $('#OrderForm').validate();
+        e.preventDefault();
+        var formData = new FormData($(this)[0])
+        if ($('#OrderForm').valid()) {
+
+            $.ajax({
+                url: '@Url.Action("OrderAction", "ProviderAccount")',
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response) {
+                        toastr.success("Order Sent!");
+                        $(".Provider-data-container").load('@Url.Action("ProviderDashBoardMain", "ProviderAccount")');
+                    }
+                    else {
+                        toastr.error("Order Failed!");
+                    }
+                }
+            })
+        }
+
+    });
+</script>

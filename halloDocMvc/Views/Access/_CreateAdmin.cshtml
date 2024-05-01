@@ -1,0 +1,209 @@
+﻿@{
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+}
+@model HalloDoc.DAL.ViewModals.AdminDashBoardActions.AdminProfileViewModel
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+            <div class="h4">Create Admin Account</div>
+            <button onclick="$('#User-Access').click()" class="btn btn-outline-primary">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-80 p-3"
+             style="border-radius: 10px" id="AdminProfileForm">
+            <h5>Account Information</h5>
+            <form class="row mt-2" id="CreateAdminForm" method="post">
+                <div class="col-6 col-md-4">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Aspnetuser.Username" type="text" class="form-control" id="AdminUserName" placeholder="User Name" />
+                        <label for="AdminUserName">User Name</label>
+                        <span asp-validation-for="AdminData.Aspnetuser.Username" id="UserNameValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Aspnetuser.Passwordhash" type="password" class="form-control" id="AdminPassword" placeholder="Password" />
+                        <label for="AdminPassword">Password</label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="form-floating mb-4">
+                        <select class="form-select loadRole" asp-for="AdminData.Roleid" required>
+                        </select>
+                        @* <input asp-for="Role.Name" type="text" class="form-control" id="AdminRole" placeholder="Role" /> *@
+                        <label for="AdminRole">Role</label>
+                        <span asp-validation-for="AdminData.Roleid" style="color:indianred"></span>
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Adminitractor Information</h5>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Firstname" type="text" class="form-control" id="AdminFirstName" placeholder="First Name" />
+                        <label for="AdminFirstName">FirstName</label>
+                        <span asp-validation-for="AdminData.Firstname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Lastname" type="text" class="form-control" id="AdminLastName" placeholder="Last Name" />
+                        <label for="AdminLastName">Last Name</label>
+                        <span asp-validation-for="AdminData.Lastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Email" type="email" class="form-control" id="AdminMail" placeholder="Email" />
+                        <label for="AdminMail">Email</label>
+                        <span asp-validation-for="AdminData.Email" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Email" type="email" class="form-control" id="AdminConfirmMail" placeholder="Confirm Email" />
+                        <label for="AdminConfirmMail">Confirm Email</label>
+                        <span asp-validation-for="AdminData.Email" style="color:indianred"></span>
+                    </div>
+                </div>
+
+                </>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mobilenumHolder mb-4">
+                        <input asp-for="AdminData.Mobile" type="tel" class="form-control mobileman  pt-3 pb-3" />
+                        <span id="mobileAspValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+
+                    @foreach (var item in ViewBag.Regions)
+                    {
+                        <input class="regioncheck" id="@item.Regionid" type="checkbox" value="@item.Regionid" />  <label class="form-check-label me-3" for="@item.Regionid">@item.Name </label>
+                    }
+                </div>
+
+                <h5 class="mb-4">Mailing & Billing Information</h5>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Address1" type="text" class="form-control" id="AdminAddress1" placeholder="Address1" />
+                        <label for="AdminAddress1">Address1</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Address2" type="text" class="form-control" id="AdminAddress2" placeholder="Address2" />
+                        <label for="AdminAddress2">Address2</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.City" type="text" class="form-control" id="floatingInputcity" placeholder="City" />
+                        <label for="floatingInputcity">City</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <select class="form-select FetchRegion" asp-for="AdminData.Regionid" required>
+                        </select>
+                        @* <input asp-for="Region.Name" type="text" class="form-control" id="floatingInputstate" placeholder="State"/> *@
+                        <label for="floatingInputstate">State</label>
+                        <span asp-validation-for="AdminData.Regionid" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="AdminData.Zip" type="number" class="form-control" id="floatingInputzip" placeholder="Zip Code" />
+                        <label for="floatingInputzip">Zip Code</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="AdminData.Altphone" type="tel" class="form-control mobileman2 W-100  pt-3 pb-3" />
+                        <span id="mobileBusinesValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-success p-3 me-4" id="" type="submit">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@* <script src="/build/js/intlTelInput.js"></script> *@
+<script src="/js/AdminScripts/AdminDashBoardScripts/AdminProfileScript.js"></script>
+@{
+        <partial name="_ValidationScriptsPartial" />
+}
+<script>
+    $("#CreateAdminForm").on("submit", function (e) {
+        e.preventDefault();
+        var formdata = new FormData($("#CreateAdminForm")[0]);
+        //for ids
+        var ids = [];
+        //datas.append("AdminData", $("#AdminAspForm")[0]);
+        $('input[type=checkbox]:checked').each(function () {
+            formdata.append("RegionList", $(this).attr("id"))
+        });
+        formdata.append("CountryCode", $(".iti__selected-dial-code").text());
+        // var formdata = $(this).serialize();
+        // var emailValue = $("#AdminUserName").val();
+        // $("#AdminUserName").on("Keyup", function () {
+        //     $.ajax({
+        //         url: '/PatientRequests/emailcheck',
+        //         method: 'post',
+        //         data:
+        //         {
+        //             email: emailValue
+        //         },
+        //         success: function (Response) {
+        //             if (Response.emails) {
+        //                 $('#Password').show();
+        //                 $('#ConfirmPassword').show();
+        //             }
+        //             else {
+        //                 $('#Password').hide();
+        //                 $('#ConfirmPassword').hide();
+        //             }
+        //         }
+        //     });
+        // })
+        $("#CreateAdminForm").validate();
+        if ($("#CreateAdminForm").valid() != true) {
+            return false;
+        }
+
+        $.ajax({
+            url: '/AdminPartials/CreateAdminPost',
+            method: 'POST',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+
+                if (response == true) {
+                    toastr.success("Admin Created!🎉")
+                    $('#User-Access').click()
+                }
+                else if (response == "NotValid") {
+                }
+                else {
+                    toastr.error("something went wrong!😩 ")
+                }
+
+                // $("#Admin-create-drop-Down").click();
+
+            }
+        });
+    });
+</script>
+

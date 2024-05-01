@@ -1,0 +1,969 @@
+﻿﻿
+<partial name="_AddNewShiftPopUp" />
+<partial name="_ViewShiftpopup" />
+<partial name="ShowAllShifts" />
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">Scheduling</div>
+            @*             <button id="" class="btn btn-outline-primary">
+            <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+            back
+            </button> *@
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 shadow p-3" id="" style="border-radius: 10px">
+            <div class="d-md-flex justify-content-between mb-2">
+
+                <select class="form-select  loadRegion mb-3 w-25" id="regions">
+                    @* load dynamic *@
+                </select>
+                <div class="mt-3 mb-3">
+                    <button class="btn btn-primary mb-2" id="ProviderOnCall">ProviderOnCall</button>
+                    <button class="btn btn-primary mb-2" id="ShiftsForReview">Shifts For Review</button>
+                    <button class="btn btn-primary mb-2" id="AddNewShift" data-bs-toggle="modal" data-bs-target="#CreateShift">Add New Shift</button>
+                </div>
+            </div>
+            @* now all the data will be dynamic *@
+
+            <div class="d-flex justify-content-start fw-bolder timestampsbasedonreq mb-2">
+                @* loads dates dynamically base on selection of day week and months *@
+
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+                @* loads dates dynamically base on selection of day week and months *@
+                <span style="background-color:#ebadd4; width:50px; height:20px; border-radius:5px; border:#ebadd4;"></span><span class="ms-2 me-2"> Pending Shifts</span>
+                <span style="background-color:#9edb9a; width:50px; height:20px; border-radius:5px; border:#9edb9a;"></span> <span class="ms-2 me-2"> Approved Shifts Shifts</span>
+            </div>
+
+            @*    <div class="d-md-flex justify-content-between align-content-sm-center">
+            </div> *@
+            <div class="d-md-flex justify-content-between mt-2 mb-2">
+                <div class="justify-content-center">
+                    <button class="btn btn-primary me-1" style="border-radius:50px" id="leftSideCalender">  <i class="bi bi-chevron-left"></i> </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                        <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    <button class="btn btn-primary ms-1" style="border-radius:50px" id="RightSideCalender">  <i class="bi bi-chevron-right"></i> </button>
+                </div>
+
+                <div class="mt-2">
+                    <button class="btn btn-outline-primary mb-2" id="day">Day</button>
+                    <button class="btn btn-outline-primary mb-2" id="Week">Week</button>
+                    <button class="btn btn-outline-primary mb-2" id="Month">Month</button>
+                </div>
+
+            </div>
+
+            <div class="Load-Schedule table-responsive mt-3 ">
+                @* alll the table based on the specific request will be load here  *@
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $("#ShiftsForReview").click(function () {
+        $(".admin-data-container").load('/Schedule/ShiftsForReviewPartial', function () {
+            // $.ajax({
+            //     url: '/AdminPartials/LoadRegion',
+            //     method: 'POST',
+            //     success: function (response) {
+            //         $('.loadRegion').empty();
+            //         $('.loadRegion').append('<option value="-1" Selected>All Selected</option>')
+
+            //         response.region.forEach(function (regionname) {
+            //             $('.loadRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+            //         })
+            //     }
+            // });
+        });
+
+    });
+
+
+    $("#ProviderOnCall").click(function (e) {
+        e.preventDefault();
+        $(".admin-data-container").load('/Schedule/ProviderOnCallPartial', function () {
+            $.ajax({
+                url: '/AdminPartials/LoadRegion',
+                method: 'POST',
+                success: function (response) {
+                    $('.loadRegion').empty();
+                    $('.loadRegion').append('<option value="-1" Selected>All Selected</option>')
+
+                    response.region.forEach(function (regionname) {
+                        $('.loadRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                    })
+                }
+            });
+        });
+    });
+
+    var months = ["", "jan", "Fab", "Mar", "Apr", "May", "June", "July", "Augest", "Sept", "Oct", "Nov", "Dec"];
+    var currentTableSelect = 1;
+    $(document).ready(function () {
+        $.ajax({
+            url: '/AdminPartials/LoadRegion',
+            method: 'POST',
+            success: function (response) {
+                $('.loadRegion').empty();
+                $('.loadRegion').append('<option value="" Selected>All Selected</option>')
+
+                response.region.forEach(function (regionname) {
+                    $('.loadRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                })
+            }
+        });
+        $(".showallchecks").prop("hidden", true)
+        getshifts();
+        if (localStorage.getItem("ClickedSchedule") == "month") {
+
+            $("#Month").click()
+            localStorage.setItem("ClickedSchedule", "");
+        }
+        else {
+            $("#day").click();
+            //handle other cases if needed
+        }
+    });
+    var shiftdata = null;
+    getshifts();
+    function getshifts() {
+        $.ajax({
+            url: '/Schedule/GetShifts',
+            method: 'GET',
+            success: function (response) {
+                shiftdata = response;
+            }
+        });
+    }
+    var tomorrow = new Date();
+
+    var selectedDate = formatDate(tomorrow);
+    var i = 1;
+    var curr = new Date();
+    var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
+    var lastday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 6));
+    var monthsdata = new Date();
+    // var curmonthwithyear = new Date(monthsdata.setDate(monthsdata.getDate() - curr.getDay()));
+
+    $("#RightSideCalender").click(function () {
+        if (currentTableSelect == 1) {
+
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            selectedDate = formatDate(tomorrow);
+            Monthcounter = 0;
+            $("#day").click();
+
+        }
+        else if (currentTableSelect == 2) {
+            //strt day
+            firstday.setDate(firstday.getDate() + 7);
+            //end
+            lastday.setDate(lastday.getDate() + 7);
+            Monthcounter = 0;
+            $("#Week").click();
+        }
+        else {
+            monthsdata.setMonth(monthsdata.getMonth() + 1);
+            $("#Month").click();
+        }
+    });
+    $("#leftSideCalender").click(function () {
+        if (currentTableSelect == 1) {
+            tomorrow.setDate(tomorrow.getDate() - i);
+            selectedDate = formatDate(tomorrow);
+            $("#day").click();
+        }
+        else if (currentTableSelect == 2) {
+            firstday.setDate(firstday.getDate() - 7);
+            //end
+            lastday.setDate(lastday.getDate() - 7);
+            $("#Week").click();
+
+        }
+        else {
+            monthsdata.setMonth(monthsdata.getMonth() - 1);
+            $("#Month").click();
+        }
+    });
+    $("#regions").on("change", function () {
+        if (currentTableSelect == 1) {
+            $("#day").click();
+        }
+        else if (currentTableSelect == 2) {
+            $("#Week").click();
+        }
+        else if (currentTableSelect == 3) {
+            $("#Month").click();
+        }
+    });
+
+    var dayname = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+    $("#day").click(function () {
+        currentTableSelect = 1;
+        var regid = null;
+        if ($("#regions").val() == "-1") {
+            regid = null;
+        }
+        else {
+            regid = $("#regions").val();
+        }
+
+        var day = selectedDate.split("-")[2];
+        var month = selectedDate.split("-")[1];
+        var year = selectedDate.split("-")[0];
+
+        $(".timestampsbasedonreq").html(`Day: ${day}, Month: ${month}, Year: ${year}`)
+        var date = formatDate(selectedDate);
+
+        $(".Load-Schedule").load("/Schedule/DayWiseSchedule", function (response) {
+            $.ajax({
+                url: '/Schedule/GetShiftData',
+                data:
+                {
+                    date: date,
+                    regid: regid
+
+                },
+                method: 'POST',
+                success: function (response) {
+                    loadDayTable(response, date);
+                    // Mark first AnimationTimeline phy
+                }
+            });
+        });
+    });
+    $("#Week").click(function () {
+        let firstonlydateday = firstday.getDate();
+        let firstonlydatemonth = firstday.getMonth() + 1;
+        let firstonlydateyear = firstday.getFullYear();
+
+        let lastdayonlydateday = lastday.getDate();
+        let lastdayonlydatemonth = lastday.getMonth() + 1;
+        let lastdayonlydateyear = lastday.getFullYear();
+
+        var firstonlydate = formatDate(firstday);
+        var lastdayonlydate = formatDate(lastday);
+
+        if (firstonlydateyear == lastdayonlydateyear) {
+            $(".timestampsbasedonreq").html(`${months[firstonlydatemonth]} ${firstonlydateday} - ${months[lastdayonlydatemonth]} ${lastdayonlydateday} , ${lastdayonlydateyear}`)
+        } else {
+            $(".timestampsbasedonreq").html(`${months[firstonlydatemonth]} ${firstonlydateday} , ${firstonlydateyear} - ${months[lastdayonlydatemonth]} ${lastdayonlydateday} , ${lastdayonlydateyear}`)
+        }
+        currentTableSelect = 2;
+
+        var regid = null;
+        if ($("#regions").val() == "-1") {
+            regid = null;
+        }
+        else {
+            regid = $("#regions").val();
+        }
+        var date = formatDate(firstday);
+        var enddate = formatDate(lastday);
+        $(".Load-Schedule").load("/Schedule/WeekWiseSchedule", function (response) {
+            $.ajax({
+                url: '/Schedule/GetShiftData',
+                data:
+                {
+                    date: date,
+                    regid: regid,
+                    enddate: enddate
+                },
+                method: 'POST',
+                success: function (response) {
+                    LoadWeekTable(response, date, enddate);
+                    // Mark first AnimationTimeline phy
+                }
+
+            });
+        });
+
+
+    });
+    $("#Month").click(function () {
+        //cur month
+        currentTableSelect = 3;
+
+        var month = monthsdata.getMonth() + 1;
+        var year = monthsdata.getFullYear();
+
+        $(".timestampsbasedonreq").html(`${months[month]} - ${year}`);
+        var regid = null;
+        if ($("#regions").val() == "-1") {
+            regid = null;
+        }
+        else {
+            regid = $("#regions").val();
+        }
+
+        $(".Load-Schedule").load("/Schedule/MonthWiseSchedule", function (response) {
+            $.ajax({
+                url: '/Schedule/ShiftMonthsData',
+                data:
+                {
+                    month: month,
+                    year: year,
+                    regid: regid
+                },
+                method: 'POST',
+                success: function (response) {
+                    //response will contains physician details, region and shiftdetails status details ass well
+                    LoadMonthTable(response, month, year);
+                }
+
+            });
+        });
+    });
+
+    function LoadMonthTable(response, month, year) {
+
+        //response
+        // console.log(response)
+        //find start date
+        var monthstart = new Date(year, month - 1, 1);
+        //find end date
+        var monthend = new Date(year, month, 0);
+        monthend.setDate(monthend.getDate() - 1);
+        var sizeArray = monthend.getDate() + 1;
+
+        //create arrays
+        var regionArray = Array(sizeArray + 1).fill(0);
+        var shiftArray = Array(sizeArray + 1).fill(0);
+        var shiftStatus = Array(sizeArray + 1).fill(0);
+        var shifttime = Array(sizeArray + 1).fill(0);
+        var phydata = Array(sizeArray + 1).fill(0);
+        var shiftCounter = Array(sizeArray + 1).fill(0)
+        //iterate in response
+        response.forEach(function (item) {
+            //fetch date
+
+            var shiftdate = item.shiftDate;
+
+            var DayOfMonth = shiftdate.split("-")[2];
+            if (DayOfMonth[0] == "0") {
+                DayOfMonth = DayOfMonth[1];
+            }
+            DayOfMonth = Number(DayOfMonth)
+
+            //shift
+            if (shiftArray[DayOfMonth] == "0") {
+
+                shiftArray[DayOfMonth] = item.shiftdetailId;
+                regionArray[DayOfMonth] = item.regionId + ":" + item.region;
+                shiftStatus[DayOfMonth] = item.status;
+                phydata[DayOfMonth] = item.physicianname + "%" + item.phyid;
+                shifttime[DayOfMonth] = item.start + " % " + item.end
+                shiftCounter[DayOfMonth] = 1
+            }
+            else {
+                var shiftstr = shiftArray[DayOfMonth] + "," + item.shiftdetailId
+                shiftArray[DayOfMonth] = shiftstr;
+
+                regionArray[DayOfMonth] += "," + item.regionId + ":" + item.region;
+
+                shiftStatus[DayOfMonth] += "," + item.status;
+
+                phydata[DayOfMonth] += "," + item.physicianname + "%" + item.phyid;
+
+                shifttime[DayOfMonth] += "," + item.start + " % " + item.end
+                shiftCounter[DayOfMonth] += 1
+            }
+        });
+        // console.log(phydata)
+        // console.log(regionArray);
+        // console.log(shiftArray);
+        // console.log(shiftCounter)
+
+        //once done this process till start date print simple div s
+        var startdate = monthstart.getDay();
+        //create varible who count for a week
+        var weekCounter = 0;
+        //for sunday case
+        if (startdate == 0) {
+            startdate = 7;
+        }
+        var appenddata = '<tr>';
+        while (startdate != 1) {
+            var onespan = `<td><div></div><div></div><div></div><div></div><div></div><div></div></td>`
+            appenddata += onespan;
+            startdate--;
+            weekCounter++;
+        }
+
+        //run loop from 1 to end date
+        for (var i = 1; i <= sizeArray; i++) {
+            if (weekCounter > 6) {
+                appenddata += `</tr><tr>`
+
+                weekCounter = 0;
+            }
+            weekCounter++;
+            //fetch shifts
+            if (shiftCounter[i] != 0) {
+
+                //data with single request
+                var shhiftstatusdata = shiftStatus[i];
+                var Shiftdatas = shiftArray[i];
+                var phydatas = phydata[i];
+                var shifttimedata = shifttime[i];
+                var regionArraydata = regionArray[i];
+                var checker = 0;
+                var datacount = 0;
+
+                //data with multiple request
+                if (shiftArray[i] != 0 && shiftCounter[i] != 1) {
+                    shhiftstatusdata = shiftStatus[i].split(',')
+                    Shiftdatas = shiftArray[i].split(',')
+                    phydatas = phydata[i].split(',')
+                    shifttimedata = shifttime[i].split(',')
+                    regionArraydata = regionArray[i].split(',')
+                    datacount = Shiftdatas.length;
+                    checker = 1;
+                }
+
+                var onespan = `<td class="active"><div class="text-center" style="background-color:pink; ">${i}</div>`
+                //in loop che if data is single type of multiple type
+                //if single type just put data right away
+
+                if (checker != 1 && Shiftdatas[i] != "0") {
+
+                    //for single value case
+                    var splitPhydata = phydatas.split('%');
+                    var firstname = splitPhydata[0];
+                    var lastname = splitPhydata[1];
+                    var phyid = splitPhydata[2];
+                    var splitshifts = Shiftdatas;
+                    var splitregion = regionArraydata.split(':');
+                    var regid = splitregion[0];
+                    var regname = splitregion[1];
+                    var times = shifttimedata.split('%');
+                    var starttime = times[0];
+                    var endtime = times[1];
+
+                    var color = '';
+                    if (shhiftstatusdata == 1) {
+                        color = '#9edb9a';
+                    }
+                    else {
+                        color = '#ebadd4'
+                    }
+                    var colval = `<div class="active m-2 text-center" style="background-color:${color}; color:white;  align:middle; ; border:solid 1px; border:radius:5px;"  onclick="ShowShiftDetailsPopup('${phyid}','${firstname}','${lastname}', '${splitshifts}','${regid}')" >${starttime}-${endtime} :Dr: ${firstname} ,${lastname}</div>`
+                    onespan += colval;
+                }
+                else {
+                    var j = 0;
+                    while (j != 5 && datacount != 0) {
+
+                        var splitshifts = Shiftdatas[j];
+                        var splitstatus = shhiftstatusdata[j];
+                        var splitPhydata = phydatas[j].split('%');
+                        var firstname = splitPhydata[0];
+                        var lastname = splitPhydata[1];
+                        var phyid = splitPhydata[2];
+                        var splitregion = regionArraydata[j].split(':');
+                        var regid = splitregion[0];
+                        var regname = splitregion[1];
+                        var times = shifttimedata[j].split('%');
+                        var starttime = times[0];
+                        var endtime = times[1];
+
+                        var colval = '';
+                        datacount--;
+                        j++;
+                        if (j == 5 && datacount != 0) {
+                            //show view all btn
+                            colval = `<div class="active text-center m-2 " style="background-color:red; color:white" onclick="showAllShiftMonth('${phydatas}','${regionArraydata}','${Shiftdatas}' )" >View All</div>`
+                            onespan += colval;
+                            break;
+                        }
+
+                        var color = '';
+                        if (splitstatus != "1") {
+                            color = '#ebadd4'
+                        }
+                        else {
+                            color = '#9edb9a';
+                        }
+                        colval = `<div class="active m-2 text-center" style="background-color:${color}; color:white;  align:middle; ; border:solid 1px; border:radius:5px;"  onclick="ShowShiftDetailsPopup('${phyid}','${firstname}','${lastname}', '${splitshifts}','${regid}','${regname}')" >${starttime}-${endtime} :Dr: ${firstname} ,${lastname}</div>`
+
+                        onespan += colval;
+                    }
+                }
+                appenddata += onespan + "</td>"
+                //inner splits
+            } else {
+                var onespan = `<td><div class="text-center" style="background-color:pink;">${i}</div><div></div><div></div><div></div><div></div><div></div></td>`
+                appenddata += onespan;
+            }
+        }
+
+        $(".MonthTableBody").html(appenddata)
+        //if counter is >6 close tr and also restart it
+
+        //foreach iteration go on the index of array if not null add 5 btns with split the shift id and connect them with the popup
+
+        //and all set
+
+    };
+
+    function LoadWeekTable(response, date, enddate) {
+        var onerow = '';
+        response.physician.forEach(function (item) {
+            if (item.photo != null) {
+                onerow += `<tr><td width="20"> <div class="d-flex"> <img src="/uploads/ProviderData/${item.photo}" alt="no" width="20" height="20"> ${item.firstname},${item.lastname}</div></td>`
+            }
+            else {
+                onerow += `<tr><td width="20"> <div class="d-flex"> <img src="#" alt="no" width="20" height="20"> ${item.firstname},${item.lastname}</div></td>`
+            }
+
+            const filterShift = [];
+            //traverse shifts
+            shiftdata.forEach(function (shift) {
+                if (shift.physicianid == item.physicianid) {
+                    filterShift.push(shift.shiftid);
+                }
+            });
+
+            const shiftdetailsdata = [];
+            response.shiftdetail.forEach(function (sd) {
+                if (filterShift.includes(sd.shiftid)) {
+                    shiftdetailsdata.push(sd);
+                }
+            });
+            // console.log(shiftdetailsdata)
+            var regionArray = Array(7).fill(0);
+            var DaysArray = Array(7).fill(0);
+            var shiftArray = Array(7).fill(0);
+            var ShiftCounter = Array(7).fill(0);
+            var ShiftStatus = Array(7).fill(0);
+            var starttime = Array(7).fill(0);
+            var endtime = Array(7).fill(0);
+            shiftdetailsdata.forEach(function (shiftdetails) {
+                //25-3-24//
+                var diff = Math.floor((Date.parse(shiftdetails.shiftdate) - Date.parse(date)) / 86400000);
+                if (DaysArray[diff] != 0) {
+                    ShiftCounter[diff] += 1;
+                    var shiftstring = shiftArray[diff] + "," + shiftdetails.shiftdetailid;
+                    shiftArray[diff] = shiftstring;
+                    var shiftRegion = regionArray[diff] + "," + shiftdetails.regionid
+                    regionArray[diff] = shiftRegion;
+                }
+                else {
+                    DaysArray[diff] = 1;
+                    shiftArray[diff] = shiftdetails.shiftdetailid,
+                        regionArray[diff] = shiftdetails.regionid
+                    ShiftCounter[diff] = 1;
+                    ShiftStatus[diff] = shiftdetails.status;
+                    starttime[diff] = shiftdetails.starttime;
+                    endtime[diff] = shiftdetails.endtime;
+                }
+            });
+            // console.log(shiftArray)
+            //push content of the data
+            for (var i = 0; i < 7; i++) {
+                var tablecontent = '';
+                //store in the table
+
+
+                if (DaysArray[i] != 0) {
+
+                    if (ShiftCounter[i] == 1) {
+                        var color = '';
+                        if (ShiftStatus[i] == 1) {
+                            color = '#9edb9a';
+                        }
+                        else {
+                            color = '#ebadd4'
+                        }
+                        tablecontent = `<td class="active" style="background-color:${color}" onclick="ShowShiftDetailsPopup('${item.physicianid}','${item.firstname}','${item.lastname}', '${shiftArray[i]}','${regionArray[i]}')"><button class="ShiftWeekBtn" style="border:none; background-color:${color}; width:100%; height:100%" id="${shiftArray[i]}">${starttime[i]} - ${endtime[i]} </button></td>`
+                    }
+                    else {
+                        tablecontent = `<td class="active" style="background-color:red" onclick="ShowAllShiftPopUp('${item.physicianid}','${item.firstname}','${item.lastname}','${shiftArray[i]}')" ><button class="ShiftWeekBtn" style="border:none; color:white; background-color:red; width:100%; height:100%" id="${shiftArray[i]}">View All</button></div></td>`
+                    }
+                    onerow += tablecontent
+                }
+                else {
+                    onerow += "<td></td>"
+                }
+                //increase date by 1day
+            }
+        });
+        $(".WeekTableBody").append(onerow);
+    }
+
+    function showAllShiftMonth(phydatas, regionArraydata, Shiftdatas) {
+        //full physician data
+        // console.log(phydatas);
+        // console.log(regionArraydata);
+        // console.log(Shiftdatas)
+
+        $("#ShiftPhy").html(`All shifts`);
+        $(".loadshiftshere").empty();
+        var shiftno = 1;
+        var j = 0;
+        var countshifts = Shiftdatas.split(',').length;
+        var phydata = phydatas.split(',');
+        var regdata = regionArraydata.split(',');
+
+        while (countshifts != j) {
+            //fetch phydetails
+
+
+            var splitPhydata = phydata[j].split('%');
+            var firstname = splitPhydata[0];
+            var lastname = splitPhydata[1];
+            var phyid = splitPhydata[2];
+
+            var splitregion = regdata[j].split(':');
+            var regid = splitregion[0];
+            var regname = splitregion[1];
+            var splitshifts = Shiftdatas.split(',');
+            var SeperateShift = `<hr/><div class="d-flex justify-content-center  m-2" onclick="ShowShiftDetailsPopup('${phyid}','${firstname}','${lastname}', '${splitshifts[j]}','${regid}')" >Shift No: ${shiftno}</div> <hr/>`
+            $(".loadshiftshere").append(SeperateShift);
+            i++;
+            j++;
+            shiftno++;
+        }
+        $("#ShowAllShift").modal("show");
+    }
+
+    function ShowAllShiftPopUp(phyid, firstname, lastname, shiftid) {
+
+        var TotalShifts = shiftid.split(',');
+        var countShift = TotalShifts.length;
+        var i = 0;
+        var shiftno = 1;
+        $("#ShiftPhy").html(`Shift Of ${firstname} , ${lastname}`);
+        $(".loadshiftshere").empty();
+        while (countShift != 0) {
+            var SeperateShift = `<hr/><div class="d-flex justify-content-center  m-2" onclick="ShowShiftDetailsPopup('${phyid}','${firstname}','${lastname}', '${TotalShifts[i]}')" >Shift No: ${shiftno}</div> <hr/>`
+            $(".loadshiftshere").append(SeperateShift);
+            i++;
+            countShift--;
+            shiftno++;
+        }
+        $("#ShowAllShift").modal("show");
+    };
+
+    function loadDayTable(response, date) {
+        var onerow = '';
+        response.physician.forEach(function (item) {
+            if (item.photo != null) {
+                onerow += `<tr><td width="20"> <div class="d-flex"> <img src="/uploads/ProviderData/${item.photo}" width="20" height="20"> ${item.firstname},${item.lastname}</div></td>`
+            }
+            else {
+                onerow += `<tr><td width="20"> <div class="d-flex"> ${item.firstname},${item.lastname}</div></td>`
+            }
+            const filterShift = [];
+            //traverse shifts
+            shiftdata.forEach(function (shift) {
+                if (shift.physicianid == item.physicianid) {
+                    filterShift.push(shift.shiftid);
+                }
+            });
+
+            //traverse shift details
+            const shiftdetailsdata = [];
+            response.shiftdetail.forEach(function (sd) {
+                if (filterShift.includes(sd.shiftid)) {
+                    shiftdetailsdata.push(sd);
+                }
+            });
+
+            var regionArray = Array(24).fill(0);
+            var hoursArray = Array(24).fill(0);
+            var shiftArray = Array(24).fill(0);
+            var shiftStatus = Array(24).fill(0);
+            shiftdetailsdata.forEach(function (shiftdetails) {
+                var starttime = shiftdetails.starttime;
+                var endtime = shiftdetails.endtime;
+                var shiftId = shiftdetails.shiftdetailid;
+
+                var regionId = shiftdetails.regionid;
+
+                //took start time floor
+                var starttimesHours = starttime.split(":")[0];
+                var endtimeHours = endtime.split(":")[0];
+
+                if (endtime.split(":")[1] != "00" || endtime.split(":")[2] != "00") {
+
+                    if (endtime.split(":")[0] == starttime.split(":")[0]) {
+
+                    }
+                    else {
+                        endtimeHours = +endtimeHours;
+                    }
+
+                } else {
+                    if (endtime.split(":")[0] == starttime.split(":")[0]) {
+
+                    }
+                    else {
+                        endtimeHours = +endtimeHours - 1;
+                    }
+                }
+                if (Array.from(starttimesHours)[0] == "0") {
+                    starttimesHours = Array.from(starttimesHours)[1]
+                }
+                if (Array.from(endtimeHours)[0] == "0") {
+                    endtimeHours = Array.from(endtimeHours)[1]
+                }
+                var starttimeHalf = starttime.split(":")[1]
+                for (var hour = starttimesHours; hour <= endtimeHours; hour++) {
+                    shiftArray[hour] = shiftId;
+                    // hoursArray[starttimesHours] = hour;
+                    hoursArray[hour] = hour;
+                    regionArray[hour] = regionId;
+                    if (shiftdetails.status == 1) {
+                        shiftStatus[hour] = 1
+                    }
+                }
+
+                if (starttimeHalf != "00") {
+                    hoursArray[starttimesHours] = starttimesHours + ':30'
+                }
+                if (endtime.split(":")[1] != "00") {
+                    hoursArray[endtimeHours] = (endtimeHours - 1) + ':30';
+                }
+            });
+            // console.log("shift " + shiftStatus)
+            // console.log("array" + shiftArray);
+            // console.log("this is" + hoursArray);
+
+            var count = 0;
+            for (var i = 0; i < 24; i++) {
+                // var tableadddata = document.createElement("td");
+                var hour = (i == 0) ? 12 : (i > 12) ? i - 12 : i;
+                var hourtype = (i >= 12) ? "PM" : "AM";
+
+                //corner case
+
+                if (shiftArray[i] != '0' && ((shiftArray[i] == shiftArray[i - 1]) || shiftArray[i - 1] == '0') && (i != 23)) {
+                    // tableadddata.classList.add("active");
+                    // tableadddata.style.backgroundColor = "green";
+                    count++;
+                }
+                else {
+                    if (i == 23 && shiftArray[i] != '0' && ((shiftArray[i] == shiftArray[i - 1]) || shiftArray[i - 1] == '0')) {
+                        count++;
+                    }
+                    if (count != 0) {
+
+                        var id = i - 1;
+                        if (i == 23 && shiftArray[i - 1] == '0') {
+                            id += 1;
+                        }
+                        var starttime = id - count;
+                        // console.log("end  " + starttime);
+                        // var color = "hotpink";
+                        // if (shiftStatus[id] == 1) {
+                        //     console.log("enter")
+                        //     color = "green";
+                        // }
+
+                        var color = '';
+                        if (shiftStatus[id] == 1) {
+                            color = '#9edb9a';
+                        }
+                        else {
+                            color = '#ebadd4'
+                        }
+                        var tablecontent = `<td class="active" colspan="${count}"  style="background-color:${color}; border:${color}" id="${shiftArray[id]}" onclick="ShowShiftDetailsPopup('${item.physicianid}','${item.firstname}','${item.lastname}', '${shiftArray[id]}','${date}','${regionArray[i]}')"> check Details: ${item.firstname} ${item.lastname}</td>`;
+                        onerow += tablecontent
+                        if (shiftArray[i] != '0' && ((shiftArray[i] != shiftArray[i - 1]))) {
+                            count++;
+                            if (i == 23) {
+                                id += 1;
+                                tablecontent = `<td class="active" colspan="${count}"  style="background-color:${color}; border:${color}" id="${shiftArray[id]}" onclick="ShowShiftDetailsPopup('${item.physicianid}','${item.firstname}','${item.lastname}', '${shiftArray[id]}','${date}','${regionArray[i]}')"> check Details: ${item.firstname} ${item.lastname}</td>`;
+                                onerow += tablecontent
+                            }
+                        }
+                        else {
+                            if (i != 23)
+                                onerow += "<td></td>"
+                        }
+                        count = 0;
+                    }
+                    else {
+                        onerow += "<td></td>"
+                    }
+                }
+
+            }
+            //traverse inside result of travrse shift and fetch start time and end time
+            //loop for start time to end time  and put value at the number of hour array
+            //once both array are reay run loop rill 24 and put td and with conditions of array
+            onerow += "</tr>"
+        })
+        $(".tablebody").append(onerow);
+    }
+
+    function ShowShiftDetailsPopup(phyid, firstname, lastname, shiftid, date, regid) {
+        //fetch shift data
+        var ShiftDetailsid = shiftid.split(',');
+
+        if (ShiftDetailsid.length > 1) {
+            console.log("Skip");
+        }
+        else {
+            $.ajax({
+                url: '/Schedule/FetchScheduleData',
+                method: 'Post',
+                data:
+                {
+                    ShiftDetailsids: ShiftDetailsid[0],
+                },
+                success: function (response) {
+
+                    $('.loadPhyRegion,.CurrentPhy').empty();
+                    $('.loadPhyRegion').append(`<option value="${response.regionid}" selected>need to be added</option>`);
+                    $('.CurrentPhy').append(`<option value="${phyid}" selected>${firstname} ${lastname}</option>`);
+                    $('#ShiftDate').val(response.shiftdate);
+                    $('#CurShiftStart').val(response.starttime);
+                    $('#CurShiftEnd').val(response.endtime);
+                    $('.ViewShift-Body input,.ViewShift-Body select').attr("disabled", "true");
+                    $('#ViewShift').modal("show");
+                    $(".SaveShift").attr("data-shiftdetId", ShiftDetailsid[0]);
+                    $(".ReturnShift").attr("data-shiftdetId", ShiftDetailsid[0]);
+                    $("#AllShiftcancelbtn").click();
+                    if (response.shiftdate == formatDate(new Date())) {
+                        console.log(response.shiftdate + "  " + formatDate(new Date()))
+                        // console.log($('#CurShiftEnd').val() + "  " + (new Date()).toLocaleTimeString('en-GB'))
+                        if ($('#CurShiftEnd').val() <= (new Date()).toLocaleTimeString('en-GB')) {
+                            $(".EditShift").attr("hidden", true);
+                            console.log("right, plave")
+                            $(".ReturnShift").attr("hidden", true);
+                        }
+                        else {
+
+                            $(".EditShift").removeAttr("hidden", true);
+                            $(".ReturnShift").removeAttr("hidden", true);
+                        }
+                    }
+                    else if (response.shiftdate < formatDate(new Date())) {
+                        $(".EditShift").attr("hidden", true);
+                        $(".ReturnShift").attr("hidden", true);
+                    }
+                    else {
+                        $(".EditShift").removeAttr("hidden", true);
+                        $(".ReturnShift").removeAttr("hidden", true);
+                    }
+                }
+            });
+        }
+    };
+    //on edit btn click of view shift
+    $('.EditShift').click(function (e) {
+        e.preventDefault();
+        $(this).attr("hidden", true);
+        $('.SaveShift').removeAttr("hidden", true);
+        $('#ShiftDate,#CurShiftStart,#CurShiftEnd').prop("disabled", false)
+    });
+    $(".ReturnShift").click(function (e) {
+        e.preventDefault()
+        var shiftid = $(".ReturnShift").attr("data-shiftdetId");
+        $.ajax({
+            url: '/Schedule/ChangeShiftStatus',
+            data: { shiftdetailsid: shiftid },
+            success: function (response) {
+                if (response) {
+                    toastr.success("Shift Approved")
+                    $("#Shiftcancelbtn").click();
+                }
+                else {
+                    toastr.error("Something went wrong")
+                }
+
+                if (currentTableSelect == 1) {
+                    $("#day").click();
+                }
+                else if (currentTableSelect == 2) {
+                    $("#Week").click();
+                }
+                else if (currentTableSelect == 3) {
+                    $("#Month").click();
+                }
+            }
+        });
+    });
+    $('.SaveShift').click(function (e) {
+        e.preventDefault();
+        var date = $('#ShiftDate').val();
+        var starttime = $('#CurShiftStart').val();
+        var endtime = $("#CurShiftEnd").val();
+
+        var StartPart = starttime.split(':');
+        var EndPart = endtime.split(':')
+        var startdate = new Date(0, 0, 0, StartPart[0], StartPart[1])
+        var enddate = new Date(0, 0, 0, EndPart[0], EndPart[1])
+        if (startdate >= enddate) {
+            toastr.error("Please Select Valid Time");
+            return false;
+        }
+        $.ajax({
+            url: '/Schedule/EditShiftDetails',
+            data:
+            {
+                shiftdetailsid: $(".SaveShift").attr("data-shiftdetId"),
+                date: date,
+                start: starttime,
+                end: endtime
+            },
+            success: function (response) {
+                if (response == "Not Valid") {
+                    toastr.error("Shift alredy exist in this time zone")
+                }
+                else if (response) {
+                    toastr.success("Data Changed");
+                    $('#Shiftcancelbtn').click();
+                    $(".SaveShift").attr("hidden", true);
+                    $('.EditShift').removeAttr("hidden", true);
+                    $('#ShiftDate,#CurShiftStart,#CurShiftEnd').prop("disabled", true);
+                    //load scheduling
+                    if (currentTableSelect == 1) {
+                        $("#day").click();
+                    }
+                    else if (currentTableSelect == 2) {
+                        console.log("emnter2")
+                        $("#Week").click();
+                    }
+                    else if (currentTableSelect == 3) {
+                        console.log("emnter3")
+                        $("#Month").click();
+                    }
+
+                    // $("#Scheduling-drop-Down").click();
+
+                }
+                else {
+                    toastr.error("Something went wrong")
+                }
+            }
+
+        });
+
+    });
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
+</script>

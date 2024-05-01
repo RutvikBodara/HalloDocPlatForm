@@ -1,0 +1,92 @@
+﻿@model ProjectManagement.DAL.ViewModels.PopUp.AddProjectViewModel
+
+<div class="modal fade" id="EditProjectPopUp" tabindex="-1" aria-labelledby="headerToggle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="headerToggle">Task Form</h1>
+            </div>
+            <form class="EditProjectForm" >
+                <div class="modal-body row m-2">
+                    <div class="form-floating col-6 mb-2">
+                        <input asp-for="TaskName" type="text" class="form-control ps-2" id="Task-name" name="TaskName" placeholder="Task Name" required>
+                        <label for="#Task-name">Task Name</label>
+                        <div class="invalid-feedback">
+                            Please provide a Task Name
+                        </div>
+                        <span asp-validation-for="TaskName" style="color:indianred"></span>
+                    </div>
+
+                    <div class="form-floating col-6 mb-2">
+                        <input asp-for="Assignee" type="text" class="form-control ps-2" id="Assignee" name="Assignee" placeholder="Assignee">
+                        <label for="#Assignee">Assignee</label>
+                        <span asp-validation-for="Assignee" style="color:indianred"></span>
+                        @* <span class="firstname_Validation" style="color:indianred"></span> *@
+                    </div>
+
+                    <div class="form-floating col-6 mb-2">
+                        <input asp-for="Id" hidden/>
+                        <input asp-for="Description" type="text" class="form-control ps-2" id="Description" name="Description" placeholder="Description">
+                        <label for="#Description">Description</label>
+                        <span asp-validation-for="Description" style="color:indianred"></span>
+                        @* @* <span class="firstname_Validation" style="color:indianred"></span> *@
+                    </div>
+
+                    <div class="form-floating col-6 mb-2">
+                        <input asp-for="Duedate" type="date" class="form-control ps-2" id="Due-date" placeholder="Due Date" value="@Model.Duedate.ToString("yyyy-MM-dd")" required>
+                        <label for="#Due-date">Due Date</label>
+                        <span asp-validation-for="Duedate" style="color:indianred"></span>
+                        @* <span class="firstname_Validation" style="color:indianred"></span> *@
+                    </div>
+
+                    <div class="form-floating col-6 mb-2">
+                        <select asp-for="city" class="form-select City ps-2" required>
+                            <option value="Surat">Surat</option>
+                            <option value="Ahmadabad">Ahmadabad</option>
+                            <option value="Baroda">Baroda</option>
+                            <option value="Rajkot">Rajkot</option>
+                            <option value="Bharuch">BHaruch</option>
+                        </select>
+                        <span asp-validation-for="city" style="color:indianred"></span>
+                        @* <span class="RegionValid" style="color:indianred"></span> *@
+                    </div>
+                    <div class="form-floating  col-6 mb-2">
+                        <input asp-for="domain" type="text" class=" ps-2 form-control" id="Domain" placeholder="Domain" required>
+                        <label for="#Domain">Domain</label>
+                        <span asp-validation-for="domain" style="color:indianred"></span>
+                        @* <span class="firstname_Validation" style="color:indianred"></span> *@
+                    </div>
+                </div>
+                <div class="modal-footer mb-2">
+                    <button type="button" class="btn btn-outline-primary closebtn" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary " id="EditProjectBtn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@{
+    <partial name="_ValidationScriptsPartial" />
+}
+<script>
+    $(".EditProjectForm").on("submit", function (e) {
+        e.preventDefault();
+        var formdata = new FormData($(this)[0]);
+        $(this).validate();
+        if ($(this).valid() == false) {
+            return false;
+        }
+        $.ajax({
+            url: '/Project/EditProjectPost',
+            method: 'POST',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function () {
+                $(".closebtn").click();
+                window.location.reload();
+            }
+
+        });
+    });
+</script>

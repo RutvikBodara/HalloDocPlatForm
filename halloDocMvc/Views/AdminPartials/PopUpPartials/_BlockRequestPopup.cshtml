@@ -1,0 +1,33 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="modal fade" id="BlockModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Block</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    Patient Name : <span class="FirstName" style="color:#60cef3">@*  @obj.Firstname *@</span>
+                </p>
+                <div class="row">
+                    <div class="col-12 form-floating">
+                        <textarea class="form-control h-100" id="BlockNotes" name="BlockNotes" placeholder="Reason For Block Request" rows="5" required></textarea>
+                        <label for="BlockNotes">Reason For Block Request</label>
+                        <span class="BlockReqValid" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="BlockCase()" type="submit" class="btn btn-primary BlockConfirmBtn">Confirm</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>

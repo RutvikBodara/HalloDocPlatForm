@@ -1,0 +1,90 @@
+
+.btnwidthspatientsideholder {
+    width: 60%;
+    margin: auto;
+    height: 10vh;
+}
+
+.btnwidthspatientside {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 3vh;
+}
+
+.btnAdminside {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 3vh;
+}
+
+.submitrequestbtn {
+    background-color: #00bafa;
+    border-color: #00bafa;
+    border-width: 2px;
+    color: white;
+    font-family: 800;
+}
+
+.registeredpatient {
+    background-color: #08199c;
+    border-color: #08199c;
+    border-width: 2px;
+    color: white;
+    font-family: 800;
+}
+
+.adminlogin {
+    background-color: red;
+    border-color: red;
+    border-width: 2px;
+    color: white;
+    font-family: 800;
+}
+/* .termsandcon{
+    background-color: black;
+    color: white;
+    position: relative;
+    bottom: 0;
+} */
+
+
+/* .terms , .privacy {
+    font-size: 1vw;
+    text-decoration: none;
+    color: #ADADAD;
+}
+.terms:hover , .privacy:hover{
+    color:#add8e6 ;
+} */
+
+/*
+@media only screen and (max-width: 767px) {
+    
+    .btnwidthspatientside {
+        font-size: 3vw;
+    }
+    .btnwidthspatientsideholder{
+        width: 80%;
+    }
+
+}
+@media  only screen and (max-width:510px) {
+
+    .btnwidthspatientsideholder{
+        width: 100%;
+    }
+    .btnwidthspatientside{
+        width:100%;
+        height: 100%;
+        font-size:3vh;
+    }
+}
+*/
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+﻿@model HalloDoc.DAL.ViewModals.PatientProfileEdit;
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">User Profile</div>
+
+            <button onclick="ProfileBack()" class="btn btn-outline-primary">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+
+        <form action="@Url.Action("EditProfile","PatientDashboard" , new {aspid = Model.aspnetid , userid = int.Parse(Model.userid)})" class="col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-80 p-3"
+              style="border-radius: 10px" id="form" method="post">
+            <h5>Patient Information</h5>
+
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="@Model.Firstname" type="text" class="form-control" id="Firstnamepro" placeholder="First Name" disabled required />
+                        <label for="Firstnamepro">User Name</label>
+                        <span asp-validation-for="Firstname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Lastname" type="text" class="form-control" id="floatingInputpro" placeholder="Last Name" disabled />
+                        <label for="floatingInputpro">Last Name</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="DateOfBirth" type="date" class="form-control" id="floatingInputdate" placeholder="Date" disabled />
+                        <label for="floatingInputdate">Date</label>
+                    </div>
+                </div>
+            </div>
+
+            <h5>Patient Contact Information</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Email" type="email" class="form-control" id="floatingInputemails" placeholder="Email" disabled required />
+                        <label for="floatingInputemails">Email</label>
+                        <span asp-validation-for="Email" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="countryCode" id="CountryCode" hidden />
+                        <input asp-for="Mobile" type="tel" class="form-control mobileman pt-3 pb-3" disabled required />
+                        <span asp-validation-for="Mobile" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+
+            <h5>Patient Location</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Street" type="text" class="form-control" id="floatingInputstreet" placeholder="Street" disabled />
+                        <label for="floatingInputstreet">Street</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="City" type="text" class="form-control" id="floatingInputcity" placeholder="City" disabled />
+                        <label for="floatingInputcity">City</label>
+                    </div>
+                </div>
+                @*  <div class="col-12 col-md-6">
+                <div class="form-floating mb-4">
+                <input asp-for="State" type="text" class="form-control" id="floatingInputstate" placeholder="State" disabled />
+                <label for="floatingInputstate">State</label>
+                </div>
+                </div> *@
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        @*    <input asp-for="State" type="text" class="form-control" id="floatingInput4" placeholder="State" />
+                        <label for="floatingInput4">State</label>
+                        <span asp-validation-for="State" style="color:indianred"></span> *@
+
+                        <input asp-for="regid" id="RegionID" hidden/>
+                        <select asp-for="regid" class="form-select FetchRegion" required disabled>
+
+                        </select>
+                        <span asp-validation-for="regid" style="color:indianred"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-6 d-flex">
+                    <div class="form-floating mb-4 col-8">
+                        <input asp-for="Zipcode" type="number" class="form-control" id="floatingInputzip" placeholder="Zip Code" disabled />
+                        <label for="floatingInputzip">Zip Code</label>
+                    </div>
+
+                    <div class="form-floating mb-4 col-2 ms-2">
+                        <a href="http://maps.google.com/?q={@Model.Street},{@Model.City},{@Model.State},{@Model.Zipcode}" target="_blank" class="mapbtn btn btn-outline-primary p-3"><span><i class="bi bi-geo-alt"></i></span></a>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary p-3 me-4" id="submitbtn" hidden type="submit">Submit</button>
+                    <button class="btn btn-outline-primary p-3 me-4" onclick="enableEdit()" id="editbtn">Edit</button>
+                    <button class="btn btn-outline-primary p-3" onclick="disableEdit()" id="cancelbtn" hidden>Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/js/PatientProfileEdit.js"></script>
+@* <script src="/build/js/intlTelInput.js"></script> *@
+@{
+    <partial name="_validationScriptsPartial" />
+}

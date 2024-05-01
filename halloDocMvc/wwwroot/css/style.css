@@ -1,0 +1,171 @@
+::selection {
+    color: white;
+    background-color: #2bb9e9;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.DarkButton {
+    width: fit-content;
+    display: flex;
+    margin-left: auto;
+    margin-right: 2%;
+    margin-top: 2%;
+    position: sticky;
+}
+/* .LoginContent{
+    margin-top: auto;
+    margin-bottom: auto;
+} */
+.darkbtnheader {
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1%;
+}
+
+.brandLogo {
+    width: fit-content;
+    margin: auto;
+}
+
+.TaskLine {
+    width: fit-content;
+    margin: auto;
+    /* color: #3E3E3E; */
+}
+/* .form-control::placeholder { 
+    color:#ADADAD;
+    opacity: 0.5; 
+} */
+.username, .password, .login, .forgetpass {
+    margin: auto;
+    font-weight: 600;
+    width: 50%;
+}
+
+.forgetpassword {
+    color: #add8e6;
+    text-decoration: none;
+}
+
+.forgetpassholder {
+    width: fit-content;
+    margin: auto;
+    font-weight: 600;
+}
+
+.forgetpassword:hover, .backhome:hover {
+    color: #83cee7;
+}
+
+.tncprivacy {
+    width: fit-content;
+    margin: auto;
+}
+
+.tnc, .privacypolicy {
+    text-decoration: none;
+    font-weight: 400;
+    color: #ADADAD;
+    font-size: 0.6545rem;
+}
+
+    .tnc:hover, .privacypolicy:hover {
+        color: #add8e6;
+    }
+
+.backhome {
+    text-decoration: none;
+    color: #add8e6;
+    font-weight: 800;
+}
+
+.mobileBack {
+    width: fit-content;
+    margin-left: 20%;
+}
+
+.h1 {
+    font-size: 2vw;
+}
+
+.login {
+    width: 50%;
+}
+
+#pswd, #usercircle {
+    display: flex;
+    justify-content: end;
+}
+
+i {
+    width: fit-content;
+    margin-top: -45px;
+}
+
+@media only screen and (max-width: 767px) {
+    .loginImg {
+        position: absolute;
+        opacity: 0.1;
+        background-size: cover;
+        filter: blur(3px);
+    }
+
+    .h1 {
+        font-size: larger;
+    }
+
+    .brandLogo {
+        display: none;
+    }
+
+    .form-control {
+        background-color: transparent;
+    }
+
+    .ttt {
+        margin-top: 20%;
+    }
+
+    .username, .password, .login {
+        width: 80%;
+    }
+
+    .login, .forgetpassword, .backhome, .tncprivacy {
+        position: relative;
+    }
+
+    .btnwidthspatientside {
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (max-width:510px) {
+    .h1 {
+        font-size: larger;
+    }
+
+    .username, .password, .login {
+        width: 100%;
+    }
+
+    .mobileBack {
+        margin-left: 10%;
+    }
+
+    .loginback {
+        font-size: large;
+    }
+}
+/* reset pass */
+.loginback {
+    font-size: 2vh;
+    width: fit-content;
+    margin: auto;
+}

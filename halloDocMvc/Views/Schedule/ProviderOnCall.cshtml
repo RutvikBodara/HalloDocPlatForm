@@ -1,0 +1,124 @@
+﻿<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 d-flex justify-content-between mb-3">
+
+            <div class="h4">MDS On Call</div>
+            <button id="" class="btn btn-outline-primary" onclick="$('#Scheduling-drop-Down').click()">
+                <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+                back
+            </button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 min-vh-80 shadow p-3" id="" style="border-radius: 10px">
+            <div class="d-md-flex justify-content-between mb-2">
+                <select class="form-select  loadRegion mb-3 w-25" id="regions">
+                    @* load dynamic *@
+                </select>
+                <div class="mb-3">
+                    <button class="btn btn-primary mb-sm-3 mb-xs-3" id="ProviderOnCall" onclick="$('#Scheduling-drop-Down').click()">Calender View</button>
+                    <button class="btn btn-primary mb-sm-3 mb-xs-3" id="ShiftsForReview">Shifts For Review</button>
+                </div>
+            </div>
+            <div class="m-2">
+                <div class="h5"> MD's On Call</div>
+                <div class="loadOnCallPhy">
+                    @* ///show all data here *@
+                    <div class="row">
+                        @if (Model.ProviderOnCall != null)
+                        {
+
+                            @foreach (var item in Model.ProviderOnCall)
+                            {
+                                <div class="col-md-4 col-6 m-3">
+                                    @if (@item.Photo != null)
+                                    {
+                                        <img src="~/uploads/ProviderData/@item.Photo" width="50px" height="50px">
+                                        <span>@item.Firstname , @item.Lastname</span>
+                                    }
+                                    else
+                                    {
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                                        </svg>
+                                        <span>@item.Firstname , @item.Lastname</span>
+                                    }
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <h5 class="h5 justify-content-center"> No Calls Are There </h5>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="m-2">
+                <div class="h5">
+                    Physicians Off Duty
+                </div>
+                <div class="PhysiciansOffDuty">
+                    <div class="row">
+                        @if (Model.ProviderOffDuty != null)
+                        {
+
+                            @foreach (var item in Model.ProviderOffDuty)
+                            {
+                                <div class="col-md-4 col-4 m-3">
+                                    @if (@item.Photo != null)
+                                    {
+                                        <img src="~/uploads/ProviderData/@item.Photo" width="50px" height="50px">
+                                        <span>@item.Firstname , @item.Lastname</span>
+                                    }
+                                    else
+                                    {
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                                        </svg>
+                                        <span>@item.Firstname , @item.Lastname</span>
+                                    }
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <h5 class="h5 justify-content-center m-3" style="color:greenyellow">No Physicians are off-duty</h5>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $("#ShiftsForReview").click(function () {
+        $(".admin-data-container").load('/Schedule/ShiftsForReviewPartial', function () {
+        });
+    });
+    $("#regions").change(function (e) {
+        var regid = $(this).val();
+        $(".admin-data-container").load('/Schedule/ProviderOnCallPartial?regid=' + regid, function () {
+            $.ajax({
+                url: '/AdminPartials/LoadRegion',
+                method: 'POST',
+                success: function (response) {
+                    $('.loadRegion').empty();
+                    $('.loadRegion').append(`<option value="-1">All Selected</option>`)
+
+                    response.region.forEach(function (regionname) {
+                        if (regionname.regionid == regid) {
+                            $('.loadRegion').append('<option value="' + regionname.regionid + '" selected>' + regionname.name + '</option>')
+                        }
+                        else {
+                            $('.loadRegion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                        }
+                    })
+                }
+            });
+        });
+    })
+</script>

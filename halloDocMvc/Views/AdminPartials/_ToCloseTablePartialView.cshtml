@@ -1,0 +1,320 @@
+﻿
+<partial name="~/Views/AdminPartials/PopUpPartials/_ClearCasePopUp.cshtml" />
+<partial name="~/Views/AdminPartials/PopUpPartials/_EncounterPopUp.cshtml" />
+@if(Model.maxPage != 0)
+{   
+<div class="table-responsive d-none d-md-block mb-5">
+
+        <table id="CloseRequestsExcel" class="table" style="border:none">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td></td>
+                    <td>DateOfBirth</td>
+                    <td>Region</td>
+                    <td>Physician Name</td>
+                    <td>Date Of Service</td>
+                    <td>Address</td>
+                    <td>Notes</td>
+                    @* <td width="">Chat With</td> *@
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tboday>
+
+            @foreach (var obj in Model.ToCloseRequestViewModels)
+                {
+                    var background = "";
+
+                    switch (obj.RequestType)
+                    {
+                        case 1:
+                            background = "rgb(226, 98, 119)";
+                            break;
+
+                        case 2:
+                            background = "rgb(25, 135, 84)";
+                            break;
+
+                        case 3:
+                            background = "rgb(237, 145, 36)";
+                            break;
+                        case 4:
+                            background = "rgb(0, 186, 250)";
+                            break;
+                    }
+                    <tr class="bg-danger text-white">
+                        <td class="text-white" style="background-color:@background">
+                            @obj.Firstname
+                        </td>
+                        <td class="text-white"  style="background-color:@background"><button onclick="window.open('mailto:@obj.Email')" class="btn btn-outline-light"><i class="bi bi-envelope"></i> </button></td>
+                        <td class="text-white" style="background-color:@background">@obj.DateOfBirth</td>
+                        <td class="text-white" style="background-color:@background">@obj.Region</td>
+                        <td class="text-white" style="background-color:@background">@obj.PhysicianName</td>
+                        <td class="text-white" style="background-color:@background">@obj.DateOfService</td>
+                      
+                        <td class="text-white" style="background-color:@background;">@obj.Address</td>
+                        <td class="text-white" style="background-color:@background">@obj.Notes</td>
+
+
+                        @*<td class="text-white" width="" style="background-color:@background">
+                            <button class="btn btn-outline-light">
+                                <i class="bi bi-person"></i>
+                                Patient
+                            </button>
+                            <button class="btn btn-outline-light">
+                                <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 64 64"
+                                     enable-background="new 0 0 64 64" xml:space="preserve" fill="currentcolor">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                <g>
+                                <path fill="currentcolor"
+                                      d="M62.242,47.758l0.014-0.014c-5.847-4.753-12.84-8.137-20.491-9.722C44.374,35.479,46,31.932,46,28 c1.657,0,3-1.343,3-3v-2c0-0.886-0.391-1.673-1-2.222V12c0-6.627-5.373-12-12-12h-8c-6.627,0-12,5.373-12,12v8.778 c-0.609,0.549-1,1.336-1,2.222v2c0,1.657,1.343,3,3,3c0,3.932,1.626,7.479,4.236,10.022c-7.652,1.586-14.646,4.969-20.492,9.722 l0.014,0.014C0.672,48.844,0,50.344,0,52v8c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4v-8C64,50.344,63.328,48.844,62.242,47.758z M20,28v-1c0-0.553-0.447-1-1-1h-1c-0.553,0-1-0.447-1-1v-2c0-0.553,0.447-1,1-1h1c0.553,0,1-0.447,1-1v-1v-1c0-2.209,1.791-4,4-4 c2.088,0,3.926-1.068,5-2.687C30.074,13.932,31.912,15,34,15h6c2.209,0,4,1.791,4,4v1v1c0,0.553,0.447,1,1,1h1c0.553,0,1,0.447,1,1 v2c0,0.553-0.447,1-1,1h-1c-0.553,0-1,0.447-1,1v1c0,6.627-5.373,12-12,12S20,34.627,20,28z M24.285,39.678 C26.498,41.143,29.147,42,32,42s5.502-0.857,7.715-2.322c1.66,0.281,3.297,0.63,4.892,1.084C41.355,43.983,36.911,46,31.973,46 c-4.932,0-9.371-2.011-12.621-5.226C20.96,40.315,22.61,39.961,24.285,39.678z">
+                                            </path>
+                                <path fill="currentcolor"
+                                      d="M24.537,21.862c0.475,0.255,1.073,0.068,1.345-0.396C25.91,21.419,26.18,21,26.998,21 c0.808,0,1.096,0.436,1.111,0.458C28.287,21.803,28.637,22,28.999,22c0.154,0,0.311-0.035,0.457-0.111 c0.491-0.253,0.684-0.856,0.431-1.347C29.592,19.969,28.651,19,26.998,19c-1.691,0-2.618,0.983-2.9,1.564 C23.864,21.047,24.063,21.609,24.537,21.862z">
+                                            </path>
+                                <path fill="currentcolor"
+                                      d="M34.539,21.862c0.475,0.255,1.073,0.068,1.345-0.396C35.912,21.419,36.182,21,37,21 c0.808,0,1.096,0.436,1.111,0.458C38.289,21.803,38.639,22,39.001,22c0.154,0,0.311-0.035,0.457-0.111 c0.491-0.253,0.684-0.856,0.431-1.347C39.594,19.969,38.653,19,37,19c-1.691,0-2.618,0.983-2.9,1.564 C33.866,21.047,34.065,21.609,34.539,21.862z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                Provider
+                            </button>
+                        </td> *@
+                        <td class="text-white" width="" style="background-color:@background">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline-light" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-lg-end">
+                                    <li onclick="viewCases(@obj.RequestId)"><button class="dropdown-item" type="button">View Case</button></li>
+                                    <li onclick="View_Document(@obj.RequestId)"><button class="dropdown-item" type="button">View Uploads</button></li>
+                                    <li onclick="ShowViewNotes(@obj.RequestId)"><button class="dropdown-item" type="button">View Notes</button></li>
+                                    <li onclick="OrderCheckOutPage(@obj.RequestId)"><button class="dropdown-item" type="button">Order</button></li>
+                                <li onclick="CloseCase(@obj.RequestId)"><button class="dropdown-item" type="button">Close Case</button></li>
+                                    @* <li><button class="dropdown-item" type="button">Doctor Note</button></li> *@
+                                <li onclick="ClearCasePopUp(@obj.RequestId)"><button class="dropdown-item" type="button">Clear Case</button></li>
+                                <li onclick="EncounterForm(@obj.RequestId)"><button class="dropdown-item" type="button">Encounter</button></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tboday>
+        </table>
+      <div class="d-flex justify-content-between">
+                <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+                <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                    <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                            <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        </svg>
+                    </button>
+                    <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                    <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                    <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                    <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </button>
+                </div>
+      </div>
+    </div>
+    }
+    else
+    {
+        <div class="d-flex justify-content-center text-danger h3">
+            Data Not Found
+        </div>
+    }
+
+    
+<div class="d-block d-md-none patienttable">
+    @if(Model.maxPage != 0)
+    {
+    @foreach (var obj in Model.ToCloseRequestViewModels)
+    {
+        var uuid = Guid.NewGuid();
+        <div class="shadow p-2" @* style="background-color:#e4f8ff" *@>
+            <div class="pt-2 ps-3" data-bs-toggle="collapse" href="#A-@uuid" aria-expanded="false" aria-controls="#A-@uuid">
+
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        @obj.Firstname
+                    </div>
+                    <div class="me-3">
+                        @if (obj.RequestType == 1)
+                        {
+                            <span>Business</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#e26277" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                        else if (obj.RequestType == 2)
+                        {
+                            <span>Patient</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#198754" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                        else if (obj.RequestType == 3)
+                        {
+                            <span>Family</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#ed9124" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                        else if (obj.RequestType == 4)
+                        {
+                            <span>Concierge</span>
+                            <svg height="15" width="15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle fill="#00bafa" r="45" cx="50" cy="50" stroke="grey" stroke-width="3" />
+                            </svg>
+                        }
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <p class="">
+                        @obj.Address
+                    </p>
+                    <div class="me-3">
+                        <a href="http://maps.google.com/?q={@obj.Address}" target="_blank" class="mapbtn btn btn-outline-primary"><span><i class="bi bi-geo-alt"></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="collapse multi-collapse col-sm-12 ps-3 in" id="A-@uuid">
+                <div class="ms-2 mt-2">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                            <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                            <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                        </svg>
+                    </span>
+                    Date Of birth:
+                    <span class="fw-bold">
+
+                        @if (@obj.DateOfBirth != null)
+                        {
+                            @obj.DateOfBirth
+                        }
+                        else
+                        {
+                            <span class="fw-bold">Not Provided</span>
+                        }
+                    </span>
+                </div>
+
+                <div class="ms-2 mt-2 ">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>
+                    </span>
+                    Email:
+                    <span class="fw-bold">
+                        @obj.Email
+                    </span>
+                </div>
+
+                <div class="ms-2 mt-2">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                            <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                            <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                        </svg>
+                    </span>
+                    <span>
+                        Transfer Notes:
+                        @if (@obj.Notes != null)
+                        {
+                            <span class="fw-bold"> @obj.Notes</span>
+                        }
+                        else
+                        {
+                            <span class="fw-bold">-</span>
+                        }
+                    </span>
+                </div>
+
+
+                <div class="ms-2 mt-2">
+
+                    <span>
+                        Date Of Service:
+                        @if (true)
+                        {
+                            <span class="fw-bold">@obj.DateOfService </span>
+                        }
+                        else
+                        {
+                            <span class="fw-bold">Not Provided</span>
+                        }
+                    </span>
+                </div>
+                <div class="ms-2 mt-2 ">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>
+                    </span>
+                    Physician:
+                    <span class="fw-bold">
+                        @obj.PhysicianName
+                    </span>
+                </div>
+
+                <div class="ms-2 mt-2 ">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#60cef3" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>
+                    </span>
+                    Region:
+                    <span class="fw-bold">
+                        @obj.Region
+                    </span>
+                </div>
+                <div class="d-flex row mt-3 gap-2 ms-2">
+                    <button onclick="CloseCase(@obj.RequestId)" class="viewCases btn col-5 text-white" style="background-color:red">Close Case</button
+                    <button onclick="viewCases(@obj.RequestId)" class="viewCases btn col-5 text-white" style="background-color:blue">View Case</button>
+                    <button onclick="ShowViewNotes(@obj.RequestId)" class="btn col-5 text-white" style="background-color:#198754">View Notes</button>
+                    <button onclick="View_Document(@obj.RequestId)"  class="btn col-5 text-white" style="background-color:#198754"> View Uploads</button>
+                    <button onclick="EncounterForm(@obj.RequestId)" class="btn col-5 text-white" style="background-color:#198754"> Encounter</button>
+                   
+                    <button onclick="ClearCasePopUp(@obj.RequestId)" class="btn col-5 text-white" style="background-color:orange">Clear Case</button>
+                    <button class="btn col-5 text-white" onclick="window.open('mailto:@obj.Email')" style="background-color:#198754">Email</button>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+    <div class="d-flex justify-content-center mt-4 pb-5 gap-1">
+        <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+            </svg>
+        </button>
+        <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+        <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+        <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+        <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+            </svg>
+        </button>
+    </div>
+    }
+</div>
+
+<script src="/js/AdminScripts/AdminDashBoardScripts/OrderAction.js"></script>

@@ -1,0 +1,73 @@
+﻿<div class="Search-input-holder d-flex justify-content-center">
+    <input type="search" class="form-control searchBTN m-3 w-100" id="" placeholder="Search">
+</div>
+<div class="Load-Table">
+</div>
+<script>
+    $(document).ready(function () {
+        $(".Load-Table").load('/Project/_ProjectDetailsPartial');
+    });
+    function EditProject(ProjectID) {
+        $("#PopUpLoader").load('/Project/LoadEditProjectPartial?ProjectID=' + ProjectID, function () {
+            $("#EditProjectPopUp").modal("show");
+            //$.ajax({
+            //    url: '/Project/LoadDomain',
+            //    method: 'POST',
+            //    success: function(response){
+            //        $('.Domain').empty();
+            //        //$('#.Domain').append('<option value="-1" Selected>Select Region</option>')
+            //        response.forEach(function (item) {
+            //            $('.Domain').append('<option value="' + item.name + '">' + item.name + '</option>')
+            //        })
+            //    }
+            //})
+        });
+    }
+    function DeleteProject(ProjectID) {
+        $.ajax({
+            url: '/Project/DeleteProjectPost?ProjectID=' + ProjectID,
+            method: 'POST',
+            data: {
+                ProjectID: ProjectID
+            },
+            success: function (response) {
+                window.location.reload();
+            }
+        })
+    }
+    $(".searchBTN").on("keyup", function () {
+        $(".Load-Table").load("/Project/_ProjectDetailsPartial?Search=" + $(this).val())
+    });
+    function ManipulateData(pagenumber) {
+        $(".Load-Table").load('/Project/_ProjectDetailsPartial?Search=' + $(".searchBTN").val() + '&PageNumber='+pagenumber);
+
+    }
+    function lastPage() {
+        let lastpage = 999999;
+        ManipulateData(lastpage);
+    };
+    function FirstPage() {
+        if ($("#PageNumber").val() > 1) {
+            ManipulateData();
+        }
+    }
+    function Previous() {
+        var CurrentPage = localStorage.getItem("RequestState");
+        if ($("#PageNumber").val() > 1) {
+            var pageNumbner = +$("#PageNumber").val() - 1;
+            ManipulateData(pageNumbner);
+        }
+        else {
+            return true;
+        }
+    }
+    function Next(maxpage) {
+        if ($("#PageNumber").val() != maxpage) {
+            var pageNumbner = +$("#PageNumber").val() + 1;
+            ManipulateData(pageNumbner);
+        }
+        else {
+            return true;
+        }
+    }
+</script>

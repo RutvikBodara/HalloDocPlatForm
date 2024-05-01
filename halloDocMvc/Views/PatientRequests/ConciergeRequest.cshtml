@@ -1,0 +1,300 @@
+@model HalloDoc.DAL.ViewModals.ConciergeRequestviewmodel
+@{
+    ViewData["Title"] = "Family Friend Request";
+            // <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/css/intlTelInput.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/PatientRequestFormDesign.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    Layout = "header_footer_Layout";
+}
+<div class="modal fade" id="myModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="d-flex justify-content-center">
+                    <i class="bi bi-exclamation-circle m-2 " style="color: #F7AC01;
+              font-size: 70px;"></i>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <h5>Information</h5>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 d-flex justify-content-center mt-2">
+                        <p style="text-align: justify;">
+                            When submitting a request you must provide the correct contact
+                            Information for the patient or the reponsiry party.Failure to
+                            provide correct email and phone number will delay service or
+                            be declined.
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary m-2" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-5 mb-5">
+    <!-- backbtn -->
+    <div class="d-flex justify-content-center">
+        <div class="backbtnpatientRequest d-flex justify-content-end mt-3 mb-3 col-lg-8 col-md-8 col-sm-12 col-12 ">
+            <a asp-controller="PatientRequests" asp-action="PatientSubmitRequest">
+                <button id="" class="btn  btn-outline-primary">
+                    <img src="/images/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg" alt=""> back
+                </button>
+            </a>
+        </div>
+    </div>
+    <!-- form for submit -->
+    <div class="d-flex justify-content-center">
+        <form method="post" class="createpatientrequestform col-lg-8 col-md-8 col-sm-12 col-12 shadow min-vh-80 p-3"
+              style="border-radius: 10px">
+            <h5 class="mb-3">Concierge Information</h5>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Conciergename" type="text" class="form-control" id="floatingInput1" placeholder="Your First Name"
+                               required />
+                        <label for="floatingInput1">Your First Name</label>
+                        <span asp-validation-for="Conciergename" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Conciergelastname" type="text" class="form-control" id="floatingInput2" placeholder="Your Last Name"
+                               required />
+                        <label for="floatingInput2">Your Last Name</label>
+                        <span asp-validation-for="Conciergelastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="ConciergeCountryCode" id="ConciergeCountryCode" hidden />
+                        <input asp-for="ConciergePhonenumber" type="tel" class="form-control mobileConcierge pt-3 pb-3" required />
+                        <span id="mobileConciergeValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="ConciergeEmail" type="email" class="form-control" id="floatingInput3" placeholder="Email" required />
+                        <label for="floatingInput3">Your Email</label>
+                        <span asp-validation-for="ConciergeEmail" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Address" type="text" class="form-control" id="floatingInput4" placeholder="Your Last Name" />
+                        <label for="floatingInput4">Hotel/Property Name</label>
+                        <span asp-validation-for="Address" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Concierge Location</h5>
+
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Street" type="text" class="form-control" id="floatingInput5" placeholder="Street" required />
+                        <label for="floatingInput5">Street</label>
+                        <span asp-validation-for="Street" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="City" type="text" class="form-control" id="floatingInput6" placeholder="City" required />
+                        <label for="floatingInput6">City</label>
+                        <span asp-validation-for="City" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        @*  <input asp-for="State" type="text" class="form-control" id="floatingInput7" placeholder="State" required />
+                        <label for="floatingInput7">State</label>
+                        <span asp-validation-for="State" style="color:indianred"></span> *@
+                        <select asp-for="regid" class="form-select" id="loadregion">
+                        </select>
+                        <span asp-validation-for="regid" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Zipcode" type="number" class="form-control" id="floatingInput8" placeholder="Zip Code" required />
+                        <label for="floatingInput8">Zip Code</label>
+                        <span asp-validation-for="Zipcode" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Patient Information</h5>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        <textarea asp-for="Notes" class="form-control flex-wrap" id="exampleFormControlTextarea1" rows="10"
+                                  placeholder="Enter Brief Details Of symptoms"></textarea>
+                        <label for="exampleFormControlTextarea1" class=" text-wrap">
+                            Enter Brief Details Of symptoms
+                            (Optional)
+                        </label>
+                        <span asp-validation-for="Notes" style="color:indianred"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Firstname" type="text" class="form-control" id="floatingInput9" placeholder="Your First Name"
+                               required />
+                        <label for="floatingInput9">First Name</label>
+                        <span asp-validation-for="Firstname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Lastname" type="text" class="form-control" id="floatingInput10" placeholder="Your Last Name" />
+                        <label for="floatingInput10">Last Name</label>
+                        <span asp-validation-for="Lastname" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="dateofbirth" type="date" class="form-control" id="floatingInput11" placeholder="Date" />
+                        <label for="floatingInput11">Date</label>
+                        <span asp-validation-for="dateofbirth" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Patient Contact Information</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Email" type="email" class="form-control" id="PatEmail" placeholder="Email" required />
+                        <label for="PatEmail">Email</label>
+                        <span asp-validation-for="Email" style="color:indianred"></span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group form-floating mobilenumHolder mb-4">
+                        <input asp-for="PatientCountryCode" id="PatientCountryCode" hidden />
+                        <input asp-for="Phonenumber" type="tel" class="form-control mobilePatient pt-3 pb-3" />
+                        <span id="mobilePatientValidation" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+            @*    <div class="row mt-2">
+            <div class="col-12 col-md-6">
+            <div id="Password" class="form-floating mb-4" style="display:none">
+            <input asp-for="password" type="password" class="form-control" id="Passlabel07" placeholder="Password" required/>
+            <label for="Passlabel07">Password</label>
+            <span asp-validation-for="password" style="color:indianred"></span>
+            </div>
+            </div>
+            <div class="col-12 col-md-6">
+            <div id="ConfirmPassword" class="input-group form-floating mobilenumHolder mb-4" style="display:none" >
+
+            <input asp-for="Conpasword" type="password" class="form-control" id="floatinglabel109" required/>
+            <label for="floatinglabel109">Confirm Password</label>
+            <span asp-validation-for="Conpasword" style="color:indianred"></span>
+            </div>
+            </div>
+            </div> *@
+
+            <h5>Patient Location</h5>
+            <div class="row mt-2">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="floatingInput01" />
+                        <label for="floatingInput01">Room#/Suite (Optional)</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary p-3 me-4" id="ConciergeRequestSubmit">Submit</button>
+                    <button class="btn btn-outline-primary p-3">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="~/js/EmailCheckscript.js"></script>
+    <script src="/js/Popup.js"></script>
+    @{
+            <partial name="_validationScriptsPartial" />
+    }
+    <script>
+        $(document).ready(function () {
+
+            let input1 = document.querySelector(".mobileConcierge");
+
+            const input1Script = window.intlTelInput(input1, {
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
+                preferredCountries: ["in"],
+                separateDialCode: true,
+                //initialCountry: "in"
+            });
+
+            $(".mobileConcierge").on("keyup", function () {
+                // console.log(input.isValidNumber());
+                if (input1Script.isValidNumber() == false) {
+                    $("#mobileConciergeValidation").html("Phonenumber is not valid");
+                }
+                else {
+                    $("#mobileConciergeValidation").html("");
+                }
+            });
+
+            let input2 = document.querySelector(".mobilePatient");
+
+            const input2script =window.intlTelInput(input2, {
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
+                preferredCountries: ["in"],
+                separateDialCode: true,
+                //initialCountry: "in"
+            });
+            $(".mobilePatient").on("keyup", function () {
+                // console.log(input.isValidNumber());
+                if (input2script.isValidNumber() == false) {
+                    $("#mobilePatientValidation").html("Phonenumber is not valid");
+                }
+                else {
+                    $("#mobilePatientValidation").html("");
+                }
+            });
+
+            $(".createpatientrequestform").on("submit", function (e) {
+                if (input2script.isValidNumber() == false || input1Script.isValidNumber() == false) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+       
+
+            $("#ConciergeRequestSubmit").click(function (e) {
+                $("#ConciergeCountryCode").val($(".iti__selected-dial-code").text());
+                $("#PatientCountryCode").val($(".iti__selected-dial-code").text());
+            });
+
+            $.ajax({
+                url: '/PatientRequests/LoadRegion',
+                method: 'POST',
+                success: function (response) {
+                    $('#loadregion').empty();
+                    $('#loadregion').append('<option value="" Selected disabled>Select Region</option>')
+                    response.region.forEach(function (regionname) {
+                        $('#loadregion').append('<option value="' + regionname.regionid + '">' + regionname.name + '</option>')
+                    })
+                }
+            });
+        });
+    </script>
+}

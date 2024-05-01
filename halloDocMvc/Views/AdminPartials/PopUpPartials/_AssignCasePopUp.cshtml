@@ -1,0 +1,76 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<div class="modal fade" id="AssignModel" tabindex="-1" aria-labelledby="headerToggle" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="headerToggle">Assign Request</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="AssignDescription">
+                    To assign this request , search and select Physician
+                </p>
+                <div class="row mb-3 form-floating">
+                    <select class="form-select col-12 RegionSelect" name="RegionOption" id="location" required>
+                        <option class="Current_Region" value="-1" selected disabled>Select Region</option>
+                        @foreach (var reg in Model.Regions)
+                        {
+                            <option value="@reg.Regionid">@reg.Name</option>
+                        };
+                    </select>
+                    <label for="#location">Narrow Search By Region</label>
+                    <span class="RegionValid" style="color:indianred"></span>
+                </div>
+
+                <div class="row mb-3 form-floating">
+                    @* <input id="phyid" hidden/> *@
+                    <select class="form-select col-12 PhysicianSelect" name="PhysicianName" id="Physician" required>
+                        <option selected disabled>--Select--Region--First--</option>
+                    @*     @foreach (var phy in Model.physicians)
+                        {
+                            <option value="@phy.Physicianid">@phy.Firstname</option>
+                        }; *@
+                    </select>
+                    <label for="#Physician">Narrow Search By Region</label>
+                    <span class="PhyValid" style="color:indianred"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 form-floating">
+                        <textarea id="Notes" class="form-control h-100 AdminDescription" name="AdminDescription" placeholder="Provide Additional Notes" rows="5" required></textarea>
+                        <label for="CancelNotes">Provide Additional Notes</label>
+                        <span class="AdminNotesValid" style="color:indianred"></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" onclick="AssignPhysician()" class="btn btn-primary AssignConfirmBtn">Submit</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.RegionSelect').on("change", function () {
+        var value = $(this).val();
+        $.ajax({
+            url: '/AdminPartials/GetPhysicianByRegion',
+            data: { RegionId: value },
+            method: 'POST',
+            success: function (response) {
+                $('.PhysicianSelect').empty(),
+                    response.physicianName.forEach(function (phy) {
+                        console.log(response.physicianName);
+                        $('.PhysicianSelect').append('<option value="' + phy.physicianid + '">' + phy.firstname + '</option>')
+                    })
+            }
+        });
+    });
+</script>

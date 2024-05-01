@@ -1,0 +1,31 @@
+﻿<div class="modal fade" id="ClearCasePopUp" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-center">
+                    <i class="bi bi-exclamation-circle m-2 " style="color: #F7AC01;
+              font-size: 70px;"></i>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <h5>Confirmation for clear case</h5>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 d-flex justify-content-center mt-2">
+                        <p style="text-align: justify">
+                            Are you want to sure to clear this request?once clear
+                            you are not able to see this request again!
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button onclick="ClearCase()"  @* requestid *@ type="button" class="btn btn-primary m-2 clearCaseBtn">
+                        clear
+                    </button>
+                    <button type="button" class="btn btn-outline-primary m-2 ClearClose" data-bs-dismiss="modal">
+                        cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

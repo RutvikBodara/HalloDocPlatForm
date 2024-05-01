@@ -1,0 +1,53 @@
+﻿@model HalloDoc.DAL.ViewModals.Loginviewmodel;
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_LAYOUT";
+}
+@section styles {
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css ">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+}
+
+<div id="logggg">
+    <div class="row TaskLine mb-3">
+        <h1 class="h1">Login To Your Account</h1>
+    </div>
+    <div class="row">
+        <form method="post">
+            <div class="form-floating mb-4 row  username">
+                <input asp-for="Username" type="text" class="form-control p-3" id="floatingInput1" placeholder="user name">
+                <label asp-for="Username" for="floatingInput1">username</label>
+                <span asp-validation-for="Username" style="color:indianred"></span>
+                <div id="usercircle">
+                    <i class="bi bi-person-circle" id="toggleUser"></i>
+                </div>
+            </div>
+            <div class="form-floating mb-4 row  password">
+                <input asp-for="Passwordhash" type="password" class="form-control p-3" id="floatingPassword2" placeholder="password" required>
+                <label asp-for="Passwordhash" for="floatingPassword2">password</label>
+                <span asp-validation-for="Passwordhash" style="color:indianred"></span>
+                <div id="pswd">
+                    <i class="bi bi-eye-slash" id="togglePswd"></i>
+                </div>
+            </div>
+
+            <div class="mb-3 login ">
+                <button class="btn btn-primary p-3 w-100  loginbtn" type="submit">Log In</button>
+            </div>
+            <div class="forgetpassholder mb-3">
+                <a class="forgetpassword" asp-controller="AdminLogin" asp-action="ForgetPassword">Forget password?</a>
+            </div>
+        </form>
+    </div>
+
+    @section scripts {
+
+        <script src="~/js/PasswordEyeScript.js"></script>
+        @{
+            <partial name="_validationScriptsPartial" />
+        }
+        <script src="/js/DisableBack.js"></script>
+    }

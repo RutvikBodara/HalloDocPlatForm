@@ -1,0 +1,28 @@
+﻿
+<div class="modal fade" id="DTYSupportModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">DTY Support</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    To all unscheduled Physicians:We are short on coverage and needs additional support On Call to respond to Requests.
+                </p>
+                <div class="row">
+                    <div class="col-12 form-floating">
+                        <textarea class="form-control h-100" id="DTYMessage" name="DtyMessage" placeholder="Message" rows="5" required></textarea>
+                        <label for="DTYMessage">Message</label>
+                        <span class="DTYMessageError mb-3" style="color:indianred"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary DtySubmitBtn">Confirm</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="dtycanecl">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

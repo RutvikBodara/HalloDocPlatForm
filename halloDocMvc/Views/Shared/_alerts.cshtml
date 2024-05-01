@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@if (TempData["success"] != null)
+{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.success('@TempData["success"]');
+    </script>
+}
+
+@if (TempData["requestSubmitted"] != null)
+{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.success('@TempData["requestSubmitted"]');
+    </script>
+}
+@if (TempData["error"] != null)
+{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.error('@TempData["error"]');
+    </script>
+}
+@if (TempData["!requestSubmitted"] != null)
+{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.error('@TempData["!requestSubmitted"]');
+    </script>
+}
+@if (TempData["paswornotmatch"] != null)
+{
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.error('@TempData["paswornotmatch"]');
+    </script>
+
+}
+
+@if (TempData["emailnotfound"] != null)
+{
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.error('@TempData["emailnotfound"]');
+    </script>
+
+}
+@if (TempData["changepass"] != null)
+{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.success('@TempData["changepass"]');
+    </script>
+}
+
+@if (TempData["NotAdmin"] != null)
+{
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.error('@TempData["NotAdmin"]');
+    </script>
+
+}
+
+@if (TempData["updateData"] != null)
+{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.progressBar = true;
+        toastr.success('@TempData["updateData"]');
+    </script>
+}

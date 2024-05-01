@@ -1,0 +1,205 @@
+﻿@model HalloDoc.DAL.ViewModals.Partner.PartnerInformationViewModel
+<div class="d-none d-md-block table-responsive d-none d-md-block">
+    @if (Model.maxPage != 0)
+    {
+        <table class="table table-striped table-responsive mt-3">
+            <thead>
+                <tr>
+                    <td>Profession</td>
+                    <td>Business Name</td>
+                    <td>Email</td>
+                    <td>Fax Number</td>
+                    <td>Phone Number</td>
+                    <td>Business Contact</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tboday>
+                @foreach (var obj in Model.healthprofessionals)
+                {
+                    <tr>
+                        <td>
+                            @if (@obj.ProfessionNavigation != null)
+                            {
+                                @obj.ProfessionNavigation.Professionname
+                            }
+                            else
+                            {
+                                <p>-</p>
+                            }
+                        </td>
+                        <td>
+                            @obj.Vendorname
+                        </td>
+                        <td>
+                            @obj.Email
+                        </td>
+                        <td>
+                            @obj.Faxnumber
+                        </td>
+                        <td>
+                            @obj.Phonenumber
+                        </td>
+                        <td>
+                            @obj.Businesscontact
+                        </td>
+                        <td class="d-flex gap-2">
+                            <button class="btn btn-outline-primary" onclick="EditVendor(@obj.Vendorid)">Edit</button>
+                            <button class="btn btn-danger" onclick="DeleteVendor(@obj.Vendorid)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tboday>
+        </table>
+        <div class="d-flex justify-content-between">
+            <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+            <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </button>
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    }
+    else
+    {
+
+        <div class="d-flex justify-content-center">
+            <h3 class="h3 text-danger">Data Not Found</h3>
+
+        </div>
+    }
+</div>
+<div class="d-block d-md-none mt-3 p-2">
+
+    @*   <div class="d-flex justify-content-end mb-4">
+    <button class="btn btn-primary m-2" id="createAccess"> create Access</button>
+    </div> *@
+    @if (Model.maxPage != 0)
+    {
+        @foreach (var obj in Model.healthprofessionals)
+        {
+            var myuuid = Guid.NewGuid();
+            var myid = "a" + myuuid;
+            <div @* style="background-color:#e4f8ff" *@>
+
+                <div class="shadow" style="border-radius:15px">
+                    <div class="pt-2 ps-2" data-bs-toggle="collapse" href="#@myid" aria-expanded="false" aria-controls="#@myid">
+                        <div class="mb-2">
+                            @if (@obj.Vendorname != null)
+                            {
+                                @obj.Vendorname
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                    </div>
+                    <br />
+                    <div class="collapse col-sm-12 ps-3 in ms-3 me-3 pb-3" id="@myid">
+                        <div class="mb-2">
+                            @if (@obj.ProfessionNavigation != null)
+                            {
+                                @obj.ProfessionNavigation.Professionname
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Email:</span>
+                            @if (obj.Email != null)
+                            {
+                                @obj.Email
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Fax:</span>
+                            @if (obj.Faxnumber != null)
+                            {
+                                @obj.Faxnumber
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Email:</span>
+                            @if (obj.Phonenumber != null)
+                            {
+                                @obj.Phonenumber
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-bold">Business contact:</span>
+                            @if (obj.Businesscontact != null)
+                            {
+                                @obj.Businesscontact
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </div>
+                        <div class="d-flex justify-content-end m-2">
+                            <button class="btn btn-outline-primary me-2">Edit</button>
+                            <button class="btn btn-outline-primary me-2">Delete</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br />
+        }
+        <div class="d-flex justify-content-between">
+            <span class="justify-content-start me-3 "> @Model.PageNumber  of @Model.maxPage </span>
+            <div class="d-flex justify-content-end mt-4 mb-5 gap-1">
+                <button class="btn btn-primary " style="border-radius:10%" onclick="FirstPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </button>
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Previous()">Prev</button>
+                <input id="PageNumber" type="number" class="pt-2 pb-2" value="@Model.PageNumber" style="border:none; border-radius:50%; width:50px; height:50px; font-family:500; text-align:center; " disabled />
+                <button class="btn btn-primary" style="border-radius:10%" onclick="Next('@Model.maxPage')">Next</button>
+                <button class="btn btn-primary me-5" style="border-radius:10%" onclick="lastPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708" />
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    }
+    else
+    {
+
+        <div class="d-flex justify-content-center">
+            <h3 class="h3">Data Not Found</h3>
+
+        </div>
+    }
+</div>

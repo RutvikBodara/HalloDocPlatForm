@@ -1,0 +1,28 @@
+﻿
+<div class="modal fade" id="DownloadEncounter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Encounter Form</h1>
+                <button type="button" class="btn-close btn-close-white closeBtn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    Encounter Form Finalize Successfully
+                </p>
+                <div class="row">
+                    <form asp-action="DownloadEncounterReport" asp-controller="ProviderAccount">
+                        <input id="ReqestIdKeeper" name="requestId" hidden/>
+                        <div class="justify-content-center">
+                            <button class="btn btn-primary" id="DownloadEncounterFormBTN" type="submit" onclick="DownloadReport()">Download</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
